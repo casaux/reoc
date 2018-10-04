@@ -49,6 +49,8 @@
 				<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
 			    <li><a href="00-user-homepage.html">Home</a></li>
+
+			    <li><a href="bob-org-dashboard.html#in-progress">Amy's Flying School</a></li>
 					<li>Remote operators certificate (ReOC)</li>
 			  </ul>
 			</nav>
@@ -56,6 +58,20 @@
 	</div>
 		</div>
 <main id="main-content">
+	<!--<section class="organisation">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+		<div class="org-logo">
+		</div>
+		<div class="org-title">
+			<h1 class="au-display-xl">Bob's Flying School</h1>
+			<h2 class="au-display-sm m-t-1">ARN: 321 4567</h2>
+		</div>
+	</div>
+	</div>
+	</div>
+</section>-->
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-12">
@@ -63,16 +79,10 @@
 					<h2 class="au-display-xl">Remote operators certificate (ReOC)</h2>
 					<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 					<h3>Application Summary</h3>
-
-						<h4 class="au-display-md">Drones and Operations</strong></h4>
-						Multi-Rotor Up to 25kg RePL Training
-
-						<h4 class="au-display-md">Fee</h4>
-						$950
-
-						<h4 class="au-display-md">Documents</h4>
+						<br>
+						<h4>Fee</h4>
+						$200
 							<div class="student-details">
-
 								<ul class="grid">
 									<li class="hidden-sm-down">
 										<div class="col-md-3 col-xs-12">
@@ -87,7 +97,7 @@
 									</li>
 									<li id="peter">
 										<div class="col-md-3 col-xs-12">
-											<span class="student-name">AmysManual</span>
+											<span class="student-name">BobsManual</span>
 											<!--<span class="badge badge-info">Existing RePL - Aeroplane, 25kg to 150kg, Medium</span>-->
 										</div>
 										<div class="col-md-3 col-xs-4 mobile-margin">
@@ -99,7 +109,7 @@
 
 										<div class="delete col-md-3 col-xs-12">
 											<a href="#" class="btn-delete"  data-toggle="modal" data-target="#deletePilot">
-											  Delete
+											  <span class="fas fa-minus-circle"></span> Delete
 											</a>
 										</div>
 									</li>
@@ -110,6 +120,17 @@
 					<!--<p><a href="01-organisation.html" class="au-direction-link">Go to Bob's Flying School</a></p>-->
 		</div>
 
+		<div class="dec">
+		<h3>Declarations</h3>
+		<p class="au-callout" aria-label="Callout description1">
+			<label class="au-control-input">
+				<input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="declaration">
+				<span class="au-control-input__text form-text p-t-0">
+					I declare ....
+				</span>
+			</label>
+		</p>
+		</div>
 
 	</div>
 </div>
@@ -117,15 +138,56 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8"><br>
-			<a href="dec.html" class="au-btn" id="summary">Next</a>
-			<!--<p class="westpac">You will be directed to Westpac for payment</p>-->
+			<a href="payment.html" class="au-btn" id="summary">Proceed to Payment</a>
+			<p class="westpac">You will be directed to Westpac for payment</p>
 			<div class="save-exit">
-			<a href="dashboard.html#save" class="au-btn au-btn--secondary">
+			<a href="bob-org-dashboard.html#in-progress" class="au-btn au-btn--secondary">
 			Save and exit
 			</a>&nbsp; to continue this application later
 		 </div>
 		</div>
 	</div>
+</div>
+
+<!-- Delete -->
+<div class="modal fade" id="deletePilot" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLongTitle">Delete</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			Are you sure you want to delete Peter Smith?
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="au-btn au-btn--secondary" data-dismiss="modal">No</button>
+			<button type="button" class="au-btn" data-dismiss="modal" id="delete-yes">Yes</button>
+		</div>
+	</div>
+</div>
+</div>
+<!-- Delete -->
+<div class="modal fade" id="deletePilot-ava" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+	<div class="modal-header">
+		<h5 class="modal-title" id="exampleModalLongTitle">Delete</h5>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		Are you sure you want to delete Ava Williams?
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="au-btn au-btn--secondary" data-dismiss="modal">No</button>
+		<button type="button" class="au-btn" data-dismiss="modal" id="delete-yes-ava">Yes</button>
+	</div>
+</div>
+</div>
 </div>
 
 </main>

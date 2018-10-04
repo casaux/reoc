@@ -64,7 +64,8 @@
 							<p><strong>Required Documents:</strong></p>
 								<ul>
 									<li>Operations Manual</li>
-									<li>RPAS operations procedures (Library)</li>
+									<li>RPAS operations procedures (Library) – if operating < 150kg </li>
+									<li>Flight Manual - if operating > 150kg AC 101-1 – Remotely Piloted Aircraft Systems </li>
 								</ul>
 							</div>
 
@@ -81,7 +82,7 @@
 			<div class="col-md-8">
 				<a href="paymentsummary.html" class="au-btn" id="next">Application summary</a>
 				<div class="save-exit">
-				<a href="dashboard.html#save" class="au-btn au-btn--secondary">
+				<a href="bob-org-dashboard.html#in-progress" class="au-btn au-btn--secondary">
 				Save and exit
 				</a>&nbsp; to continue this application later
 			 </div>
@@ -106,13 +107,13 @@ function myFunction(){
             txt = " ";
         } else {
             for (var i = 0; i < x.files.length; i++) {
-                txt += "<h4>Uploaded files</h4>";
+                txt += "<h4>Uploaded file/s</h4>";
                 var file = x.files[i];
                 if ('name' in file) {
                     txt += "<div class='row filename'><div class='col-md-4'><span> " + file.name + "</span></div>"
-										txt += "<div class='col-md-6'><label for='select1' class='sr-only'>Type of document</label><select id='select1' class='au-select'>"
+										txt += "<div class='col-md-6'><label for='select1' class='hidden'>Type of document</label><select id='select1' class='au-select'>"
 										txt += "<option value=''>Please select</option><option value='1'>Operations Manual</option><option value='2'>Library</option>"
-  									txt += "</select></div><div class='col-md-2'><a href='#'>Delete</a></div></div><br>";
+  									txt += "<option value='3'>Training Manual</option></select></div><div class='col-md-2'><a href='#'>Delete</a></div></div><br>";
 								}
                 /*if ('size' in file) {
                     txt += "size: " + file.size + " bytes <br>";

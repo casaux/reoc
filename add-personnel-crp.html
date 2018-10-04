@@ -11,21 +11,6 @@
 	<link rel="stylesheet" href="css/furnace.min.css">
 	<!--<link rel="stylesheet" href="css/lead.css">-->
 	<link rel="stylesheet" href="css/main.css">
-	<script type="text/javascript" src="js/furnace.min.js"></script>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-
-	<script>
-	$(document).ready(function() {
-		var type = window.location.hash.substr(1);
-		if(type=='org'){
-			$('a#next').attr("href", "add-personnel-crp.html");
-		}else if(type !=='org'){
-			//alert(3);
-			$('a#next').attr("href", "upload-app.html");
-		}
-	});
-	</script>
-
 </head>
 
 <body class="live-demo au-body au-grid js">
@@ -71,52 +56,73 @@
 
 				<h2 class="au-display-xl m-t-2">Remote operators certificate (ReOC)</h2>
 				<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
-           <h3 class="m-t-4">Drone Details</h3>
-					 <div class="form-section">
-						 <label for="category">Category</label>
-						 <select id="category" class="au-select au-select--block">
-							 <option value="1" selected="selected">Please select</option>
-							 <option value="2">Aeroplane</option>
-							 <option value="3">Helicopter</option>
-							 <option value="4">Multi Rotor</option>
-							 <option value="5">Airship</option>
-							 <option value="6">Powered Lift</option>
-						 </select>
-					 </div>
-					 <div class="form-section">
-						 <label for="weight">Weight class</label>
-						 <select id="weight" class="au-select au-select--block">
-							 <option value="1" selected="selected">Please select</option>
-							 <option value="2">Up to 7kg</option>
-							 <option value="2">Up to 25kg</option>
-							 <option value="3">Up to 150kg</option>
 
-						 </select>
-					 </div>
-					 <div class="form-section">
-						 <label for="type">Type</label>
-						 <select id="type" class="au-select au-select--block">
-							 <option value="1" selected="selected">Please select</option>
-							 <option value="2">Small</option>
-							 <option value="3">Medium</option>
-							 <option value="3">Large</option>
-						 </select>
-					 </div>
+					 <div class="row student-details">
+ 						<ul class="col-md-12 grid">
+ 							<li class="bg-dark">
+ 								<div class="student">
+ 									<strong>Name</strong>
+ 								</div>
+ 									<div class="edit">
+ 										<strong>ARN</strong>
+ 									</div>
+ 							</li>
+ 							<li class="hidden" id="ava">
+ 								<div class="student">
+ 									<span class="student-name">Ava Williams</span>
+ 								</div>
+ 								<div class="edit">
+ 									<span class="student-arn">7654321</span>
+ 								</div>
+ 								<div class="delete-repl">
+ 									<a href="#" class="btn-delete" style="padding-left:1rem" data-toggle="modal" data-target="#deletePilot-ava">
+ 									  <span class="fas fa-minus-circle"></span> Delete
+ 									</a>
+ 								</div>
+ 							</li>
+ 						</ul>
+ 					</div>
 
-					 <div class="form-section">
-						 <p><strong>Please indicate the type of operations you wish to conduct with this drone:</strong></p>
-						  <label class="au-control-input">
-							  <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
-							  <span class="form-text au-control-input__text">RPAS Aerial Work</span>
+
+<h3 class="m-t-4">Chief Remote Pilot</h3>
+					<section class="row arn-details">
+					<div class="form-section col-md-12">
+						<label for="surname-input">Family Name</label>
+						<span id="surname-error" style="color:#d82c52;"></span>
+						<input class="au-text-input" name="text-input" id="surname-input" type="text">
+					</div>
+					<div class="form-section col-md-12">
+						<label for="arn-input">ARN</label>
+						<span id="arn-error" style="color:#d82c52;"></span>
+						<input class="au-text-input" name="text-input" id="arn-input" type="number">
+
+					</div>
+					<!--<div class="form-section col-md-12">
+						<label for="type">Role</label>
+					 <select id="type" class="au-select au-select--block">
+						 <option value="1" selected="selected">Please select</option>
+						 <option value="2">Chief Remote Pilot</option>
+						 <option value="3">Maintenance Controller</option>
+					 </select>
+				 </div>-->
+						<div class="form-section col-md-12">
+							<p> Has this person been charged with or convicted of any criminal offence in Australia, its territories, or a foreign country in the last 10 years?</p>
+							<label class="au-control-input">
+							  <input class="au-control-input__input" type="radio" name="radio-ex">
+							  <span class="au-control-input__text">Yes</span>
 							</label>
 							<label class="au-control-input">
-							  <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
-							  <span class="form-text au-control-input__text">RePL Training</span>
+							  <input class="au-control-input__input" type="radio" name="radio-ex">
+							  <span class="au-control-input__text">No</span>
 							</label>
-					 </div>
-					 <p>&nbsp;</p>
-					 <a href="#" class="au-btn au-btn--secondary">Add drone</a>
-					 <p>&nbsp;</p>
+						</div>
+					<!--<div class=" col-md-12"><br>
+					<button type="button" class="au-btn au-btn--secondary" id="addPilot">
+					Add personnel
+				</button>
+			</div>-->
+				</section>
+
 				</div>
 
 		</div>
@@ -124,7 +130,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-8"><br>
 				<a href="upload-app.html" class="au-btn" id="next">Next</a>
 				<div class="save-exit">
 				<a href="dashboard.html#save" class="au-btn au-btn--secondary">
@@ -140,6 +146,11 @@
 			<iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
 		</div>
 </footer>
+<script type="text/javascript" src="js/furnace.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+$('.student-details').hide();
 
+</script>
 </body>
 </html>

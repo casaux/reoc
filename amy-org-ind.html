@@ -57,73 +57,31 @@
 				<h2 class="au-display-xl m-t-2">Remote operators certificate (ReOC)</h2>
 				<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
-					 <div class="row student-details">
- 						<ul class="col-md-12 grid">
- 							<li class="bg-dark">
- 								<div class="student">
- 									<strong>Name</strong>
- 								</div>
- 									<div class="edit">
- 										<strong>ARN</strong>
- 									</div>
- 							</li>
- 							<li class="hidden" id="ava">
- 								<div class="student">
- 									<span class="student-name">Ava Williams</span>
- 								</div>
- 								<div class="edit">
- 									<span class="student-arn">7654321</span>
- 								</div>
- 								<div class="delete-repl">
- 									<a href="#" class="btn-delete" style="padding-left:1rem" data-toggle="modal" data-target="#deletePilot-ava">
- 									  <span class="fas fa-minus-circle"></span> Delete
- 									</a>
- 								</div>
- 							</li>
- 						</ul>
- 					</div>
 
-
-<h3 class="m-t-4">Add personnel</h3>
-					<section class="row arn-details">
-					<div class="form-section col-md-12">
-						<label for="surname-input">Family Name</label>
-						<span id="surname-error" style="color:#d82c52;"></span>
-						<input class="au-text-input" name="text-input" id="surname-input" type="text">
-
+				<h3 class="m-t-4">ReOC details</h3>
+					<br>
+					<div class="form-section">
+						<label class="au-control-input">
+							<input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="org">
+							<span class="au-control-input__text">I am applying for a ReOC on behalf of an Organisation</span>
+						</label>
 					</div>
-					<div class="form-section col-md-12">
-						<label for="arn-input">ARN</label>
-						<span id="arn-error" style="color:#d82c52;"></span>
-						<input class="au-text-input" name="text-input" id="arn-input" type="number">
 
-					</div>
-					<div class="form-section col-md-12">
-						<label for="type">Role</label>
-					 <select id="type" class="au-select au-select--block">
-						 <option value="1" selected="selected">Please select</option>
-						 <option value="2">Chief Remote Pilot</option>
-						 <option value="3">Maintenance Controller</option>
-					 </select>
-					</div>
-						<div class="form-section col-md-12">
-							<p> Has this person been charged with or convicted of any criminal offence in Australia, its territories, or a foreign country in the last 10 years?</p>
-							<label class="au-control-input">
-							  <input class="au-control-input__input" type="radio" name="radio-ex">
-							  <span class="au-control-input__text">Yes</span>
-							</label>
-							<label class="au-control-input">
-							  <input class="au-control-input__input" type="radio" name="radio-ex">
-							  <span class="au-control-input__text">No</span>
-							</label>
+				<br>
+
+							<div id="org-details" class="hidden">
+
+							<div class="form-section">
+								<label for="select1">Select an organisation</label>
+									<select id="select1" class="au-select" style="width:100%;">
+										<option value="">Please select</option>
+										<option value="1">Amy's Flying School</option>
+										<!--<option value="1">Ace Aviation</option>-->
+									</select>
+							</div>
 						</div>
-					<div class=" col-md-12"><br>
-						<button type="button" class="au-btn au-btn--secondary" id="addPilot">
-						<!--<span class="fas fa-user-plus"></span>--> Add personnel
-					</button>
-					</div>
-				</section>
-				<p>&nbsp;</p>
+
+							<p>&nbsp;</p><p>&nbsp;</p>
 				</div>
 
 		</div>
@@ -134,7 +92,7 @@
 			<div class="col-md-8">
 				<a href="drone-details.html" class="au-btn" id="next">Next</a>
 				<div class="save-exit">
-				<a href="bob-org-dashboard.html#in-progress" class="au-btn au-btn--secondary">
+				<a href="dashboard.html#save" class="au-btn au-btn--secondary">
 				Save and exit
 				</a>&nbsp; to continue this application later
 			 </div>
@@ -150,7 +108,16 @@
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
-$('.student-details').hide();
+	//$("#error").hide();
+
+$("#org").change(function(){
+
+	if (this.checked){
+		$('#next').attr("href", "for-org.html");
+	}else{
+		$('#next').attr("href", "drone-details.html");
+	}
+})
 
 </script>
 </body>

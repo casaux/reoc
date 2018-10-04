@@ -11,21 +11,6 @@
 	<link rel="stylesheet" href="css/furnace.min.css">
 	<!--<link rel="stylesheet" href="css/lead.css">-->
 	<link rel="stylesheet" href="css/main.css">
-	<script type="text/javascript" src="js/furnace.min.js"></script>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-
-	<script>
-	$(document).ready(function() {
-		var type = window.location.hash.substr(1);
-		if(type=='org'){
-			$('a#next').attr("href", "add-personnel-crp.html");
-		}else if(type !=='org'){
-			//alert(3);
-			$('a#next').attr("href", "upload-app.html");
-		}
-	});
-	</script>
-
 </head>
 
 <body class="live-demo au-body au-grid js">
@@ -115,7 +100,7 @@
 							</label>
 					 </div>
 					 <p>&nbsp;</p>
-					 <a href="#" class="au-btn au-btn--secondary">Add drone</a>
+					 <a href="#" class="au-btn au-btn--secondary" id="next">Add drone</a>
 					 <p>&nbsp;</p>
 				</div>
 
@@ -127,7 +112,7 @@
 			<div class="col-md-8">
 				<a href="upload-app.html" class="au-btn" id="next">Next</a>
 				<div class="save-exit">
-				<a href="dashboard.html#save" class="au-btn au-btn--secondary">
+				<a href="dashboard.html#id-progress" class="au-btn au-btn--secondary">
 				Save and exit
 				</a>&nbsp; to continue this application later
 			 </div>
@@ -140,6 +125,20 @@
 			<iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
 		</div>
 </footer>
+<script type="text/javascript" src="js/furnace.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+	//$("#error").hide();
 
+$("#org").change(function(){
+	var org = getElementById("org");
+	if (this.checked){
+		$(this).removeClass('hidden');
+	}else{
+		$(this).addClass('hidden');
+	}
+})
+
+</script>
 </body>
 </html>

@@ -43,7 +43,7 @@
 				<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
 			    <li><a href="dashboard.html">Home</a></li>
-					<li>Remote operators certificate (ReOC)</li>
+					<li>Link to an existing organisation</li>
 			  </ul>
 			</nav>
 		</div>
@@ -54,34 +54,54 @@
 		<div class="row">
 			<div class="col-lg-6 col-md-12"><br>
 
-					<h2 class="au-display-xl m-t-2">Remote operators certificate (ReOC)</h2>
-					<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
+				<h2 class="au-display-xl m-t-2">Link to an existing organisation</h2>
+				<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
-				<p>&nbsp;</p>
-							<section>
-							<h3>Upload your application</h3>
-							<div class="au-callout">
-							<p><strong>Required Documents:</strong></p>
-								<ul>
-									<li>Operations Manual</li>
-									<li>RPAS operations procedures (Library)</li>
-								</ul>
+
+							<h3 class="m-t-4">Organisation Details</h3>
+
+							<div id="org-details">
+							<div class="form-section">
+								<label for="abn-input">Organisation ARN</label>
+								<span id="ACN-error" style="color:#d82c52;"></span>
+								<input class="au-text-input" name="text-input" id="abn-input" type="text">
+				  		</div>
+							<div class="form-section">
+								<label for="abn-input">ACN/ARBN</label>
+								<span id="ACN-error" style="color:#d82c52;"></span>
+								<input class="au-text-input" name="text-input" id="abn-input" type="text">
+				  		</div>
+							<div class="form-section">
+								<label for="legalname-input">Legal Name</label>
+								<span id="legalname-error" style="color:#d82c52;"></span>
+								<input class="au-text-input" name="text-input" id="legalname-input" type="text">
+				  		</div>
+							<div class="form-section">
+								<label for="select1">What is your main role within this organisation?</label>
+									<select id="select1" class="au-select" style="width:100%;">
+										<option value="">Please select</option>
+										<option value="1">Administrator</option>
+										<option value="2">RPAS pilot</option>
+										<option value="3">Chief remote pilot</option>
+										<option value="3">ACROC Assessor</option>
+										<option value="3">GELP/ELP Assessor</option>
+										<option value="3">Maintenance Controller</option>
+									</select>
 							</div>
+						</div>
 
-							<input type="file" id="myFile" class="inputfile" onchange="myFunction()"><br>
-							<label for="myFile">Choose a file</label>
-							<span class="form-text">Accepted file types are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png</span>
-							<p id="file"></p>
-						</section><p>&nbsp;</p>
+							<p>&nbsp;</p><p>&nbsp;</p>
+				</div>
+
 		</div>
 	</div>
-	</div>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<a href="paymentsummary.html" class="au-btn" id="next">Application summary</a>
-				<div class="save-exit">
-				<a href="dashboard.html#save" class="au-btn au-btn--secondary">
+				<a href="link-org-approval.html" class="au-btn" id="next">Next</a>
+				<div class="save-exit hidden">
+				<a href="dashboard.html" class="au-btn au-btn--secondary">
 				Save and exit
 				</a>&nbsp; to continue this application later
 			 </div>
@@ -96,33 +116,6 @@
 </footer>
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<script>
-function myFunction(){
-	$('.au-page-alerts').hide();
-    var x = document.getElementById("myFile");
-    var txt = "";
-    if ('files' in x) {
-        if (x.files.length == 0) {
-            txt = " ";
-        } else {
-            for (var i = 0; i < x.files.length; i++) {
-                txt += "<h4>Uploaded files</h4>";
-                var file = x.files[i];
-                if ('name' in file) {
-                    txt += "<div class='row filename'><div class='col-md-4'><span> " + file.name + "</span></div>"
-										txt += "<div class='col-md-6'><label for='select1' class='sr-only'>Type of document</label><select id='select1' class='au-select'>"
-										txt += "<option value=''>Please select</option><option value='1'>Operations Manual</option><option value='2'>Library</option>"
-  									txt += "</select></div><div class='col-md-2'><a href='#'>Delete</a></div></div><br>";
-								}
-                /*if ('size' in file) {
-                    txt += "size: " + file.size + " bytes <br>";
-                }*/
-            }
-        }
-    }
 
-    document.getElementById("file").innerHTML = txt;
-}
-</script>
 </body>
 </html>
