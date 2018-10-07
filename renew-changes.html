@@ -54,36 +54,35 @@
 		<div class="row">
 			<div class="col-lg-6 col-md-12"><br>
 
-					<h2 class="au-display-xl m-t-2">Remote operators certificate (ReOC)</h2>
-					<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
+				<h2 class="au-display-xl m-t-2">Remote operators certificate (ReOC)</h2>
+				<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
-				<p>&nbsp;</p>
-							<section>
-							<h3>Upload your documents</h3>
-							<div class="au-callout">
-							<p><strong>Required Documents:</strong></p>
-								<ul>
-									<li>Operations Manual</li>
-									<li>RPAS operations procedures (Library)</li>
-								</ul>
-							</div>
+				<h3>Renewal</h3><br>
+				<div class="">
+					<p><strong>Has there been any changes to your ReOC details?</strong></p>
+					<label class="au-control-input">
+  					<input class="au-control-input__input" type="radio" name="radio-ex">
+					  <span class="au-control-input__text form-text">Yes</span>
+					</label>
+					<label class="au-control-input">
+					  <input class="au-control-input__input" type="radio" name="radio-ex">
+					  <span class="au-control-input__text form-text">No</span>
+					</label>
+				</div>
+							<p>&nbsp;</p>
+				</div>
 
-							<input type="file" id="myFile" class="inputfile" onchange="myFunction()"><br>
-							<label for="myFile">Choose a file</label>
-							<span class="form-text">Accepted file types are PDF documents (.pdf) and the following image formats: .jpg, .bmp and .png</span>
-							<p id="file"></p>
-						</section><p>&nbsp;</p>
 		</div>
 	</div>
-	</div>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<a href="paymentsummary.html" class="au-btn" id="next">Application summary</a>
+				<a href="drone-details.html" class="au-btn" id="next">Next</a>
 				<div class="save-exit">
-				<a href="dashboard.html#save" class="au-btn au-btn--secondary">
-				Save and exit
-				</a>&nbsp; to continue this application later
+				<a href="bob-org-dashboard.html" class="au-btn au-btn--secondary">
+				Exit
+				</a>
 			 </div>
 			</div>
 		</div>
@@ -97,32 +96,17 @@
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
-function myFunction(){
-	$('.au-page-alerts').hide();
-    var x = document.getElementById("myFile");
-    var txt = "";
-    if ('files' in x) {
-        if (x.files.length == 0) {
-            txt = " ";
-        } else {
-            for (var i = 0; i < x.files.length; i++) {
-                txt += "<h4>Uploaded files</h4>";
-                var file = x.files[i];
-                if ('name' in file) {
-                    txt += "<div class='row filename'><div class='col-md-4'><span> " + file.name + "</span></div>"
-										txt += "<div class='col-md-6'><label for='select1' class='sr-only'>Type of document</label><select id='select1' class='au-select'>"
-										txt += "<option value=''>Please select</option><option value='1'>Operations Manual</option><option value='2'>Library</option>"
-  									txt += "</select></div><div class='col-md-2'><a href='#'>Delete</a></div></div><br>";
-								}
-                /*if ('size' in file) {
-                    txt += "size: " + file.size + " bytes <br>";
-                }*/
-            }
-        }
-    }
+	//$("#error").hide();
 
-    document.getElementById("file").innerHTML = txt;
-}
+$("#org").change(function(){
+	var org = getElementById("org");
+	if (this.checked){
+		$(this).removeClass('hidden');
+	}else{
+		$(this).addClass('hidden');
+	}
+})
+
 </script>
 </body>
 </html>

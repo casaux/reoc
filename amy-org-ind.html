@@ -60,12 +60,22 @@
 
 				<h3 class="m-t-4">ReOC details</h3>
 					<br>
-					<div class="form-section">
+					<!--<div class="form-section">
 						<label class="au-control-input">
 							<input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="org">
 							<span class="au-control-input__text">I am applying for a ReOC on behalf of an Organisation</span>
 						</label>
-					</div>
+					</div>-->
+
+					<p><strong>Who you applying this Reoc for?</strong></p><br>
+					<label class="au-control-input">
+					  <input class="au-control-input__input" type="radio" name="radio-ex" id="ind">
+					  <span class="au-control-input__text form-text">Yourself, as an individual</span>
+					</label>
+					<label class="au-control-input">
+					  <input class="au-control-input__input" type="radio" name="radio-ex" id="org">
+					  <span class="au-control-input__text form-text">An Organisation (Company)</span>
+					</label>
 
 				<br>
 
@@ -75,7 +85,7 @@
 								<label for="select1">Select an organisation</label>
 									<select id="select1" class="au-select" style="width:100%;">
 										<option value="">Please select</option>
-										<option value="1">Amy's Flying School</option>
+										<option value="1">Wendy's Flying School</option>
 										<!--<option value="1">Ace Aviation</option>-->
 									</select>
 							</div>
@@ -109,10 +119,10 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
 	//$("#error").hide();
+$('input[type=radio][name=radio-ex]').change(function() {
+//$("#org").change(function(){
 
-$("#org").change(function(){
-
-	if (this.checked){
+	if (this.id == 'org'){
 		$('#next').attr("href", "for-org.html");
 	}else{
 		$('#next').attr("href", "drone-details.html");
