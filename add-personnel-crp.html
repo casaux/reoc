@@ -69,10 +69,10 @@
  							</li>
  							<li class="hidden" id="ava">
  								<div class="student">
- 									<span class="student-name">Ava Williams</span>
+ 									<span class="student-name">Wendy Williams</span>
  								</div>
  								<div class="edit">
- 									<span class="student-arn">7654321</span>
+ 									<span class="student-arn">1234567</span>
  								</div>
  								<div class="delete-repl">
  									<a href="#" class="btn-delete" style="padding-left:1rem" data-toggle="modal" data-target="#deletePilot-ava">
@@ -88,7 +88,7 @@
 					<section class="row arn-details">
 					<div class="form-section col-md-12" style="padding-bottom:.6rem;padding-top:1rem">
 						<label class="au-control-input">
-					  <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
+					  <input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="am">
 					  <span class="au-control-input__text">I am the Chief Remote Pilot</span>
 						</label>
 					</div><br>
@@ -114,13 +114,35 @@
 						<div class="form-section col-md-12">
 							<p style="font-weight:bold;"> Has this person been charged with or convicted of any criminal offence in Australia, its territories, or a foreign country in the last 10 years?</p>
 							<label class="au-control-input">
-							  <input class="au-control-input__input" type="radio" name="radio-ex">
+							  <input class="au-control-input__input" type="radio" name="radio-ex" id="yes">
 							  <span class="au-control-input__text form-text">Yes</span>
 							</label>
 							<label class="au-control-input">
-							  <input class="au-control-input__input" type="radio" name="radio-ex">
+							  <input class="au-control-input__input" type="radio" name="radio-ex" id="no">
 							  <span class="au-control-input__text form-text">No</span>
 							</label>
+						</div>
+
+						<div id="convicted" class="hidden">
+							<div class="form-section col-md-12">
+								<p style="font-weight:bold;">Was a conviction recorded?</p>
+								<label class="au-control-input">
+									<input class="au-control-input__input" type="radio" name="convicted-ex">
+									<span class="au-control-input__text form-text">Yes</span>
+								</label>
+								<label class="au-control-input">
+									<input class="au-control-input__input" type="radio" name="convicted-ex">
+									<span class="au-control-input__text form-text">No</span>
+								</label>
+							</div>
+
+							<div class="form-section col-md-12">
+							<label for="textarea">Please provide detials of the penalty imposed and the offence in which a conviction was recorded</label>
+							<textarea class="au-text-input au-text-input--block" name="textarea" id="textarea">
+
+							</textarea>
+							</div>
+
 						</div>
 					<!--<div class=" col-md-12"><br>
 					<button type="button" class="au-btn au-btn--secondary" id="addPilot">
@@ -156,6 +178,18 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
 $('.student-details').hide();
+
+$('input[name="radio-ex"]').change(function(){
+	//var convicted = getElementById("yes").checked;
+	if($('input[id="yes"]:checked')){
+		$('#convicted').removeClass('hidden');
+	}
+	else if($('input[id="no"]:checked')) {
+		$('#convicted').addClass('hidden');
+	}
+});
+
+
 
 </script>
 </body>
