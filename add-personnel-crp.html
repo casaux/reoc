@@ -82,8 +82,6 @@
  							</li>
  						</ul>
  					</div>
-
-
 <h3 class="m-t-4">Chief Remote Pilot</h3>
 					<section class="row arn-details">
 					<div class="form-section col-md-12" style="padding-bottom:.6rem;padding-top:1rem">
@@ -101,16 +99,7 @@
 						<label for="arn-input">ARN</label>
 						<span id="arn-error" style="color:#d82c52;"></span>
 						<input class="au-text-input" name="text-input" id="arn-input" type="number">
-
 					</div>
-					<!--<div class="form-section col-md-12">
-						<label for="type">Role</label>
-					 <select id="type" class="au-select au-select--block">
-						 <option value="1" selected="selected">Please select</option>
-						 <option value="2">Chief Remote Pilot</option>
-						 <option value="3">Maintenance Controller</option>
-					 </select>
-				 </div>-->
 						<div class="form-section col-md-12">
 							<p style="font-weight:bold;"> Has this person been charged with or convicted of any criminal offence in Australia, its territories, or a foreign country in the last 10 years?</p>
 							<label class="au-control-input">
@@ -189,6 +178,12 @@ $('input[name="radio-ex"]').change(function(){
 	}
 });
 
+$('#am').change(function(){
+	if ('#am'){
+	$('#arn-input').value('1234567');
+	$('#surname-input').value('1234567');
+}
+});
 
 
 </script>
