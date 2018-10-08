@@ -177,7 +177,11 @@ a.cancel{
 .dronedetails ul.grid li:nth-child(2n + 1){background-color:whitesmoke;}
 .dronedetails ul.grid li:first-child{border-top: .07rem dashed #ebedf2;}
 
-
+.col-md-3.col-xs-5 .au-btn{
+	display:block;
+	float:right;
+	margin-right:12px;
+}
 
 .form-descriptor{
 	margin-bottom:0.45rem !important;
