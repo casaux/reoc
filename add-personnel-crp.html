@@ -170,11 +170,11 @@ $('.student-details').hide();
 
 $('input[name="radio-ex"]').change(function(){
 	//var convicted = getElementById("yes").checked;
-	if($('input[id="yes"]:checked')){
+	if($('#yes').is(':checked')){
 		$('#convicted').removeClass('hidden');
 	}
-	else if($('input[id="no"]:checked')) {
-		$('#convicted').addClass('hidden');
+	else if($('#no').is(':checked')) {
+	$('#convicted').addClass('hidden');
 	}
 });
 
