@@ -42,7 +42,7 @@
 			 <div class="col-md-12">
 				<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
-			    <li><a href="dashboard.html">Home</a></li>
+					<li><a href="dashboard.html">Home</a></li>
 					<li>Remote operators certificate (ReOC)</li>
 			  </ul>
 			</nav>
@@ -57,20 +57,28 @@
 				<h2 class="au-display-xl m-t-2">Remote operators certificate (ReOC)</h2>
 				<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
-				<h3>Before you begin</h3>
-				<div class="">
-					<!--<p>[...about Individual and Organisation reoc...]</p>-->
-					<p><strong>Supporting documentations required:</strong></p>
-					<a href="https://www.casa.gov.au/file/190411/download?token=H7sb0Aud">Download Manual Template</a><br/>
-					<a href="https://www.casa.gov.au/file/190406/download?token=MjVCsWLN">Download RPAS operations procedures (Library)</a><br/>
 
-					<p><strong>Information required</strong><p>
-						<ul>
-							<li>The RPA (drone/UAV) models which will be used for operations</li>
-							<li>A Chief Remote Pilot - this person will be responsible for all aviation operations conducted by the organisation. The Chief Remote Pilot must already hold a Remote Pilots Licence (RePL)</li>
-							<li>A Maintenance Controller. This person will be responsible for all maintenance and safe condition of all RPA systems. The Maintenance Controller can be anyone holding a Remote Pilots Licence (RePL)</li>
-						</ul>
-				</div>
+							<div id="org-arn">
+<br>
+								<h3 class="m-t-4">ReOC details</h3>
+							<div class="form-section">
+								<label for="add-input">Organisation's phone number</label>
+								<span id="add-error" style="color:#d82c52;"></span>
+								<input class="au-text-input" name="text-input" id="add-input" type="number">
+							</div>
+							<div class="form-section">
+								<label for="add-input">Organisation's mobile number</label>
+								<span id="add-error" style="color:#d82c52;"></span>
+								<input class="au-text-input" name="text-input" id="add-input" type="number">
+							</div>
+							<div class="form-section">
+								<label for="add-input">Organisation's email</label>
+								<span id="add-error" style="color:#d82c52;"></span>
+								<input class="au-text-input" name="text-input" id="add-input" type="text">
+							</div>
+						</div>
+
+
 							<p>&nbsp;</p>
 				</div>
 
@@ -80,11 +88,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<a href="amy-for-org.html" class="au-btn" id="next">Next</a>
+				<a href="drone-details.html" class="au-btn" id="next">Next</a>
 				<div class="save-exit">
-				<a href="bob-org-dashboard.html" class="au-btn au-btn--secondary">
-				Cancel
-				</a>
+				<a href="dashboard.html" class="au-btn au-btn--secondary">
+				Save and exit
+				</a>&nbsp; to continue this application later
 			 </div>
 			</div>
 		</div>
@@ -97,18 +105,6 @@
 </footer>
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<script>
-	//$("#error").hide();
 
-$("#org").change(function(){
-	var org = getElementById("org");
-	if (this.checked){
-		$(this).removeClass('hidden');
-	}else{
-		$(this).addClass('hidden');
-	}
-})
-
-</script>
 </body>
 </html>
