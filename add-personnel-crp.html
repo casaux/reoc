@@ -101,7 +101,7 @@
 						<input class="au-text-input" name="text-input" id="arn-input" type="number">
 					</div>
 						<div class="form-section col-md-12">
-							<p style="font-weight:bold;"> Has this person been charged with or convicted of any criminal offence in Australia, its territories, or a foreign country in the last 10 years?</p>
+							<p style="font-weight:bold;"> <span id="am-text">Has this person</span> been charged with or convicted of any criminal offence in Australia, its territories, or a foreign country in the last 10 years?</p>
 							<label class="au-control-input">
 							  <input class="au-control-input__input" type="radio" name="radio-ex" id="yes">
 							  <span class="au-control-input__text form-text">Yes</span>
@@ -179,10 +179,17 @@ $('input[name="radio-ex"]').change(function(){
 });
 
 $('#am').change(function(){
-	if ('#am'){
-	$('#arn-input').value('1234567');
-	$('#surname-input').value('1234567');
-}
+	//var crp = $("#am");
+	if ($("#am").is(':checked')){
+		$('#arn-input').val('1234567');
+		$('#surname-input').val('Williams');
+		$('#am-text').text('Have you');
+	}
+	else {
+		$('#arn-input').val('');
+		$('#surname-input').val('');
+		$('#am-text').text('Has this person');
+	}
 });
 
 
