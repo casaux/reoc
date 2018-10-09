@@ -47,7 +47,9 @@
 
 			<header class="au-header" role="banner">
 
-
+				<div role="alert" class="au-body au-page-alerts au-page-alerts--success hidden" id="doc-status">
+					  <h3>Your documents have been submitted</h3>
+					</div>
 
 				<h1 class="au-header-heading">Welcome to myCASA</h1>
 
@@ -65,7 +67,7 @@
 							 Multi-Rotor Up to 25kg - RePL Training-->
 						 </div>
 						 <div class="col-md-4 col-xs-4">
-							 <span class="badge badge-warning">Upload document changes</span>
+							 <span class="badge badge-warning" id="status">Upload document changes</span>
 						 </div>
 						 <div class="col-md-3 col-xs-3">
 							 <a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Delete</a>
@@ -131,6 +133,11 @@
 <script>
 $('#link-active').hide();
 		var type = window.location.hash.substr(1);
+		if (type=='upload'){
+			$('#doc-status').removeClass('hidden');
+			$('#save').addClass('hidden');
+			$('#status').removeClass('badge-warning').addClass('badge-info').text('Under review');
+		}
 		if (type=='in-progress'){
 			$('#in-progress').removeClass('hidden');
 			/*$('#link-active').addClass('hidden');

@@ -35,7 +35,6 @@
 			.banner {padding-left: 25px;}
 			.banner {padding-top: 10px;}
 			.banner {padding-bottom: 10px;}
-
 		</style>
 		This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
 	</div>
@@ -89,12 +88,13 @@
 			if(type=='update'){
 				$('#wendy').attr("href", "dashboard-update.html");
 				$('.updates-wendy').removeClass('hidden');
-			}else if(type !=='update'){
+			}else if (type=='approved'){
+				$('#wendy').attr("href", "dashboard-approved.html");
+				$('.updates-wendy').removeClass('hidden');
+			}else if(type !=='update' || type !=='approved'){
 				$('#wendy').attr("href", "dashboard-wendy.html");
 				$('.updates-wendy').addClass('hidden');
 			}
-
-
 </script>
 
 </body>

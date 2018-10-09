@@ -56,6 +56,14 @@
 			</nav>
 
 			<header class="au-header" role="banner">
+				<div role="alert" class="au-body au-page-alerts au-page-alerts--success hidden" id="drones-save">
+				  <h3>Saved</h3>
+				  <p>Your drone details have been saved. Ensure the documents are modified and uploaded to match your changes.</p>
+				</div>
+				<div role="alert" class="au-body au-page-alerts au-page-alerts--success hidden" id="doc-save">
+				  <h3>Saved</h3>
+					<p>Your documents have been uploaded.</p>
+				</div>
 				<h1 class="au-header-heading">Update your ReOC</h1>
 				<a class="au-direction-link au-direction-link--left" href="dashboard-approved.html">Back</a>
 			</header>
@@ -116,11 +124,17 @@
 								<div class="col-md-3 col-xs-3"> N/A</div>
 									<div class="col-md-3 col-xs-3">RPAS Aerial Work</div>
 						</li>
+						<li class="row alt-row hidden" id="drone-new">
+							<div class="col-md-3 col-xs-3">Multi-Rotor <span class="badge badge-success">New</span></div>
+							<div class="col-md-3 col-xs-3">Up to 150kg</div>
+								<div class="col-md-3 col-xs-3"> Large</div>
+									<div class="col-md-3 col-xs-3">RPAS Aerial Work</div>
+						</li>
 					</ul>
 				</div>
-				<a class="au-btn au-btn--secondary" href="update-upload-app.html#update-section">Update drones</a>
+				<a class="au-btn au-btn--secondary" href="update-drone-details.html">Update drones</a>
 <p>&nbsp;</p>
-<h4>Douments</h4>
+<h4>Documents</h4>
 <div class="student m-t-0">
 
 								<ul class="list-unstyled">
@@ -136,7 +150,7 @@
 											</div>
 									</li>
 									<li class="row">
-										<div class="col-md-3 col-xs-12"><a href="#">WendysManual</a></div>
+										<div class="col-md-3 col-xs-12"><a href="#">WendysManual </a> <span id="doc-new" class="badge badge-success">New</span></div>
 										<div class="col-md-3 col-xs-4">Operations Manual
 										</div>
 
@@ -149,7 +163,7 @@
 								<a class="au-btn au-btn--secondary" href="update-upload-app.html#update-section">Upload documents</a>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<a class="au-btn au-btn--primary" href="update-paymentsummary.html#update-section">Application Summary</a>
+<a class="au-btn au-btn--primary hidden" href="update-paymentsummary.html#update-section" id="app-summary">Application Summary</a>
 					<!--<p><a href="01-organisation.html" class="au-direction-link">Go to Bob's Flying School</a></p>-->
 		</div>
 
@@ -173,7 +187,21 @@
 </main>
 
 
-
+<script>
+var type = window.location.hash.substr(1);
+if (type=='drone'){
+	$('#drone-new, #app-summary, #drones-save').removeClass('hidden');
+}
+if (type=='doc'){
+	$('#drone-new, #app-summary, #doc-save, #doc-new').removeClass('hidden');
+	$('#drones-save').addClass('hidden');
+}
+if (type=='renew'){
+	$('#drones-save, #app-summary, #doc-save, #doc-new, .badge-success').addClass('hidden');
+	$('#drone-new').removeClass('hidden');
+	$('H1').text('Renew your ReOC');
+}
+</script>
 
 </body>
 </html>

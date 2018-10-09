@@ -73,6 +73,16 @@
 
 							<div id="org-arn" class="hidden">
 								<h3 class="m-t-4">Organisation details</h3>
+								<div class="form-section">
+									<label for="abn-input">ACN/ARBN</label>
+									<span id="ACN-error" style="color:#d82c52;"></span>
+									<input class="au-text-input" name="text-input" id="abn-input" type="text">
+					  		</div>
+								<div class="form-section">
+									<label for="legalname-input">Legal Name</label>
+									<span id="legalname-error" style="color:#d82c52;"></span>
+									<input class="au-text-input" name="text-input" id="legalname-input" type="text">
+					  		</div>
 							<div class="form-section">
 								<label for="abn-input">ARN</label>
 								<span id="ARN-error" style="color:#d82c52;"></span>
@@ -87,16 +97,7 @@
 						</div>
 							<div id="org-details" class="hidden">
 
-							<div class="form-section">
-								<label for="abn-input">ACN/ARBN</label>
-								<span id="ACN-error" style="color:#d82c52;"></span>
-								<input class="au-text-input" name="text-input" id="abn-input" type="text">
-				  		</div>
-							<div class="form-section">
-								<label for="legalname-input">Legal Name</label>
-								<span id="legalname-error" style="color:#d82c52;"></span>
-								<input class="au-text-input" name="text-input" id="legalname-input" type="text">
-				  		</div>
+
 							<!--<div class="form-section">
 								<label for="select1">What is your main role within this organisation?</label>
 									<select id="select1" class="au-select" style="width:100%;">
@@ -110,7 +111,7 @@
 										<option value="7">Maintenance Controller</option>
 									</select>
 							</div>-->
-							<p>&nbsp;</p>
+
 							<!--<h3>Address details</h3>
 							<div class="form-section">
 								<label for="add-input">Physical address</label>
@@ -159,14 +160,16 @@
 $('input[name=radio-ex]').change(function () {
 	if($('#org').is(':checked')){
 		$('#org-arn').removeClass('hidden');
+		$('a#next').attr("href", "amy-for-org-address.html");
 	}
 	else{
 		$('#org-arn').addClass('hidden');
+		$('a#next').attr("href", "drone-details.html");
 	}
 
 });
 
-$("#arn-org").change(function(){
+/*$("#arn-org").change(function(){
 	if($('#arn-org').is(':checked')){
 		$('#org-details').removeClass('hidden');
 		$('#arn-input').attr("disabled", true);
@@ -178,7 +181,7 @@ $("#arn-org").change(function(){
 		$('a#next').attr("href", "drone-details.html");
 	}
 
-})
+})*/
 </script>
 </body>
 </html>
