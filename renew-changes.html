@@ -61,11 +61,11 @@
 				<div class="">
 					<p><strong>Has there been any changes to your ReOC details?</strong></p>
 					<label class="au-control-input">
-  					<input class="au-control-input__input" type="radio" name="radio-ex">
+  					<input class="au-control-input__input" type="radio" name="radio-ex" id="changes">
 					  <span class="au-control-input__text form-text">Yes</span>
 					</label>
 					<label class="au-control-input">
-					  <input class="au-control-input__input" type="radio" name="radio-ex">
+					  <input class="au-control-input__input" type="radio" name="radio-ex" id="no-changes">
 					  <span class="au-control-input__text form-text">No</span>
 					</label>
 				</div>
@@ -78,10 +78,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<a href="drone-details.html" class="au-btn" id="next">Next</a>
+				<a href="paymentsummary.html#renew" class="au-btn" id="next">Next</a>
 				<div class="save-exit">
 				<a href="bob-org-dashboard.html" class="au-btn au-btn--secondary">
-				Exit
+				Cancel
 				</a>
 			 </div>
 			</div>
@@ -106,7 +106,14 @@ $("#org").change(function(){
 		$(this).addClass('hidden');
 	}
 })
+$("input[name=radio-ex]").change(function(){
+	 if($('#changes').is(':checked')){
+		 $('#next').attr('href','manage-reoc-update.html#renew');
+	 }else{
+		 $('#next').attr('href','paymentsummary.html#renew');
+	 }
 
+});
 </script>
 </body>
 </html>
