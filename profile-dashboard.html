@@ -1,13 +1,15 @@
+
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>myCASA</title>
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/furnace.min.css">
 	<link rel="stylesheet" href="css/lead.css">
-	<link rel="stylesheet" href="css/main.css">
+
 </head>
 
 <body class="live-demo au-body au-grid arn-application">
@@ -36,6 +38,55 @@
 			.banner {padding-top: 10px;}
 			.banner {padding-bottom: 10px;}
 
+	
+			a.casa-card{
+				display:block;
+				float:left;
+				width:16em;
+				height:14em;
+				margin-right:1em;
+				box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+				border-top-width: 3px;
+    			border-top-style: solid;
+				border-top-color:rgba(0,200,83,1);
+				border-radius:4px;
+				padding:1em;
+				text-decoration: none;
+				transition: background-color 0.3s ease-in-out,color 0.3s ease-in-out
+			}
+			
+			.casa-card h3{
+				text-decoration: underline;
+			}
+			
+			a.casa-card p{
+				color:#000;
+			}
+			
+			a.casa-card:hover {
+				background:rgba(0,200,83,0.2);
+			}
+			
+			#organisation:hover, #organisation{
+				border-top-color:rgba(255,152,0,1);
+			}
+			
+			#organisation:hover{
+				background:rgba(255,152,0,0.2);
+			}
+			
+			.casa-card-detail{
+				padding-left:32px;
+				position:relative;
+			}
+			
+			.icon{
+				position:absolute;
+				left:0;
+				top:0;
+			}
+			
+			
 		</style>
 		This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
 	</div>
@@ -43,31 +94,60 @@
 
 		<div class="container">
 
-			<div class="col-md-8">
+			<div class="col-md-12">
 
 			<header class="au-header" role="banner">
-			<h1 class="au-header-heading">Welcome to myCASA</h1>
-				<!--<div><strong>Select Profile</strong></div>-->
-			</header>
+				<h1 class="au-header-heading">Welcome to myCASA</h1>
 
-				<h2 class="m-t-1">Select account</h2>
-				<h3 style="font-weight:500; margin-bottom:.7rem;">My personal account</h3>
-				<a class="au-cta-link" href="dashboard-wendy.html" id="wendy">Wendy Williams</a>
-				<div class="updates-wendy hidden">
-					<span class="badge badge-info">Updates available</span>
-				</div>
-				<p style="margin-top:0;">Manage your personal account and services with CASA</p>
-				<p>&nbsp;</p>
-				<h3 style="font-weight:500; margin-bottom:.7rem;">Linked Organisation account</h3>
-				<a class="au-cta-link" href="dashboard.html">Bob's Flying School</a>
-				<p style="margin-top:0;">Manage Bob's Flying school services with CASA</p>
-				<p>&nbsp;</p>
-				<p>
-					<strong>Can't see your organisation/company?</strong><br>
-					<a href="#">Link to an existing organisation</a> <br>
-					<a href="#">Register your organisation with CASA</a>
-				</p>
+				
+				
+				<br />
+				<div><strong>What profile do you want to use to access myCASA?</strong></div>
+				
+				<br />
+
+
+
+
+
+				
+				<div class="casa-cards">
+				
+					
+				<a class="casa-card" id="individual" href="dashboard-wendy.html">
+						
+						<h3>Wendy Williams<br /><br /></h3>
+					
+						<div class="casa-card-detail">
+							<div class="icon"><img src="img/ind.svg" alt="Individual" /></div>
+							
+							<p>Your individual account<br />ARN: 1234567</p>
+						</div>
+
+				</a>
+				
+				<a class="casa-card" id="organisation" href="#">
+									
+						<h3>Wendy's Weddings Pty Ltd</h3>
+					
+						<div class="casa-card-detail">
+							<div class="icon"><img src="img/org.svg" alt="Organisation" /></div>
+							
+							<p>Organisational account<br />
+							ARN: 7654321<br />
+							CASA.ReOC.0634<br />
+							Your role: CEO
+							</p>
+						</div>
+					
+						
+					
+				</a>
+				
+				
 			</div>
+
+			</header>
 
 		</div>
 	</div>
@@ -86,12 +166,27 @@
 <script src="js/jquery.js"></script>
 <script>
 		var type = window.location.hash.substr(1);
-			if(type=='update'){
-				$('#wendy').attr("href", "dashboard-update.html");
-				$('.updates-wendy').removeClass('hidden');
-			}else if(type !=='update'){
-				$('#wendy').attr("href", "dashboard-wendy.html");
-				$('.updates-wendy').addClass('hidden');
+		if (type=='in-progress'){
+			$('#in-progress').removeClass('hidden');
+			/*$('#link-active').addClass('hidden');
+			$('#link-active').find('h3').addClass('hidden');*/
+			$('#save, #link-active').addClass('hidden');
+		}
+		if (type=='save'){
+			$('#save').removeClass('hidden');
+
+			$('#in-progress').addClass('hidden');
+			/*$('#link-active').removeClass('hidden');
+			$('#link-active').find('h3').removeClass('hidden');*/
+		}
+
+
+			var type = window.location.hash.substr(1);
+			if(type=='in-progress'){
+				$('#signout').attr("href", "mycasa-update.html");
+			}else if(type !=='org'){
+				//alert(3);
+				$('#signout').attr("href", "mycasa.html");
 			}
 
 
