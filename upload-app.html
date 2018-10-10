@@ -52,13 +52,15 @@
 <main id="main-content">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6 col-md-12"><br>
-
+			<div class="col-lg-6 col-md-12">
+				<div role="alert" class="au-body au-page-alerts au-page-alerts--success hidden m-t-2" id="save">
+									<h3>Document uploaded successful</h3>
+								</div>
 					<h2 class="au-display-xl m-t-2">Remote operators certificate (ReOC)</h2>
 					<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
-				<p>&nbsp;</p>
-							<section>
+
+							<section class="m-t-2">
 							<h3>Upload your documents</h3>
 							<div class="au-callout">
 							<p><strong>Required Documents:</strong></p>
@@ -98,7 +100,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
 function myFunction(){
-	$('.au-page-alerts').hide();
+	//$('.au-page-alerts').hide();
     var x = document.getElementById("myFile");
     var txt = "";
     if ('files' in x) {
@@ -106,17 +108,19 @@ function myFunction(){
             txt = " ";
         } else {
             for (var i = 0; i < x.files.length; i++) {
-                txt += "<h4>Uploaded files</h4>";
+                txt += "<h4>Uploaded Documents</h4>";
+								txt += "<div class='row alt-row' style='padding-bottom:.6rem;'><div class='col-md-4'><strong>Document name</strong></div>";
+								txt += "<div class='col-md-6'><strong>Document Type</strong></div>";
+								txt += "<div class='col-md-2'></div></div>";
                 var file = x.files[i];
                 if ('name' in file) {
-                    txt += "<div class='row filename'><div class='col-md-4'><span> " + file.name + "</span></div>"
-										txt += "<div class='col-md-6'><label for='select1' class='sr-only'>Type of document</label><select id='select1' class='au-select'>"
-										txt += "<option value=''>Please select</option><option value='1'>Operations Manual</option><option value='2'>Library</option>"
+                    txt += "<div class='row' style='padding-top:.5rem;'><div class='col-md-4'><span> " + file.name + "</span></div>";
+										txt += "<div class='col-md-6'><label for='select1' class='sr-only'>Type of document</label>";
+										txt += "<select id='select1' class='au-select' style='margin-top:-.6rem;'>";
+										txt += "<option value=''>Please select</option><option value='1'>Operations Manual</option><option value='2'>Library</option>";
   									txt += "</select></div><div class='col-md-2'><a href='#'>Delete</a></div></div><br>";
 								}
-                /*if ('size' in file) {
-                    txt += "size: " + file.size + " bytes <br>";
-                }*/
+								$('#save').removeClass('hidden');
             }
         }
     }

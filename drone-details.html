@@ -67,7 +67,11 @@
 <main id="main-content">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6 col-md-12"><br>
+			<div class="col-lg-6 col-md-12">
+
+				<div role="alert" class="au-body au-page-alerts au-page-alerts--success hidden m-t-2" id="save">
+									<h3>Remotely Piloted Aircraft added to application</h3>
+								</div>
 
 				<h2 class="au-display-xl m-t-2">Remote operators certificate (ReOC)</h2>
 				<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
@@ -75,27 +79,28 @@
 
 				<div class="student m-t-3 hidden">
 									<ul class="list-unstyled m-t-1">
-										<li class="row alt-row">
-											<div class="col-md-3 col-xs-3"><strong>Category</strong></div>
-											<div class="col-md-2 col-xs-3"><strong>Weight Class</strong></div>
-												<div class="col-md-2 col-xs-3"><strong>Type</strong></div>
-												<div class="col-md-3 col-xs-3"><strong>Operation</strong></div>
-												<div class="col-md-2 col-xs-3"></div>
+										<li class="row alt-row xs-hidden">
+											<div class="col-md-3 col-sm-3 col-xs-3"><strong>Category</strong></div>
+											<div class="col-md-2 col-sm-2 col-xs-3"><strong>Weight Class</strong></div>
+												<div class="col-md-2 col-sm-2 col-xs-3"><strong>Type</strong></div>
+												<div class="col-md-3 col-sm-3 col-xs-3"><strong>Operation</strong></div>
+												<div class="col-md-2 col-sm-2 col-xs-3"></div>
 										</li>
 										<li class="row">
-											<div class="col-md-3 col-xs-3">Multi-Rotor</div>
-											<div class="col-md-2 col-xs-3">Up to 25kg</div>
-												<div class="col-md-2 col-xs-3"> N/A</div>
-													<div class="col-md-3 col-xs-3">RPAS Aerial Work</div>
-													<div class="col-md-2 col-xs-3"><a href="#">Delete</a></div>
+											<div class="col-md-3 col-sm-3 col-xs-12">Multi-Rotor</div>
+											<div class="col-md-2 col-sm-2 col-xs-12">Up to 25kg</div>
+												<div class="col-md-2 col-sm-2 col-xs-12"> N/A</div>
+													<div class="col-md-3 col-sm-3 col-xs-12">RPAS Aerial Work</div>
+													<div class="col-md-2 col-sm-2 col-xs-12"><a href="#">Delete</a></div>
 										</li>
 									</ul>
+									<p>&nbsp;</p>
 								</div>
 
 
 
-								<h3 class="m-t-4">Remotely Piloted Aircraft details</h3>
-									<div class="form-section">
+								<h3 class="m-t-2">Remotely Piloted Aircraft details</h3>
+									<div class="form-section m-t-1">
 										<label for="category">Category</label>
 										<select id="category" class="au-select au-select--block">
 											<option value="1" selected="selected">Please select</option>
@@ -236,8 +241,8 @@
 <script>
 
 $("#add-drone").click(function(){
-	$(".student").removeClass("hidden");
-
+	$(".student, #save").removeClass("hidden");
+	$('html').scrollToTop();
 });
 $('#capacity').parent().addClass('hidden');
 //$('.save-exit').hide();

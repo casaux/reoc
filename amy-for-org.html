@@ -51,18 +51,18 @@
 <main id="main-content">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6 col-md-12"><br>
+			<div class="col-lg-6 col-md-12">
 
 				<h2 class="au-display-xl m-t-2">Remote operators certificate (ReOC)</h2>
 				<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
-							<h3 class="m-t-4">ReOC details</h3>
+							<h3 class="m-t-3">ReOC details</h3>
 							<div class="form-section">
-								<p style="padding-bottom:1rem;"><strong>This remote operators certificate is for:</strong></p>
+								<p style="padding-bottom:1rem;padding-top:1rem;font-size:1.1rem;"><strong>This remote operators certificate is for:</strong></p>
 								<label class="au-control-input">
 								<input class="au-control-input__input" type="radio" name="radio-ex" id="ind">
 								<span class="au-control-input__text">Myself (as an individual)</span>
 								</label>
-								<label class="au-control-input">
+								<label class="au-control-input m-t-1">
 								<input class="au-control-input__input" type="radio" name="radio-ex" id="org">
 								<div class="au-control-input__text">An organisation (company/business)<br>
 									<span class="form-text">You must be the CEO/Director of this organisation</span>
@@ -141,8 +141,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<a href="#" class="au-btn" id="next">Next</a>
-				<div class="save-exit">
+				<a href="#" class="au-btn hidden" id="next">Next</a>
+				<div class="save-exit hidden">
 				<a href="dashboard.html" class="au-btn au-btn--secondary">
 				Save and exit
 				</a>&nbsp; to continue this application later
@@ -158,8 +158,11 @@
 </footer>
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-validate.js"></script>
 <script>
+
 $('input[name=radio-ex]').change(function () {
+	$('#next,.save-exit').removeClass('hidden');
 	if($('#org').is(':checked')){
 		$('#org-arn').removeClass('hidden');
 		$('a#next').attr("href", "amy-for-org-address.html");
@@ -171,19 +174,20 @@ $('input[name=radio-ex]').change(function () {
 
 });
 
-/*$("#arn-org").change(function(){
-	if($('#arn-org').is(':checked')){
-		$('#org-details').removeClass('hidden');
-		$('#arn-input').attr("disabled", true);
-		$('a#next').attr("href", "amy-for-org-address.html");
-	}
-	else{
-		$('#org-details').addClass('hidden');
-		$('#arn-input').removeAttr("disabled");
-		$('a#next').attr("href", "drone-details.html");
-	}
 
-})*/
+
+
+/*$("#signinForm").validate({
+	rules: {
+			email: {
+			required: false,
+			email: false
+		},
+			password:{
+			required: false,
+			}
+	}
+});*/
 </script>
 </body>
 </html>
