@@ -60,19 +60,24 @@
 
 							<h3 class="m-t-4">ReOC details</h3>
 							<div class="form-section">
-								<p><strong>This remote operators certificate is for:</strong></p>
+								<p style="padding-bottom:1rem;"><strong>This remote operators certificate is for:</strong></p>
 								<label class="au-control-input">
 								<input class="au-control-input__input" type="radio" name="radio-ex" id="ind">
-								<span class="au-control-input__text form-text">Myself (as an individual)</span>
+								<span class="au-control-input__text">Myself (as an individual)</span>
 								</label>
 								<label class="au-control-input">
 								<input class="au-control-input__input" type="radio" name="radio-ex" id="org">
-								<span class="au-control-input__text form-text">On behalf of an organisation (company/business)</span>
+								<div class="au-control-input__text">An organisation (company/business)<br>
+									<span class="form-text">You must be the CEO/Director of this organisation applying for this ReOC</span>
+								</div>
 								</label>
 							</div>
 
 							<div id="org-arn" class="hidden">
 								<h3 class="m-t-4">Organisation details</h3>
+								<!--<p class="au-callout">
+									<strong>You must be the CEO/Director applying for this ReOC<strong>
+								</p>-->
 								<div class="form-section">
 									<label for="abn-input">ACN/ARBN</label>
 									<span id="ACN-error" style="color:#d82c52;"></span>
@@ -139,7 +144,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<a href="drone-details.html" class="au-btn" id="next">Next</a>
+				<a href="#" class="au-btn" id="next">Next</a>
 				<div class="save-exit">
 				<a href="dashboard.html" class="au-btn au-btn--secondary">
 				Save and exit
@@ -164,7 +169,7 @@ $('input[name=radio-ex]').change(function () {
 	}
 	else{
 		$('#org-arn').addClass('hidden');
-		$('a#next').attr("href", "drone-details.html");
+		$('a#next').attr("href", "add-personnel-crp.html");
 	}
 
 });
