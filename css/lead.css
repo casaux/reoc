@@ -187,6 +187,109 @@ a.cancel{
 	margin-bottom:0.45rem !important;
 }
 
+
+
+
+/* ind v org styles */
+
+a.casa-card{
+	display:block;
+	float:left;
+	width:16em;
+	height:14em;
+	margin-right:1em;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+	border-top-width: 3px;
+	border-top-style: solid;
+	border-radius:4px;
+	padding:1em;
+	text-decoration: none;
+	transition: background-color 0.3s ease-in-out,color 0.3s ease-in-out
+}
+
+.casa-card h3{
+	text-decoration: underline;
+}
+
+a.casa-card p{
+	color:#000;
+}
+
+a.casa-card:hover {
+	background:rgba(0,200,83,0.2);
+}
+
+.individual:hover, .individual{
+	border-top-color:rgba(0,200,83,1) !important;
+}
+
+.organisation:hover, .organisation{
+	border-top-color:rgba(255,152,0,1) !important;
+}
+
+.casa-card.organisation:hover{
+	background:rgba(255,152,0,0.2);
+}
+
+.casa-card-detail{
+	padding-left:32px;
+	position:relative;
+}
+
+.icon{
+	position:absolute;
+	left:0;
+	top:0;
+}
+
+.au-body hr.seperator{
+	margin-top:.5em !important;
+	margin-bottom:1.5em !important;
+	border-top-width: 2px;
+	border-top-style: solid;
+}
+
+/* menu */
+
+#menu-col{
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+#signout{
+	z-index:100;
+	background-image:url(../img/menu.svg);
+	background-repeat: no-repeat;
+	background-position: calc(100% - 8px) 8px;
+	padding-right:40px;
+	text-align:right;
+}
+
+#signout.expand{
+	background-image:url(../img/close.svg);
+}
+
+#menu{
+	display:none;
+	margin-top:.5em;
+}
+
+#signout.au-btn:hover #menu a{
+	color:#135E70;
+	
+}
+
+#signout #menu a:hover{
+	color:#135E70;
+}
+
+#signout.expand #menu{
+	display:block !important;
+}
+
+
+
 /* mobile */
 @media only screen and  (max-width: 991px) {
 	/*.au-grid .container{background:red}*/
