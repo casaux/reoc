@@ -50,7 +50,7 @@
       </div>
     </div>
   </div>
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 col-md-12"><br>
@@ -61,32 +61,41 @@
           <h3>Before you begin</h3>
           <div class="">
             <!--<p>[...about Individual and Organisation reoc...]</p>-->
-            <p><strong>Supporting documentations required:</strong></p>
+            <p class="m-t-1"><strong>Supporting documentations required:</strong></p>
             <a href="https://www.casa.gov.au/file/190411/download?token=H7sb0Aud">Download Manual Template</a><br />
             <a href="https://www.casa.gov.au/file/190406/download?token=MjVCsWLN">Download RPAS operations procedures (Library) Template</a><br />
 
-            <p><strong>Information required</strong>
-              <p>
-                <ul>
-                  <li>The RPA (drone/UAV) models which will be used for operations</li>
-                  <li>A Chief Remote Pilot - this person will be responsible for all aviation operations conducted by the organisation. The Chief Remote Pilot must already hold a Remote Pilots Licence (RePL)</li>
-                  <li>A Maintenance Controller. This person will be responsible for all maintenance and safe condition of all RPA systems. The Maintenance Controller can be anyone holding a Remote Pilots Licence (RePL)</li>
+            <p><strong>Information required:</strong></p>
+                <ul class="m-t-1">
+                  <li>The RPA (drone) models which will be used for operations</li>
+                  <li>A Chief Remote Pilot - this person will be responsible for all aviation operations</li>
+                  <li>A Maintenance Controller - this person will be responsible for all maintenance and safe condition of all RPA systems (Large RPA – more than 150kg)</li>
                 </ul>
           </div>
-          <p>&nbsp;</p>
+
+					<div class="form-section au-callout m-t-1">
+						<!--<p style="padding-bottom:1rem;font-weight:bold;" id="q1">Are you applying on behalf of a legal entity other than an individual? <br><span class="form-text">Legal entity: registered in the
+						Australian Securities and Investments Commission (ASIC), the ACN or ARBN and the ARN</span>
+					  </p>
+						<label class="au-control-input" aria-describedby="q1">
+						<input class="au-control-input__input" type="radio" name="radio-ex" id="yes-legal">
+						<span class="au-control-input__text">Yes</span>
+						</label>
+						<label class="au-control-input m-t-1" aria-describedby="q1">
+						<input class="au-control-input__input" type="radio" name="radio-ex" id="no-myself">
+						<span class="au-control-input__text">No</span>
+          </label>-->
+            If you are applying as a legal entity, please <a href="profile-dashboard.html">change your profile to the organisation</a>. Or you may <a href="drone-details.html">apply as an individual.</a>
+					</div>
         </div>
-				<p class="au-callout">
-					Are you applying on behalf of a legal entity other than an individual? <br><span class="form-text">As registered in the
-					Australian Securities and Investments Commission (ASIC), the ACN or ARBN and the ARN</span>
-					 
-				</p>
       </div>
     </div>
 
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <a href="amy-for-org.html" class="au-btn" id="next">Next</a>
+
+          <a href="amy-for-org.html" class="au-btn hidden" id="next">Next</a>
           <div class="save-exit">
             <a href="dashboard-wendy.html" class="au-btn au-btn--secondary">
               Cancel
@@ -113,7 +122,18 @@
       } else {
         $(this).addClass('hidden');
       }
-    })
+    });
+
+		$('input[name=radio-ex]').change(function() {
+      if ($('#yes-legal').is(':checked')) {
+        $('a#next').attr("href", "profile-dashboard.html").text("Switch Profile");
+      } else {
+        $('#no-myself').addClass('hidden');
+        $('a#next').attr("href", "drone-details.html").text("Next");
+      }
+			$('#next').removeClass('hidden');
+    });
+
   </script>
 </body>
 

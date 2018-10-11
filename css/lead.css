@@ -231,6 +231,28 @@ a.casa-card:hover {
 	background:rgba(255,152,0,0.2);
 }
 
+.new-organisation:hover, .new-organisation{
+	border-top-color:#0080A2 !important;
+}
+
+.casa-card.new-organisation:hover{
+	background:#edf7ff;
+}
+
+#new-organisation .casa-card-detail .icon {
+	background:transparent url('../img/plus.svg') no-repeat;
+	background-size: contain;
+	background-position: center;
+	height:8rem;
+	width:100%;
+}
+#new-organisation:hover .casa-card-detail .icon {
+	background:transparent url('../img/plus-hover.svg') no-repeat;
+	background-size: contain;
+	background-position: center;
+	height:8rem;
+	width:100%;
+}
 .casa-card-detail{
 	padding-left:32px;
 	position:relative;
@@ -277,7 +299,7 @@ a.casa-card:hover {
 
 #signout.au-btn:hover #menu a{
 	color:#135E70;
-	
+
 }
 
 #signout #menu a:hover{
