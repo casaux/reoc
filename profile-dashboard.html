@@ -16,7 +16,7 @@
 
 <main class="au-grid">
 
-<body class="live-demo au-body au-grid js">
+
 	<header class="au-header logo au-body au-body--dark" role="banner">
 	<div class="header">
 		<div class="container">
@@ -26,65 +26,18 @@
 	          <img class="au-header__brand-image" alt="my CASA" src="img/CASALOGO-white-i.svg">
 	        </a>
 	      </div>
-	      <div class="col-md-3 col-xs-5"><a class="au-btn au-btn--dark" href="mycasa.html" id="signout">Sign out</a></div>
+	      <div class="col-md-3 col-xs-5"></div>
 	    </div>
 		</div>
 	</div>
 	</header>
 	<div class="banner">
-	<div class=container>
+	<div class="container">
 		<style>
 			.banner {padding-left: 25px;}
 			.banner {padding-top: 10px;}
 			.banner {padding-bottom: 10px;}
 
-	
-			a.casa-card{
-				display:block;
-				float:left;
-				width:16em;
-				height:14em;
-				margin-right:1em;
-				box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-				border-top-width: 3px;
-    			border-top-style: solid;
-				border-top-color:rgba(0,200,83,1);
-				border-radius:4px;
-				padding:1em;
-				text-decoration: none;
-				transition: background-color 0.3s ease-in-out,color 0.3s ease-in-out
-			}
-			
-			.casa-card h3{
-				text-decoration: underline;
-			}
-			
-			a.casa-card p{
-				color:#000;
-			}
-			
-			a.casa-card:hover {
-				background:rgba(0,200,83,0.2);
-			}
-			
-			#organisation:hover, #organisation{
-				border-top-color:rgba(255,152,0,1);
-			}
-			
-			#organisation:hover{
-				background:rgba(255,152,0,0.2);
-			}
-			
-			.casa-card-detail{
-				padding-left:32px;
-				position:relative;
-			}
-			
-			.icon{
-				position:absolute;
-				left:0;
-				top:0;
-			}
 			
 			
 		</style>
@@ -101,10 +54,10 @@
 
 				
 				
-				<br />
+				<br>
 				<div><strong>What profile do you want to use to access myCASA?</strong></div>
 				
-				<br />
+				<br>
 
 
 
@@ -114,28 +67,28 @@
 				<div class="casa-cards">
 				
 					
-				<a class="casa-card" id="individual" href="dashboard-wendy.html">
+				<a class="casa-card individual" id="individual" href="dashboard-wendy.html">
 						
-						<h3>Wendy Williams<br /><br /></h3>
+						<h3>Wendy Williams<br><br></h3>
 					
 						<div class="casa-card-detail">
-							<div class="icon"><img src="img/ind.svg" alt="Individual" /></div>
+							<div class="icon"><img src="img/ind.svg" alt="Individual"></div>
 							
-							<p>Your individual account<br />ARN: 1234567</p>
+							<p>Your individual account<br>ARN: 1234567</p>
 						</div>
 
 				</a>
 				
-				<a class="casa-card" id="organisation" href="#">
+				<a class="casa-card organisation" id="organisation" href="dashboard-org.html">
 									
 						<h3>Wendy's Weddings Pty Ltd</h3>
 					
 						<div class="casa-card-detail">
-							<div class="icon"><img src="img/org.svg" alt="Organisation" /></div>
+							<div class="icon"><img src="img/org.svg" alt="Organisation"></div>
 							
-							<p>Organisational account<br />
-							ARN: 7654321<br />
-							CASA.ReOC.0634<br />
+							<p>Organisational account<br>
+							ARN: 7654321<br>
+							CASA.ReOC.0634<br>
 							Your role: CEO
 							</p>
 						</div>
@@ -159,11 +112,11 @@
 	</div>
 
 
-</main> 
+</main>
 
-<script type="text/javascript" src="js/furnace.min.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.js"></script>
+<script type="text/javascript" src="/furnace.min.js"></script>
+<script src="jquery.min.js"></script>
+<script src="jquery.js"></script>
 <script>
 		var type = window.location.hash.substr(1);
 		if (type=='in-progress'){
@@ -192,5 +145,6 @@
 
 </script>
 
-</body>
-</html>
+
+
+</body></html>
