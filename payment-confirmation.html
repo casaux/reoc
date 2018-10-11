@@ -85,7 +85,7 @@ img {filter: brightness(0) invert(1);}
 			<div class="col-md-8">
 				<a class="au-btn au-btn--secondary" href="04-payment.html">Back</a>&nbsp;&nbsp;
 				<a class="au-btn au-btn--secondary" href="dashboard.html#save">Cancel</a>
-				<a class="au-btn float-right" href="receipt.html">Next</a>
+				<a class="au-btn float-right" href="receipt.html" id="next">Next</a>
     	</div>
 		</div>
 	</div>
@@ -105,5 +105,11 @@ img {filter: brightness(0) invert(1);}
 </footer>
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+	var type = window.location.hash.substr(1);
+	if (type=='update-section'){
+		$('a#next').attr("href", "update-receipt.html#update-section");
+	}
+</script>
 </body>
 </html>

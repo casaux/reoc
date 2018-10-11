@@ -241,9 +241,18 @@
 <script>
 
 $("#add-drone").click(function(){
+	$("input[name=checkbox-ex]").prop( "checked", false );
+	$("option").prop("selected",false);
 	$(".student, #save").removeClass("hidden");
-	$('html').scrollToTop();
+	$('html').scrollTop();
+
+			$( "select, input" ).click(function() {
+		  $( "#save" ).addClass('hidden');
+		});
+
 });
+
+
 $('#capacity').parent().addClass('hidden');
 //$('.save-exit').hide();
 $('#category').on('change', function() {

@@ -57,7 +57,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-12"><br>
-
+				<div role="alert" class="au-body au-page-alerts au-page-alerts--success hidden m-t-2" id="save">
+									<h3>Remotely Piloted Aircraft added to application</h3>
+								</div>
 				<h2 class="au-display-xl m-t-2">Update my ReOC</h2>
 				<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
@@ -216,10 +218,10 @@
 			<div class="col-md-8">
 				<a href="manage-reoc-update.html#drone" class="au-btn" id="next">Save</a>
 				<div class="save-exit">
-				<a href="dashboard-update.html#save" class="au-btn au-btn--secondary">
-				Save and exit
-				</a>&nbsp; to continue this application later
-			 </div>
+					<a href="manage-reoc-update.html" class="au-btn au-btn--secondary">
+					Cancel
+					</a>
+			</div>
 			</div>
 		</div>
 	</div>
@@ -233,6 +235,14 @@
 
 $("#add-drone").click(function(){
 	$("#new").removeClass("hidden");
+	$("input[name=checkbox-ex]").prop( "checked", false );
+	$("option").prop("selected",false);
+	$("#save").removeClass("hidden");
+	$('html').scrollTop();
+			$( "select, input" ).click(function() {
+		  $( "#save" ).addClass('hidden');
+		});
+
 });
 
 $('#capacity').parent().addClass('hidden');

@@ -2,7 +2,12 @@ html,body{
   font-size:100%;
   box-sizing: border-box;
 }
-
+* {
+  -webkit-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+-moz-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+-o-transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0;
+transition: all 0.2s ease-in-out, width 0, height 0, top 0, left 0; 
+}
 /*header*/
 .au-header__brand .au-header__brand-image{
   max-width:15rem;
@@ -37,6 +42,9 @@ html,body{
 /* modal */
 /* .modal-dialog {max-width:55%;} */
 /* Student grid */
+.student {
+	color:#525252;
+}
 .student-details ul.grid {
   list-style:none;
   margin: 0.5rem 0 3rem 0;
@@ -309,6 +317,16 @@ footer{
 .badge-info {
     color: #fff;
     background-color: #0e8496;
+}
+
+.item {
+	margin:2rem 0 2.5rem 0;
+	border:1px solid #efefef;
+	padding:1rem;
+	background:#fefefe;
+	border-radius:4px;
+	border-top:4px solid #efefef;
+	box-shadow:#f7f7f7 1px 2px 2px
 }
 
 

@@ -139,11 +139,11 @@
 							</div>
 
 						</div>
-					<div class="col-md-12">
+					<!--<div class="col-md-12">
 					<button type="button" class="au-btn au-btn--secondary" id="addPilot">
 						Add personnel
 					</button>
-					</div>
+				</div>-->
 				</section>
 
 				</div>
@@ -172,7 +172,16 @@
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
-$('.student-details').hide();
+//$('.student-details').hide();
+$('#addPilot').click(function(){
+
+	$('#save, #personnel').removeClass('hidden');
+	$('#arn-input').val('');
+	$('#surname-input').val('');
+	$( "#am" ).prop( "checked", false );
+	$('#am-text').text('Has this person');
+	$('html').scrollToTop();
+});
 
 $('input[name="radio-ex"]').change(function(){
 	//var convicted = getElementById("yes").checked;
@@ -198,10 +207,7 @@ $('#am').change(function(){
 	}
 });
 
-$('#addPilot').click(function(){
- $('#save, #personnel').removeClass('hidden');
-	$('html').scrollToTop();
-})
+
 
 </script>
 </body>
