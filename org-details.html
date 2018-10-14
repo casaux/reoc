@@ -9,12 +9,12 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
 	<link rel="stylesheet" href="css/furnace.min.css">
-	<!--<link rel="stylesheet" href="css/lead.css">-->
+	<link rel="stylesheet" href="css/lead.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 
 <body class="live-demo au-body au-grid js">
-	<header class="au-header logo au-body au-body--dark" role="banner">
+	<header class="au-header logo au-body--dark" role="banner">
   <a class="skip-link" href="#main-content">Skip to content</a>
 	  <div class="container">
 	    <div class="row">
@@ -23,7 +23,24 @@
 	          <img class="au-header__brand-image" alt="my CASA" src="img/CASALOGO-white-i.svg">
 					</a>
 	      </div>
-	      <div class="col-md-3 col-xs-5"><a class="au-btn au-btn--dark" href="signed-out.html">Sign out</a></div>
+				<div class="col-md-3 col-xs-5">
+
+			 <div  id="menu-col">
+
+				 <div class="au-btn au-btn--dark" id="signout">
+
+				 <div>Menu</div>
+
+				 <div id="menu">
+					 <div class="menu"><a href="profile-dashboard.html" id="home">Switch profile</a></div>
+					 <div class="menu"><a href="#">Edit profile</a></div>
+					 <div class="menu"><a href="mycasa-renew.html">Sign out</a></div>
+				 </div>
+
+				 </div>
+
+		 </div>
+	    </div>
 	    </div>
 	  </div>
 	</header>
@@ -42,7 +59,7 @@
 			 <div class="col-md-12">
 				<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
-			    <li><a href="profile-dashboard.html">Switch Profile</a></li>
+			    <li><a href="profile-dashboard.html#org-wendy">Switch Profile</a></li>
 					<li>New Organisation</li>
 			  </ul>
 			</nav>
@@ -94,7 +111,7 @@
 							<h3 class="m-t-1">myCASA services</h3>
 							<p><strong>Select a service</strong></p>
 							<label class="au-control-input m-t-1">
-							  <input class="au-control-input__input" type="radio" name="radio-ex">
+							  <input class="au-control-input__input" type="radio" name="radio-ex" checked>
 							  <span class="au-control-input__text">RPA operator's certificate (ReOC)</span>
 							</label>
 							<p>&nbsp;</p>
@@ -107,9 +124,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<a href="drone-details.html" class="au-btn" id="next">Next</a>
+				<a href="drone-details.html#org" class="au-btn" id="next">Next</a>
 				<div class="save-exit">
-				<a href="bob-org-dashboard.html#in-progress" class="au-btn au-btn--secondary">
+				<a href="dashboiard-org.html#save" class="au-btn au-btn--secondary">
 				Save and exit
 				</a>&nbsp; to continue this application later
 			 </div>

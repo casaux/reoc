@@ -36,7 +36,7 @@
 					<div id="menu">
 						<div class="menu"><a href="profile-dashboard.html">Switch profile</a></div>
 						<div class="menu"><a href="#">Edit profile</a></div>
-						<div class="menu"><a href="mycasa.html">Sign out</a></div>
+						<div class="menu"><a href="mycasa-update.html">Sign out</a></div>
 					</div>
 
 				  </div>
@@ -96,7 +96,7 @@
 							 <span class="badge badge-info">Under review</span>
 						 </div>
 						 <div class="col-md-3 col-xs-3">
-							 <a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Delete</a>
+							 <a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Withdraw Application</a>
 						 </div>
 					 </li>
 				 </ul>
@@ -106,13 +106,13 @@
 			 	 <h3>Application in progress</h3>
 			 	 <ul class="list-unstyled m-t-1">
 			 		 <li class="row alt-row">
-			 			 <div class="col-md-5 col-xs-5"><a href="drone-details.html" class=" ">Remote operator’s certificate (ReOC)</a>
+			 			 <div class="col-md-7 col-xs-5"><a href="drone-details.html" class=" ">Remote operator’s certificate (ReOC)</a>
 			 				 <br>
 			 				 Individual ReOC<!--<br>
 			 				 Multi-Rotor Up to 25kg - RePL Training-->
 			 			 </div>
 			 			 <div class="col-md-3 col-xs-3">
-			 				 <a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Delete</a>
+			 				 <a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Withdraw Application</a>
 			 			 </div>
 			 		 </li>
 			 	 </ul>
@@ -159,7 +159,7 @@
 		if (type=='save'){
 			$('#save').removeClass('hidden');
 
-			$('#in-progress').addClass('hidden');
+			$('#in-progress, #link-active').addClass('hidden');
 			/*$('#link-active').removeClass('hidden');
 			$('#link-active').find('h3').removeClass('hidden');*/
 		}

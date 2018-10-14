@@ -9,12 +9,12 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
 	<link rel="stylesheet" href="css/furnace.min.css">
-	<!--<link rel="stylesheet" href="css/lead.css">-->
+	<link rel="stylesheet" href="css/lead.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 
 <body class="live-demo au-body au-grid js">
-	<header class="au-header logo au-body au-body--dark" role="banner">
+	<header class="au-header logo au-body--dark" role="banner">
   <a class="skip-link" href="#main-content">Skip to content</a>
 	  <div class="container">
 	    <div class="row">
@@ -23,7 +23,24 @@
 	          <img class="au-header__brand-image" alt="my CASA" src="img/CASALOGO-white-i.svg">
 					</a>
 	      </div>
-	      <div class="col-md-3 col-xs-5"><a class="au-btn au-btn--dark" href="signed-out.html">Sign out</a></div>
+				<div class="col-md-3 col-xs-5">
+
+			 <div  id="menu-col">
+
+				 <div class="au-btn au-btn--dark" id="signout">
+
+				 <div>Menu</div>
+
+				 <div id="menu">
+					 <div class="menu"><a href="profile-dashboard.html" id="home">Switch profile</a></div>
+					 <div class="menu"><a href="#">Edit profile</a></div>
+					 <div class="menu"><a href="mycasa-renew.html">Sign out</a></div>
+				 </div>
+
+				 </div>
+
+		 </div>
+	    </div>
 	    </div>
 	  </div>
 	</header>
@@ -42,7 +59,7 @@
 			 <div class="col-md-12">
 				<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
-			    <li><a href="dashboard.html">Home</a></li>
+			    <li><a href="dashboard-wendy.html" id="bread-home">Home</a></li>
 					<li>Remote operators certificate (ReOC)</li>
 			  </ul>
 			</nav>
@@ -172,6 +189,13 @@
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
+var type = window.location.hash.substr(1);
+if(type=='org'){
+	$('a#home').attr("href", "profile-dashboard.html#org-wendy");
+	$('a#bread-home').attr("href", "dashboard-org.html#save").text("Wendy's Wedding");
+	$('.save-exit a').attr("href", "dashboard-org.html#save");
+	$('a#next').attr("href", "upload-app.html#org");
+}
 //$('.student-details').hide();
 $('#addPilot').click(function(){
 

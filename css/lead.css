@@ -13,7 +13,7 @@ html *{
 }
 
 .au-body p {max-width:100%!important;}
-.au-body.au-body--dark{background: #0080A2;}
+.au-body--dark{background: #0080A2!important;}
 .au-header {padding:1.8rem 0;!important}
 .au-btn--secondary {background-color: #ffffff!important;}
 

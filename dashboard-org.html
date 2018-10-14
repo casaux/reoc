@@ -27,7 +27,7 @@
 	      </div>
 
 			 <div class="col-md-3 col-xs-5">
-			  
+
 			  <div  id="menu-col">
 
 				  <div class="au-btn au-btn--dark" id="signout">
@@ -35,20 +35,20 @@
 					<div>Menu</div>
 
 					<div id="menu">
-						<div class="menu"><a href="profile-dashboard.html">Switch profile</a></div>
+						<div class="menu"><a href="profile-dashboard.html#org-wendy">Switch profile</a></div>
 						<div class="menu"><a href="#">Edit profile</a></div>
-						<div class="menu"><a href="mycasa.html">Sign out</a></div>
+						<div class="menu"><a href="mycasa-renew.html">Sign out</a></div>
 					</div>
 
 				  </div>
-				  
+
 			</div>
-			
-			
-			
+
+
+
 		</div>
-			
-			
+
+
 			</div>
 		</div>
 	</div>
@@ -77,7 +77,7 @@
 
 
 				<strong>Wendy's Weddings Pty Ltd</strong> ARN: 7654321
-				
+
 				<hr class="organisation seperator" />
 
 
@@ -85,7 +85,7 @@
 				 <h3>Submitted Applications</h3>
 				 <ul class="list-unstyled m-t-1">
 					 <li class="row alt-row">
-						 <div class="col-md-5 col-xs-5"><a href="drone-details.html" class=" ">Remote operator’s certificate (ReOC)</a>
+						 <div class="col-md-5 col-xs-5"><a href="drone-details.html#org" class=" ">Remote operator’s certificate (ReOC)</a>
 							 <br>
 							 Individual ReOC<!--<br>
 							 Multi-Rotor Up to 25kg - RePL Training-->
@@ -101,16 +101,19 @@
 			 </div>
 
 			 <div id="save" class="hidden">
-			 	 <h3>Application in progress</h3>
+			 	 <h3>Submitted application</h3>
 			 	 <ul class="list-unstyled m-t-1">
 			 		 <li class="row alt-row">
-			 			 <div class="col-md-5 col-xs-5"><a href="drone-details.html" class=" ">Remote operator’s certificate (ReOC)</a>
+			 			 <div class="col-md-5 col-xs-5"><a href="drone-details.html#org" class=" ">Remote operator’s certificate (ReOC)</a>
 			 				 <br>
-			 				 Individual ReOC<!--<br>
+			 				 Legal entity (Organisation)<!--<br>
 			 				 Multi-Rotor Up to 25kg - RePL Training-->
 			 			 </div>
+						 <div class="col-md-3 col-xs-3">
+							 <span class="badge badge-info">Under review</span>
+						 </div>
 			 			 <div class="col-md-3 col-xs-3">
-			 				 <a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Delete</a>
+			 				 <a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Withdraw Application</a>
 			 			 </div>
 			 		 </li>
 			 	 </ul>
@@ -123,7 +126,7 @@
 
 				<h3>New applications</h3>
 
-				<a class="au-cta-link" href="amy-before-you-begin.html">RPA operator's certificate (ReOC)</a>
+				<a class="au-cta-link" href="drone-details.html#org">RPA operator's certificate (ReOC)</a>
 
 			</div>
 
@@ -156,7 +159,7 @@
 		if (type=='save'){
 			$('#save').removeClass('hidden');
 
-			$('#in-progress').addClass('hidden');
+			$('#in-progress, #link-active').addClass('hidden');
 			/*$('#link-active').removeClass('hidden');
 			$('#link-active').find('h3').removeClass('hidden');*/
 		}
