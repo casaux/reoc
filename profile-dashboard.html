@@ -55,7 +55,7 @@
           <div><strong>What profile do you want to use to access myCASA?</strong></div>
           <br>
           <div class="casa-cards">
-          <a class="casa-card individual" id="individual" href="dashboard-wendy.html">
+          <a class="casa-card individual m-t-1" id="individual" href="dashboard-wendy.html">
 
               <h3>Wendy Williams<br><br></h3>
 
@@ -67,7 +67,7 @@
 
             </a>
 
-            <a class="casa-card organisation" id="organisation" href="dashboard-org.html#save">
+            <a class="casa-card organisation hidden m-t-1" id="organisation" href="dashboard-org.html#save">
 
               <h3>Wendy's Weddings Pty Ltd</h3>
 
@@ -83,7 +83,7 @@
 
             </a>
 
-						<a class="casa-card new-organisation text-center" id="new-organisation" href="org-details.html">
+						<a class="casa-card new-organisation text-center  m-t-1" id="new-organisation" href="org-details.html">
 
 							<h3>New organisation?</h3>
               <p style="font-size:.9rem;" class="m-t-0">Create a new organisation/company profile with CASA.</p>
@@ -114,11 +114,11 @@
 
 
   <script>
-  $('a#organisation').hide();
+  //$('a#organisation').hide();
     var type = window.location.hash.substr(1);
     if(type=='org-wendy') {
       //alert(1);
-      $('a#organisation').show();
+      $('a#organisation').removeClass('hidden');
     }
   </script>
 

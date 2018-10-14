@@ -382,3 +382,6 @@ ul li {margin-bottom:.5rem;/*font-weight: 500;*/}
     width:100%;
   }
 }
+@media only screen and (max-width: 767px){
+  #new-organisation .casa-card-detail .icon{height:5rem;}
+}
