@@ -47,7 +47,7 @@
 			 <div class="col-md-12">
 				<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
-			    <li><a href="dashboard.html#in-progress">Home</a></li>
+			    <li><a href="dashboard.html#in-progress" id="bread-home">Home</a></li>
 					<li>Remote operators certificate (ReOC)</li>
 			  </ul>
 			</nav>
@@ -73,7 +73,7 @@
 						<li>Once the manual is finalised, the inspector will organise an interview and assessment </li>
 					</ul>
 
-					<p><a href="dashboard-wendy.html#in-progress" class="au-direction-link">Go to dashboard</a></p>
+					<p><a href="dashboard-wendy.html#in-progress" class="au-direction-link" id="dashboard">Go to dashboard</a></p>
 		</div>
 	</div>
 </div>
@@ -85,5 +85,14 @@
 </footer>
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+var type = window.location.hash.substr(1);
+if(type=='renew'){
+	$('a.renew').remove();
+	$('a#bread-home').attr("href", "dashboard-org.html#save").text("Wendy's Wedding");
+	$('#dashboard').attr("href", "dashboard-org.html#renewed");
+	//$('a#next').attr("href", "payment.html#renew");
+}
+</script>
 </body>
 </html>

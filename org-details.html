@@ -70,9 +70,27 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-12">
-
+				<div role="alert" class="hidden au-page-alerts au-page-alerts--error m-t-2" id="selected-none">
+				  <h3>You must be the CEO or Director to proceed.</h3>
+				</div>
 				<h2 class="au-display-xl m-t-2">New Organisation</h2>
-				<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
+				<a class="au-direction-link au-direction-link--left" href="profile-dashboard.html#org-wendy">Back</a>
+
+				<h3 class="m-t-3">Your role in the Organistion</h3>
+				<p><label for="select1block">What is your role in the Organistion?</label></p>
+				<select id="select1block" class="au-select au-select--block">
+				  <option value="">Please select</option>
+				  <option value="1">CEO</option>
+				  <option value="2">Director</option>
+				  <option value="3" id="none">None of the above</option>
+				</select>
+
+				<h3 class="m-t-3">myCASA services</h3>
+				<p><strong>Select a service</strong></p>
+				<label class="au-control-input m-t-1">
+					<input class="au-control-input__input" type="radio" name="radio-ex" checked>
+					<span class="au-control-input__text">RPA operator's certificate (ReOC)</span>
+				</label>
 
 
 							<h3 class="m-t-3">Organistion Details</h3>
@@ -108,13 +126,7 @@
 								<input class="au-text-input" name="text-input" id="phone-input" type="text">
 				  		</div>
 							<p>&nbsp;</p>
-							<h3 class="m-t-1">myCASA services</h3>
-							<p><strong>Select a service</strong></p>
-							<label class="au-control-input m-t-1">
-							  <input class="au-control-input__input" type="radio" name="radio-ex" checked>
-							  <span class="au-control-input__text">RPA operator's certificate (ReOC)</span>
-							</label>
-							<p>&nbsp;</p>
+
 							<p>&nbsp;</p>
 				</div>
 
@@ -143,7 +155,12 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
 	$("#error").hide();
-
+	$('#select1block').change(function(){
+		if($('#none').is(':selected')){
+			$('#selected-none').removeClass('hidden');
+			$('html').scrollTop();
+		}
+	});
 </script>
 </body>
 </html>

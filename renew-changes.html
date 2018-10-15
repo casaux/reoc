@@ -58,7 +58,7 @@
 			 <div class="col-md-12">
 				<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
-			    <li><a href="dashboard.html">Wendy Williams</a></li>
+			    <li><a href="dashboard.html" id="bread-home">Wendy Williams</a></li>
 					<li>Remote operators certificate (ReOC) renewal</li>
 			  </ul>
 			</nav>
@@ -130,6 +130,13 @@ $("input[name=radio-ex]").change(function(){
 	 }
 
 });
+var type = window.location.hash.substr(1);
+		if (type=='renew'){
+			//$('a#home').attr("href", "profile-dashboard.html#org-wendy");
+			$('a#bread-home').attr("href", "dashboard-org.html#save").text("Wendy's Wedding");
+			//$('.save-exit a').attr("href", "dashboard-org.html#save");
+			$('a#next').attr("href", "renew-changes-charges.html#renew");
+		}
 </script>
 </body>
 </html>

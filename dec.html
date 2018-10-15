@@ -48,7 +48,7 @@
 			 <div class="col-md-12">
 				<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
-			    <li><a href="00-user-homepage.html">Home</a></li>
+			    <li><a href="00-user-homepage.html" id="bread-home">Home</a></li>
 					<li>Remote operators certificate (ReOC)</li>
 			  </ul>
 			</nav>
@@ -74,7 +74,7 @@
 		<div class="row">
 			<div class="col-lg-8 col-md-12">
 
-					<h2 class="au-display-xl">Remote operators certificate (ReOC)</h2>
+					<h2 class="au-display-xl m-t-3">Remote operators certificate (ReOC)</h2>
 					<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
 
@@ -97,7 +97,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8"><p>&nbsp;</p><p>&nbsp;</p>
-			<a href="payment.html" class="au-btn" id="summary">Proceed to Payment</a>
+			<a href="payment.html" class="au-btn" id="next">Proceed to Payment</a>
 			<p class="westpac">You will be directed to Westpac for payment</p>
 			<div class="save-exit">
 			<a href="dashboard.html#save" class="au-btn au-btn--secondary">
@@ -120,6 +120,14 @@
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-
+<script>
+var type = window.location.hash.substr(1);
+if(type=='renew'){
+	$('a.renew').remove();
+	$('a#bread-home').attr("href", "dashboard-org.html#save").text("Wendy's Wedding");
+	$('.save-exit a').attr("href", "dashboard-org.html#save");
+	$('a#next').attr("href", "payment.html#renew");
+}
+</script>
 </body>
 </html>

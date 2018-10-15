@@ -81,14 +81,16 @@
 				<br />
 
 
-				<strong>Wendy Williams</strong> ARN: 1234567
+				<strong id="name">Wendy Williams</strong> <span id="arn-num">ARN: 1234567</span>
 
 				<hr class="individual seperator" />
 
 
-				<a class="au-cta-link" href="manage-reoc-renew.html">Manage your ReOC</a>
+				<a class="au-cta-link" href="manage-reoc-renew.html" id="manage">Manage your ReOC</a>
 								<p style="margin-top:0;">Manage your ReOC details and renewal</p>
 								<br />
+
+
 				<div id="in-progress" class="hidden">
 				 <h3>Submitted Applications</h3>
 				 <ul class="list-unstyled m-t-1">
@@ -155,23 +157,26 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.js"></script>
 <script>
-		var type = window.location.hash.substr(1);
+var type = window.location.hash.substr(1);
+		if (type=='org'){
+			//$('a#home').attr("href", "profile-dashboard.html#org-wendy");
+			//$('a#bread-home').attr("href", "dashboard-org.html#save").text("Wendy's Wedding");
+			$('#name').text("Wendy's Weddings Pty Ltd");
+			$('#arn-num').text("ARN 7654321");
+			$('#manage').attr('href','manage-reoc-renew.html#org');
+			//$('.save-exit a').attr("href", "dashboard-org.html#save");
+			//$('a#next').attr("href", "add-personnel-crp.html#org");
+		}
 		if (type=='in-progress'){
 			$('#in-progress').removeClass('hidden');
-			/*$('#link-active').addClass('hidden');
-			$('#link-active').find('h3').addClass('hidden');*/
 			$('#save, #link-active').addClass('hidden');
 		}
 		if (type=='save'){
 			$('#save').removeClass('hidden');
 
 			$('#in-progress').addClass('hidden');
-			/*$('#link-active').removeClass('hidden');
-			$('#link-active').find('h3').removeClass('hidden');*/
 		}
 
-
-			var type = window.location.hash.substr(1);
 			if(type=='in-progress'){
 				$('#signout').attr("href", "mycasa-update.html");
 			}else if(type !=='org'){

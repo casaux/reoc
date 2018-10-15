@@ -58,7 +58,7 @@
 			 <div class="col-md-12">
 				<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
-			    <li><a href="dashboard.html">Wendy Williams</a></li>
+			    <li><a href="dashboard.html" id="bread-home">Wendy Williams</a></li>
 					<li>Remote operators certificate (ReOC) renewal</li>
 			  </ul>
 			</nav>
@@ -110,7 +110,7 @@ offence in Australia from the time the current ReOC was issued to now?</strong><
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<a href="paymentsummary.html#renew" class="au-btn" id="next">Next</a>
+				<a href="paymentsummary.html" class="au-btn" id="next">Next</a>
 				<div class="save-exit">
 				<a href="bob-org-dashboard.html" class="au-btn au-btn--secondary">
 				Cancel
@@ -148,6 +148,13 @@ $('input[name="radio-ex"]').change(function(){
 	$('#convicted').addClass('hidden');
 	}
 });
+var type = window.location.hash.substr(1);
+		if (type=='renew'){
+			//$('a#home').attr("href", "profile-dashboard.html#org-wendy");
+			$('a#bread-home').attr("href", "dashboard-org.html#save").text("Wendy's Wedding");
+			//$('.save-exit a').attr("href", "dashboard-org.html#save");
+			$('a#next').attr("href", "paymentsummary.html#renew");
+		}
 </script>
 </body>
 </html>

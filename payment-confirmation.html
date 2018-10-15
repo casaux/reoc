@@ -110,6 +110,12 @@ img {filter: brightness(0) invert(1);}
 	if (type=='update-section'){
 		$('a#next').attr("href", "update-receipt.html#update-section");
 	}
+	if(type=='renew'){
+		$('a.renew').remove();
+		$('a#bread-home').attr("href", "dashboard-org.html#save").text("Wendy's Wedding");
+		$('.save-exit a').attr("href", "dashboard-org.html#save");
+		$('a#next').attr("href", "receipt.html#renew");
+	}
 </script>
 </body>
 </html>
