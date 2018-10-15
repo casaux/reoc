@@ -87,7 +87,7 @@
 				 <h3>Submitted Applications</h3>
 				 <ul class="list-unstyled m-t-1">
 					 <li class="row alt-row">
-						 <div class="col-md-5 col-xs-5"><a href="drone-details.html" class=" ">Remote operator’s certificate (ReOC)</a>
+						 <div class="col-md-5 col-xs-5"><a href="drone-details.html" class=" " id="app-name">Remote operator’s certificate (ReOC)</a>
 							 <br>
 							 Individual ReOC<!--<br>
 							 Multi-Rotor Up to 25kg - RePL Training-->
@@ -163,7 +163,13 @@
 			/*$('#link-active').removeClass('hidden');
 			$('#link-active').find('h3').removeClass('hidden');*/
 		}
-
+		if(type=='renewed'){
+			$('#link-active').addClass('hidden');
+			$('#in-progress').removeClass('hidden');
+			$('#app-name').text('Renewal - Remote operator’s certificate (ReOC)');
+			//$('#dashboard').attr("href", "dashboard-org.html#renewed");
+			//$('a#next').attr("href", "payment.html#renew");
+		}
 
 			var type = window.location.hash.substr(1);
 			if(type=='in-progress'){
