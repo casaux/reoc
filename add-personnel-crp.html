@@ -196,6 +196,10 @@ if(type=='org'){
 	$('.save-exit a').attr("href", "dashboard-org.html#save");
 	$('a#next').attr("href", "add-personnel-mc.html#org");
 }
+if(type=='task'){
+	$('a#next').attr("href", "app-reoc-tasklist.html#personnel").text("Save");
+	$('.save-exit').addClass('hidden');
+}
 //$('.student-details').hide();
 $('#addPilot').click(function(){
 

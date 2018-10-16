@@ -123,7 +123,7 @@
 								<option value="3">Authorised RPAS Maintanier</option>
 							</select>
 					</div>-->
-						<div class="form-section col-md-12">
+						<div class="form-section col-md-12" id="convicted-question">
 							<p style="font-weight:bold;"> <span id="am-text">Has this person</span> been charged with or convicted of any criminal offence in Australia, its territories, or a foreign country in the last 10 years?</p>
 							<label class="au-control-input">
 							  <input class="au-control-input__input" type="radio" name="radio-ex" id="yes">
@@ -223,11 +223,13 @@ $('#am').change(function(){
 		$('#arn-input').val('1234567');
 		$('#surname-input').val('Williams');
 		$('#am-text').text('Have you');
+		$('#convicted-question').addClass('hidden');
 	}
 	else {
 		$('#arn-input').val('');
 		$('#surname-input').val('');
 		$('#am-text').text('Has this person');
+		$('#convicted-question').removeClass('hidden');
 	}
 });
 

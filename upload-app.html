@@ -170,6 +170,14 @@
 
       document.getElementById("file").innerHTML = txt;
     }
+
+    var type = window.location.hash.substr(1);
+    if(type=='task'){
+    	$('a#next').attr("href", "app-reoc-tasklist.html#upload").text("Save");
+    	$('.save-exit').addClass('hidden');
+    }
+
+
   </script>
 </body>
 

@@ -276,6 +276,10 @@ if(type=='org'){
 	$('.save-exit a').attr("href", "dashboard-org.html#save");
 	$('a#next').attr("href", "add-personnel-crp.html#org");
 }
+if(type=='task'){
+	$('a#next').attr("href", "app-reoc-tasklist.html#drone").text("Save");
+	$('.save-exit').addClass('hidden');
+}
 
 
 $('#capacity').parent().addClass('hidden');
