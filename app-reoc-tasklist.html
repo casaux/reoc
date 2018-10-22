@@ -76,21 +76,21 @@
 
 
                   <div class="item">
-                    <h4 id="heading-cert">1. Certificate Details <span class="badge badge-success float-right hidden">Saved</span></h4>
+                    <h4 id="heading-cert">1. Certificate Details <span class="badge badge-secondary float-right">Not started</span></h4>
                     <p style="color:#666666;" class="m-t-0">Provide your details.</p>
 
 										<div class="student hidden" id="names">
 				              <p>&nbsp;</p>
 				              <ul class="list-unstyled m-t-1">
 				                <li class="row alt-row xs-hidden">
-				                  <div class="col-md-5 col-sm-5 col-xs-12"><strong>Business Name</strong></div>
-													<div class="col-md-2 col-sm-2 col-xs-12"></div>
-				                  <div class="col-md-2 col-sm-2 col-xs-12"></div>
+				                  <div class="col-md-10 col-sm-5 col-xs-12"><strong>Business Name</strong></div>
+													<div class="col-md-1 col-sm-2 col-xs-12"></div>
+				                  <div class="col-md-1 col-sm-2 col-xs-12"></div>
 				                </li>
 				                <li class="row">
-				                  <div class="col-md-5 col-sm-5 col-xs-12">Wendy's Weddings</div>
-													<div class="col-md-2 col-sm-2 col-xs-12"><a href="business-details.html#edit">Edit</a></div>
-				                  <div class="col-md-2 col-sm-2 col-xs-12"><a href="#">Delete</a></div>
+				                  <div class="col-md-10 col-sm-5 col-xs-12">Wendy's Weddings</div>
+													<div class="col-md-1 col-sm-2 col-xs-12"><a href="business-details.html#edit">Edit</a></div>
+				                  <div class="col-md-1 col-sm-2 col-xs-12"><a href="#">Delete</a></div>
 				                </li>
 				              </ul>
 
@@ -98,7 +98,7 @@
                     <p><a class="au-btn au-btn--secondary" href="business-details.html#task">Your Certificate Details</a></p>
                   </div>
                   <div class="item">
-                    <h4 id="heading-drones">2. Drones<span class="badge badge-success float-right hidden">Saved</span></h4>
+                    <h4 id="heading-drones">2. Drones and Operations<span class="badge badge-secondary float-right">Not started</span></h4>
                     <p style="color:#666666;" class="m-t-0">Add your drone and operations details.</p>
 
                     <div class="student">
@@ -124,7 +124,7 @@
                     <p><a class="au-btn au-btn--secondary" href="drone-details.html#task">Drone details</a></p>
                   </div>
                   <div class="item">
-                    <h4 id="heading-personnel">3. Personnel <span class="badge badge-success float-right hidden">Saved</span></h4>
+                    <h4 id="heading-personnel">3. Personnel <span class="badge badge-secondary float-right">Not started</span></h4>
                     <p style="color:#666666;" class="m-t-0">After you have added your drone/s. You may proceed to enter your personnels.</p>
 
                     <div class="student">
@@ -144,7 +144,7 @@
                     <p><a class="au-btn au-btn--secondary" href="add-personnel-crp.html#task" id="personnel-add">Personnel Details</a></p>
                   </div>
                   <div class="item">
-                    <h4 id="heading-docs">4. Documents <span class="badge badge-success float-right hidden">Saved</span></h4>
+                    <h4 id="heading-docs">4. Documents <span class="badge badge-secondary float-right">Not started</span></h4>
                     <p style="color:#666666;" class="m-t-0">Upload your manual and required document for review.</p>
 
                     <div class="student">
@@ -195,17 +195,17 @@
     var type = window.location.hash.substr(1);
 		if (type == 'cert') {
       $('#names').removeClass('hidden');
-      $('#heading-cert span').removeClass('hidden');
+      $('#heading-cert span').removeClass('hidden,badge-secondary').text('Saved').addClass('badge-success');
       //$('#personnel-add').removeClass('gray');
     }
     if (type == 'drone') {
       $('#drones').removeClass('hidden');
-      $('#heading-drones span').removeClass('hidden');
+      $('#heading-drones span').removeClass('hidden,badge-secondary').text('Saved').addClass('badge-success');
       $('#personnel-add').removeClass('gray');
     }
     if (type == 'personnel') {
       $('#drones').removeClass('hidden');
-      $('#heading-drones span').removeClass('hidden');
+      $('#heading-drones span').removeClass('hidden,badge-secondary').text('Saved').addClass('badge-success');
       //$('#personnel-add').removeClass('gray');
 
       $('#personnel').removeClass('hidden');
@@ -216,13 +216,13 @@
     }
     if (type == 'upload') {
       $('#drones').removeClass('hidden');
-      $('#heading-drones span').removeClass('hidden');
+      $('#heading-drones span').removeClass('hidden,badge-secondary').text('Saved').addClass('badge-success');
       //$('#personnel-add').removeClass('gray');
 
       $('#personnel').removeClass('hidden');
       $('#personnel').parent().find('p').remove();
 
-      $('#heading-personnel span').removeClass('hidden');
+      $('#heading-personnel span').removeClass('hidden,badge-secondary').text('Saved').addClass('badge-success');
       $('#heading-docs span').removeClass('hidden');
 
       $('#manual').removeClass('hidden');
@@ -231,15 +231,8 @@
     }
 		if (type == 'review') {
       $('#drones').removeClass('hidden');
-      //$('#heading-drones span').removeClass('hidden');
-      //$('#personnel-add').removeClass('gray');
-
       $('#personnel').removeClass('hidden');
       $('#personnel').parent().find('p').remove();
-
-      //$('#heading-personnel span').removeClass('hidden');
-      //$('#heading-docs span').removeClass('hidden');
-
       $('#manual, #names').removeClass('hidden');
       $('#next').addClass('hidden');
 			$('.au-callout, .au-btn--secondary').addClass('hidden');

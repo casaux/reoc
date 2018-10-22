@@ -96,12 +96,12 @@
               <p>&nbsp;</p>
               <ul class="list-unstyled m-t-1">
                 <li class="row alt-row xs-hidden">
-                  <div class="col-md-5 col-sm-5 col-xs-12"><strong>Business Name</strong></div>
+                  <div class="col-md-7 col-sm-5 col-xs-12"><strong>Business Name</strong></div>
                   <div class="col-md-2 col-sm-2 col-xs-12"></div>
                 </li>
                 <li class="row">
-                  <div class="col-md-5 col-sm-5 col-xs-12">Wendy's Weddings</div>
-                  <div class="col-md-2 col-sm-2 col-xs-12"><a href="#">Delete</a></div>
+                  <div class="col-md-7 col-sm-5 col-xs-12">Wendy's Weddings</div>
+                  <div class="col-md-2 col-sm-2 col-xs-12"><a href="#" data-toggle="modal" data-target="#delete-modal-app">Delete</a></div>
                 </li>
               </ul>
               <p>&nbsp;</p>
@@ -122,15 +122,39 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 m-t-2"><br>
-          <a href="add-personnel-mc.html" class="au-btn" id="next">Next</a>
+          <a href="app-reoc-tasklist.html#cert" class="au-btn" id="next">Save</a>
           <div class="save-exit">
-            <a href="dashboard-wendy.html#save" class="au-btn au-btn--secondary">
-              Save and exit
-            </a>&nbsp; to continue this application later
+            <a href="app-reoc-tasklist.html" class="au-btn au-btn--secondary">
+              Cancel
+            </a><!--&nbsp; to continue this application later-->
           </div>
         </div>
       </div>
     </div>
+
+
+<!--delete modal -->
+<div class="modal fade" id="delete-modal-app" tabindex="-1" role="dialog" aria-labelledby="na" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Delete business name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete the business name, Wendy's Wedding?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="au-btn au-btn--secondary" data-dismiss="modal">No</button>
+        <button type="button" class="au-btn" data-dismiss="modal" id="delete-yes-app">Yes</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
   </main>
   <footer class="footer">
     <div class="footer-wrapper">
@@ -139,6 +163,8 @@
   </footer>
   <script type="text/javascript" src="js/furnace.min.js"></script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
   <script>
     var type = window.location.hash.substr(1);
     if (type == 'org') {
@@ -149,30 +175,26 @@
     }
     if (type == 'task') {
       $('a#next').attr("href", "app-reoc-tasklist.html#cert").text("Save");
-      $('.save-exit').addClass('hidden');
+      //$('.save-exit').addClass('hidden');
     }
-    //$('.student-details').hide();
-    /*$('#addPilot').click(function() {
-      $('#save, #personnel').removeClass('hidden');
-      $('#arn-input').val('');
-      $('#surname-input').val('');
-      $("#am").prop("checked", false);
-      $('.am-text').text('Has this person');
-      $('html').scrollToTop();
-    });*/
-
+    $('a#next').addClass('hidden');
     $('input[name="name"]').change(function() {
-      //var convicted = getElementById("yes").checked;
+      $('a#next').removeClass('hidden');
       if ($('#name').is(':checked')) {
         $('#business-name').removeClass('hidden');
+
       } else {
-        $('#business-name').addClass('hidden');
+        $('#business-name, #names, #save').addClass('hidden');
       }
     });
     $('#add-name').click(function (){
         $('#names, #save').removeClass('hidden');
+        $('#save').fadeOut(3000);
     });
+    $('#delete-yes-app').click(function(){
 
+      $('#names').addClass('hidden');
+    });
 		/*$('input[name="radio-ex-1"]').change(function() {
       //var convicted = getElementById("yes").checked;
       if ($('#yes-1').is(':checked')) {

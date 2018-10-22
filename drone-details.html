@@ -247,7 +247,7 @@
               <span class="au-control-input__text form-text">Theory and Operational</span>
             </label>
             <label class="au-control-input">
-              <input class="au-control-input__input" type="radio" name="radio-ex" checked>
+              <input class="au-control-input__input" type="radio" name="radio-ex">
               <span class="au-control-input__text form-text">Operational only</span>
             </label>
           </div>
@@ -266,7 +266,7 @@
           <div class="save-exit">
             <a href="dashboard-wendy.html#save" class="au-btn au-btn--secondary">
               Save and exit
-            </a>&nbsp; to continue this application later
+            </a><span id="cancel-help-text">&nbsp; to continue this application later</span>
           </div>
         </div>
       </div>
@@ -289,6 +289,15 @@
       });
     });
 
+    $('#rpatypeaero, #rpatypeair, #rpatypeheli, #rpatypmulti, #rpatypepow').on('change', function() {
+      if ($('#rpatypeaero, #rpatypeair, #rpatypeheli, #rpatypmulti, #rpatypepow').val() == 'Other'){
+        $('#other').removeClass('hidden');
+      }else{
+        $('#other').addClass('hidden');
+      }
+    });
+
+
     var type = window.location.hash.substr(1);
     if (type == 'org') {
       $('a#home').attr("href", "profile-dashboard.html#org-wendy");
@@ -298,7 +307,8 @@
     }
     if (type == 'task') {
       $('a#next').attr("href", "app-reoc-tasklist.html#drone").text("Save");
-      $('.save-exit').addClass('hidden');
+      $('.save-exit a').attr("href","app-reoc-tasklist.html").text('Cancel');
+      $('#cancel-help-text').remove();
     }
 
 
@@ -461,13 +471,7 @@
       }
     });
 
-    $('#rpatypeaero, #rpatypeair, #rpatypeheli, #rpatypmulti, #rpatypepow').on('change', function() {
-      if ($('#rpatypeaero, #rpatypeair, #rpatypeheli, #rpatypmulti, #rpatypepow').val() == 'Other'){
-        $('#other').removeClass('hidden');
-      }else{
-        $('#other').addClass('hidden');
-      }
-    });
+
   </script>
 </body>
 
