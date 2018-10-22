@@ -127,20 +127,33 @@
 					</div>-->
             </div>
 
-						<div class="form-section col-md-12">
-              <label for="text-input-block">Remotely Piloted Aircraft (RPA) Type operated</label>
-              <input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text">
-						</div>
+
             <div class="form-section col-md-12">
-              <label for="text-input-block">Total RPA flying time</label>
-              <input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text">
-            </div>
-            <div class="form-section col-md-12">
-              <label for="textarea">Provide details of relevant qualifications, knowledge and flying history</label>
+              <label for="textarea">Provide details of experience relevant to maintaining RPA</label>
               <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea">
 
               </textarea>
             </div>
+
+            <div class="form-section col-md-12">
+              <p style="font-weight:bold;"> <span class="am-text">Does the nominated MC hold any other positions within yours, or any other aviation organisation?</p>
+              <label class="au-control-input">
+                <input class="au-control-input__input" type="radio" name="radio-ex-mc" id="yes-mc">
+                <span class="au-control-input__text form-text">Yes</span>
+              </label>
+              <label class="au-control-input">
+                <input class="au-control-input__input" type="radio" name="radio-ex-mc" id="no-mc">
+                <span class="au-control-input__text form-text">No</span>
+              </label>
+            </div>
+            <div class="form-section col-md-12 hidden" id="other-mc">
+              <label for="textarea">Provide specific details including each position, description of duties and responsibilities</label>
+              <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea">
+
+              </textarea>
+            </div>
+
+
             <div class="form-section col-md-12">
               <p style="font-weight:bold;"> <span class="am-text">Has this person</span> been charged with or convicted of any criminal offence in Australia, its territories, or a foreign country in the last 10 years?</p>
               <label class="au-control-input">
@@ -246,7 +259,14 @@ or a foreign regulatory authority in the last 10 years?</p>
       $('.am-text').text('Has this person');
       $('html').scrollToTop();
     });
-
+    $('input[name="radio-ex-mc"]').change(function() {
+      //var convicted = getElementById("yes").checked;
+      if ($('#yes-mc').is(':checked')) {
+        $('#other-mc').removeClass('hidden');
+      } else if ($('#no-mc').is(':checked')) {
+        $('#other-mc').addClass('hidden');
+      }
+    });
     $('input[name="radio-ex"]').change(function() {
       //var convicted = getElementById("yes").checked;
       if ($('#yes').is(':checked')) {
