@@ -136,7 +136,7 @@
             </div>
 
             <div class="form-section col-md-12">
-              <p style="font-weight:bold;"> <span class="am-text">Does the nominated MC hold any other positions within yours, or any other aviation organisation?</p>
+              <p style="font-weight:bold;">Does the nominated MC hold any other positions within yours, or any other aviation organisation?</p>
               <label class="au-control-input">
                 <input class="au-control-input__input" type="radio" name="radio-ex-mc" id="yes-mc">
                 <span class="au-control-input__text form-text">Yes</span>
@@ -154,7 +154,7 @@
             </div>
 
 
-            <div class="form-section col-md-12">
+            <div class="form-section col-md-12 previous-q">
               <p style="font-weight:bold;"> <span class="am-text">Has this person</span> been charged with or convicted of any criminal offence in Australia, its territories, or a foreign country in the last 10 years?</p>
               <label class="au-control-input">
                 <input class="au-control-input__input" type="radio" name="radio-ex" id="yes">
@@ -167,7 +167,7 @@
             </div>
 
 
-            <div id="convicted" class="hidden">
+            <div id="convicted" class="hidden previous-q">
               <div class="form-section col-md-12">
                 <p style="font-weight:bold;">Was a conviction recorded?</p>
                 <label class="au-control-input">
@@ -188,7 +188,7 @@
               </div>
 
             </div>
-						<div class="form-section col-md-12">
+						<div class="form-section col-md-12 previous-q">
               <p style="font-weight:bold;"> <span class="am-text">Has this person</span> been subjected to regulatory action by CASA
 or a foreign regulatory authority in the last 10 years?</p>
               <label class="au-control-input">
@@ -291,6 +291,7 @@ or a foreign regulatory authority in the last 10 years?</p>
 				$('#arn-input,#surname-input').parent().find('label').addClass('gray');
         $('#surname-input').val('Williams').attr('disabled','disabled');
         $('.am-text').text('Have you');
+        $('.previous-q').addClass('hidden');
       } else {
         $('#arn-input').val('').removeAttr('disabled','disabled');
         $('#surname-input').val('').removeAttr('disabled','disabled');
