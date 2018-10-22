@@ -13,6 +13,8 @@
   <script type="text/javascript" src="js/furnace.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="live-demo au-body au-grid js">
@@ -90,7 +92,7 @@
 				                <li class="row">
 				                  <div class="col-md-10 col-sm-5 col-xs-12">Wendy's Weddings</div>
 													<div class="col-md-1 col-sm-2 col-xs-12"><a href="business-details.html#edit">Edit</a></div>
-				                  <div class="col-md-1 col-sm-2 col-xs-12"><a href="#">Delete</a></div>
+				                  <div class="col-md-1 col-sm-2 col-xs-12"><a href="#" data-toggle="modal" data-target="#delete-modal-app">Delete</a></div>
 				                </li>
 				              </ul>
 
@@ -107,7 +109,7 @@
                           <div class="col-md-2 col-xs-3"><strong>Category</strong></div>
                           <div class="col-md-2 col-xs-3"><strong>Weight Class</strong></div>
                           <div class="col-md-3 col-xs-3"><strong>Type</strong></div>
-                          <div class="col-md-2 col-xs-3"><strong>Operation</strong></div>
+                          <div class="col-md-3 col-xs-3"><strong>Operation</strong></div>
                           <div class="col-md-1 col-xs-3"></div>
                           <div class="col-md-1 col-xs-3"></div>
                         </li>
@@ -115,7 +117,7 @@
                           <div class="col-md-2 col-xs-3">Multi-Rotor</div>
                           <div class="col-md-2 col-xs-3">Up to 25kg</div>
                           <div class="col-md-3 col-xs-3">N/A</div>
-                          <div class="col-md-2 col-xs-3">RPAS Aerial Work</div>
+                          <div class="col-md-3 col-xs-3">RPAS Aerial Work</div>
                           <div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
                           <div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
                         </li>
@@ -189,23 +191,48 @@
         </div>
       </div>
 
+			<!--delete modal -->
+			<div class="modal fade" id="delete-modal-app" tabindex="-1" role="dialog" aria-labelledby="na" style="display: none;" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLongTitle">Delete business name</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">×</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        Are you sure you want to delete the business name, Wendy's Wedding?
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="au-btn au-btn--secondary" data-dismiss="modal">No</button>
+			        <button type="button" class="au-btn" data-dismiss="modal" id="delete-yes-app">Yes</button>
+			      </div>
+			    </div>
+			  </div>
+			  </div>
 
   </main>
   <script>
     var type = window.location.hash.substr(1);
 		if (type == 'cert') {
       $('#names').removeClass('hidden');
-      $('#heading-cert span').removeClass('hidden,badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       //$('#personnel-add').removeClass('gray');
+				$('#delete-yes-app').click(function(){
+		      $('#names').addClass('hidden');
+					$('#heading-cert span').removeClass('badge-success').addClass('badge-secondary').text('Not started');
+		    });
     }
     if (type == 'drone') {
-      $('#drones').removeClass('hidden');
-      $('#heading-drones span').removeClass('hidden,badge-secondary').text('Saved').addClass('badge-success');
+      $('#drones,#names').removeClass('hidden');
+			$('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       $('#personnel-add').removeClass('gray');
     }
     if (type == 'personnel') {
       $('#drones').removeClass('hidden');
-      $('#heading-drones span').removeClass('hidden,badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       //$('#personnel-add').removeClass('gray');
 
       $('#personnel').removeClass('hidden');
@@ -216,29 +243,29 @@
     }
     if (type == 'upload') {
       $('#drones').removeClass('hidden');
-      $('#heading-drones span').removeClass('hidden,badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       //$('#personnel-add').removeClass('gray');
 
       $('#personnel').removeClass('hidden');
       $('#personnel').parent().find('p').remove();
 
-      $('#heading-personnel span').removeClass('hidden,badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       $('#heading-docs span').removeClass('hidden');
 
       $('#manual').removeClass('hidden');
       $('#next').removeClass('hidden');
-      //$('#upload-doc').removeClass('gray');
     }
 		if (type == 'review') {
       $('#drones').removeClass('hidden');
       $('#personnel').removeClass('hidden');
+
       $('#personnel').parent().find('p').remove();
       $('#manual, #names').removeClass('hidden');
       $('#next').addClass('hidden');
+
 			$('.au-callout, .au-btn--secondary').addClass('hidden');
 			$('h1').text('Summary of your ReOC');
 			$('#names a, #drones a').remove();
-      //$('#upload-doc').removeClass('gray');
     }
   </script>
 

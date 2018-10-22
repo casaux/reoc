@@ -96,11 +96,13 @@
               <p>&nbsp;</p>
               <ul class="list-unstyled m-t-1">
                 <li class="row alt-row xs-hidden">
-                  <div class="col-md-7 col-sm-5 col-xs-12"><strong>Business Name</strong></div>
+                  <div class="col-md-7 col-sm-5 col-xs-12"><strong>Business Name(s)</strong></div>
+                  <div class="col-md-2 col-sm-2 col-xs-12"></div>
                   <div class="col-md-2 col-sm-2 col-xs-12"></div>
                 </li>
                 <li class="row">
-                  <div class="col-md-7 col-sm-5 col-xs-12">Wendy's Weddings</div>
+                  <div class="col-md-7 col-sm-5 col-xs-12" id="wendy">Wendy's Weddings</div>
+                  <div class="col-md-2 col-sm-2 col-xs-12"><a href="#edit" onclick=" ">Edit</a></div>
                   <div class="col-md-2 col-sm-2 col-xs-12"><a href="#" data-toggle="modal" data-target="#delete-modal-app">Delete</a></div>
                 </li>
               </ul>
@@ -110,7 +112,7 @@
               <div class="form-section hidden" id="business-name">
                 <label for="surname-input">Business Name</label>
                 <span id="surname-error" style="color:#d82c52;"></span>
-                <input class="au-text-input" name="text-input" id="surname-input" type="text">
+                <input class="au-text-input" name="text-input" id="name-input" type="text">
                 <p>&nbsp;</p>
                 <a id="add-name" href="#" class="au-btn au-btn--secondary">Add business name</a>
               </div>
@@ -166,7 +168,18 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
   <script>
+    $('a#next').addClass('hidden');
     var type = window.location.hash.substr(1);
+    if (type == 'edit') {
+      $('#name').attr('checked','checked');
+      $('#names, #next, #business-name').removeClass('hidden');
+      $('#name-input').attr('value',"Wendy's Wedding").focus();
+      $('.save-exit a').attr('href','app-repc-tasklist.html#cert');
+      $('#add-name').text('Update business name');
+        $('#add-name').click(function(){
+          $('#wendy').text("Wendy's Wedding PTY LTD");
+        });
+    }
     if (type == 'org') {
       $('a#home').attr("href", "profile-dashboard.html#org-wendy");
       $('a#bread-home').attr("href", "dashboard-org.html#save").text("Wendy's Wedding");
@@ -175,14 +188,12 @@
     }
     if (type == 'task') {
       $('a#next').attr("href", "app-reoc-tasklist.html#cert").text("Save");
-      //$('.save-exit').addClass('hidden');
     }
-    $('a#next').addClass('hidden');
+
     $('input[name="name"]').change(function() {
       $('a#next').removeClass('hidden');
       if ($('#name').is(':checked')) {
         $('#business-name').removeClass('hidden');
-
       } else {
         $('#business-name, #names, #save').addClass('hidden');
       }
@@ -192,18 +203,8 @@
         $('#save').fadeOut(3000);
     });
     $('#delete-yes-app').click(function(){
-
       $('#names').addClass('hidden');
     });
-		/*$('input[name="radio-ex-1"]').change(function() {
-      //var convicted = getElementById("yes").checked;
-      if ($('#yes-1').is(':checked')) {
-        $('#by-casa').removeClass('hidden');
-      } else if ($('#no-1').is(':checked')) {
-        $('#by-casa').addClass('hidden');
-      }
-    });*/
-
   </script>
 </body>
 
