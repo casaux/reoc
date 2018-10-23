@@ -76,14 +76,31 @@
 				<h2 class="au-display-xl m-t-2">New Organisation</h2>
 				<a class="au-direction-link au-direction-link--left" href="profile-dashboard.html#org-wendy">Back</a>
 
-							<h3 class="m-t-3">Organistion Details</h3>
+
+				<div class="form-section">
+				<p class="m-t-3"><strong>Are you the CEO/Director for this Organisation?</strong></p>
+				<label class="au-control-input m-t-1">
+				  <input class="au-control-input__input" type="radio" name="radio-ex-org">
+				  <span class="au-control-input__text">Yes</span>
+				</label>
+				<label class="au-control-input">
+				  <input class="au-control-input__input" type="radio" name="radio-ex-org" id="no-ceo">
+				  <span class="au-control-input__text">No</span>
+				</label>
+			  </div>
+
+				<div class="form-section">
+				<!--<h4 class="m-t-1">myCASA services</h4>-->
+				<p><strong>Select mycasa service(s)</strong></p>
+				<label class="au-control-input m-t-1">
+					<input class="au-control-input__input" type="radio" name="radio-ex" checked>
+					<span class="au-control-input__text">RPA operator's certificate (ReOC)</span>
+				</label>
+			</div>
+
+							<!--<h3 class="m-t-3">Organistion Details</h3>
 							<div class="form-section">
 								<label for="abn-input">ACN/ARBN</label>
-								<span id="ACN-error" style="color:#d82c52;"></span>
-								<input class="au-text-input" name="text-input" id="abn-input" type="text">
-				  		</div>
-							<div class="form-section">
-								<label for="abn-input">Foreign ID Number <span class="form-text" style="display:inline-block">(Optional)</span></label>
 								<span id="ACN-error" style="color:#d82c52;"></span>
 								<input class="au-text-input" name="text-input" id="abn-input" type="text">
 				  		</div>
@@ -107,42 +124,7 @@
 								<label for="phone-input">Mobile</label>
 								<span id="phone-error" style="color:#d82c52;"></span>
 								<input class="au-text-input" name="text-input" id="phone-input" type="text">
-				  		</div>
-							<p>&nbsp;</p>
-							<h3 class="">Organisation Type</h3>
-							<div class="form-section m-t-1">
-								<p><strong>Select the organisation types that apply</strong></p>
-								<label class="au-control-input m-t-1">
-								  <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
-								  <span class="au-control-input__text">Public/Proprietary Company</span>
-								</label>
-								<label class="au-control-input">
-								  <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
-								  <span class="au-control-input__text">Incorporated Association</span>
-								</label>
-								<label class="au-control-input">
-								  <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
-								  <span class="au-control-input__text">University/Tertiary Body</span>
-								</label>
-								<label class="au-control-input">
-								  <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
-								  <span class="au-control-input__text">Foreign Company/Body</span>
-								</label>
-								<label class="au-control-input">
-								  <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
-								  <span class="au-control-input__text">Foreign Government/Regulator</span>
-								</label>
-								<label class="au-control-input">
-								  <input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="gov">
-								  <span class="au-control-input__text">Government</span>
-								</label>
-							</div>
-							<div class="form-section hidden" id="gov-abn">
-								<label for="text-input">Government ABN</label>
-								<input class="au-text-input" name="text-input" id="text-input" type="text">
-							</div>
-							<p>&nbsp;</p>
-
+				  		</div>-->
 							<p>&nbsp;</p>
 				</div>
 
@@ -152,7 +134,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<a href="app-reoc-tasklist.html#org" class="au-btn" id="next">Next</a>
+				<a href="org-details.html#org" class="au-btn" id="next">Next</a>
 				<div class="save-exit">
 				<a href="dashboiard-org.html#save" class="au-btn au-btn--secondary">
 				Save and exit
@@ -171,12 +153,17 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
 	$("#error").hide();
-	$('input[name="checkbox-ex"]').change(function(){
-		if($('#gov').is(':checked')){
-			$('#gov-abn').removeClass('hidden');
+	/*$('#radio-ex-org').change(function(){
+		if($('#no-ceo').is(':checked')){
+			$('#selected-none').removeClass('hidden');
+			$('html').scrollTop();
 		}
-		else {
-			$('#gov-abn').addClass('hidden');
+	});*/
+	$('#next').click(function(){
+		if($('#no-ceo').is(':checked')){
+			$('#selected-none').removeClass('hidden');
+			$('html').scrollTop();
+			return false;
 		}
 	});
 </script>
