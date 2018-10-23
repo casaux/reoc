@@ -70,7 +70,7 @@
 					<h3>Next Steps</h3>
 					<ul class="m-t-1">
 						<li>Your manual will be reviewed by an inspector. If additional details or edits are needed, you will be contacted by email outlining the requirements</li>
-						<li>Once the manual is finalised, the inspector will organise an interview and assessment </li>
+						<li class="renew-li">Once the manual is finalised, the inspector will organise an interview and assessment </li>
 					</ul>
 
 					<p><a href="dashboard-wendy.html#in-progress" class="au-direction-link" id="dashboard">Go to dashboard</a></p>
@@ -88,7 +88,7 @@
 <script>
 var type = window.location.hash.substr(1);
 if(type=='renew'){
-	$('a.renew').remove();
+	$('a.renew, .renew-li').remove();
 	$('a#bread-home').attr("href", "dashboard-org.html#save").text("Wendy's Wedding");
 	$('#dashboard').attr("href", "dashboard-wendy.html#renewed");
 	//$('a#next').attr("href", "payment.html#renew");
