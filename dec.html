@@ -100,7 +100,7 @@
 			<a href="payment.html" class="au-btn" id="next">Proceed to Payment</a>
 			<p class="westpac">You will be directed to Westpac for payment</p>
 			<div class="save-exit">
-			<a href="dashboard.html#save" class="au-btn au-btn--secondary">
+			<a href="dashboard-wendy.html#save" class="au-btn au-btn--secondary">
 			Save and exit
 			</a>&nbsp; to continue this application later
 		 </div>
@@ -127,6 +127,9 @@ if(type=='renew'){
 	$('a#bread-home').attr("href", "dashboard-org.html#save").text("Wendy's Wedding");
 	$('.save-exit a').attr("href", "dashboard-org.html#save");
 	$('a#next').attr("href", "payment.html#renew");
+}
+if (type=='update-section'){
+	$('a#next').attr("href", "payment.html#update-section");
 }
 </script>
 </body>

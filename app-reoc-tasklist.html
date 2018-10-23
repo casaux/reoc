@@ -127,7 +127,7 @@
                   </div>
                   <div class="item">
                     <h4 id="heading-personnel">3. Personnel <span class="badge badge-secondary float-right">Not started</span></h4>
-                    <p style="color:#666666;" class="m-t-0">After you have added your drone/s. You may proceed to enter your personnels.</p>
+                    <p style="color:#666666;" class="m-t-0">Enter your Chief Remote Pilot and Maintenance Controller <em>(MC only required if a drone is above 150kg)</em>.</p>
 
                     <div class="student">
                       <ul class="list-unstyled m-t-1 hidden" id="personnel">
@@ -171,7 +171,7 @@
                           <div class="col-md-5 col-xs-12"><a href="#">WendysManual</a></div>
                           <div class="col-md-5 col-xs-4">Operations Manual
                           </div>
-                          <div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
+                          <div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
                         </li>
                       </ul>
                     </div>
@@ -181,7 +181,7 @@
 										<strong>RPA operator’s certificate (ReOC) fee:</strong><br>$950
 
 									</div><br>
-                  <!--<a class="au-btn au-btn--primary hidden" href="dec.html" id="next">Next</a>-->
+                  <a class="au-btn au-btn--primary hidden" href="dec.html" id="next">Next: Declarations</a>
 
 											<div class="hidden" id="proceed-payment">
 												<a href="payment.html  " class="au-btn" id="next">Proceed to Payment</a>
@@ -283,7 +283,17 @@
 
 			$('.au-callout, .au-btn--secondary').addClass('hidden');
 			$('h1').text('Summary of your ReOC');
-			$('#names a, #drones a').remove();
+			$('#names a, #drones a, #personnel a, #manual a.del, p.lead').remove();
+
+			/*$('#heading-drones span').removeClass('badge-secondary').text('Under Review').addClass('badge-info');
+			$('#heading-cert span').removeClass('badge-secondary').text('Under Review').addClass('badge-info');
+      $('#heading-personnel span').removeClass('badge-secondary').text('Under Review').addClass('badge-info');
+			$('#heading-docs span').removeClass('badge-secondary').text('Under Review').addClass('badge-info');*/
+
+			$('#heading-drones span').addClass('hidden');
+			$('#heading-cert span').addClass('hidden');
+      $('#heading-personnel span').addClass('hidden');
+			$('#heading-docs span').addClass('hidden');
     }
   </script>
 
