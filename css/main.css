@@ -328,6 +328,8 @@ footer{
 	border-top:4px solid #efefef;
 	box-shadow:#f7f7f7 1px 2px 2px
 }
+.item p {margin-top:.7rem;}
+
 .gray{
   color:#777!important;
   border-color:#777!important;
