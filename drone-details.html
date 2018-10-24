@@ -252,7 +252,7 @@
             </label>
           </div>
           <p>&nbsp;</p>
-          <a href="#" class="au-btn au-btn--secondary" id="add-drone">Add drone</a>
+          <!--<a href="#" class="au-btn au-btn--secondary" id="add-drone">Add drone</a>-->
           <p>&nbsp;</p>
         </div>
 
@@ -306,9 +306,10 @@
       $('a#next').attr("href", "add-personnel-crp.html#org");
     }
     if (type == 'task') {
-      $('a#next').attr("href", "app-reoc-tasklist.html#drone").text("Save");
+      $('a#next').attr("href", "app-reoc-tasklist-links.html#drone").text("Save");
       $('.save-exit a').attr("href","app-reoc-tasklist.html").text('Cancel');
       $('#cancel-help-text').remove();
+      $('#add-drone').addClass('hidden');
     }
 
 

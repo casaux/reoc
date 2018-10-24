@@ -354,7 +354,7 @@ a[href="*"].gray{content:''!important;}
     border: 3px solid #00698f;
     cursor: pointer;
     vertical-align: middle;
-    /*width:30%;*/
+    width:30%;
     text-align:center;
 }
 .inputfile:focus ~ label,

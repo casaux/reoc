@@ -18,7 +18,6 @@
 
 <body class="live-demo au-body au-grid js">
   <main class="au-grid">
-
     <body class="live-demo au-body au-grid js">
       <header class="au-header logo au-body au-body--dark" role="banner">
         <div class="header">
@@ -56,19 +55,20 @@
 
       <div class="body">
         <div class="container">
-
-          <div class="col-xs-8">
+          <div class="col-md-10">
             <nav class="au-breadcrumbs" aria-label="breadcrumb">
               <ul class="au-link-list au-link-list--inline">
                 <li><a href="dashboard-approved.html">Wendy Williams</a></li>
                 <li>Apply for ReOC</li>
               </ul>
             </nav>
-
-            <header class="au-header" role="banner">
+            <div role="alert" class="hidden au-page-alerts au-page-alerts--error" id="dec-error" style="width:100%;">
+              <h3>Declaration incomplete</h3>
+            </div>
+            <div class="au-header" role="banner">
               <h1 class="m-t-0">Apply for ReOC</h1>
               <a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
-            </header>
+            </div>
 
             <div class="container">
               <div class="row">
@@ -81,7 +81,6 @@
                     <p style="color:#666666;" class="m-t-0">Please provide the details of the operator details.</p>
 
 										<div class="student hidden" id="names">
-				              <p>&nbsp;</p>
 				              <ul class="list-unstyled m-t-1">
 				                <li class="row alt-row xs-hidden">
 				                  <div class="col-md-10 col-sm-5 col-xs-12"><strong>Business Name</strong></div>
@@ -99,8 +98,8 @@
                     <p><a class="au-cta-link" href="business-details.html#task" style="font-size:1.1rem;font-weight:500;">Add preferred name(s) on your certificate</a></p>
                   </div>
                   <div class="item">
-                    <h4 id="heading-drones">2. Drones and Operations<span class="badge badge-secondary float-right">Not started</span></h4>
-                    <p style="color:#666666;" class="m-t-0">Add your drone and operations details.</p>
+                    <h4 id="heading-drones">2. RPA and Operations<span class="badge badge-secondary float-right">Not started</span></h4>
+                    <p style="color:#666666;" class="m-t-0">Add your RPA and operations details.</p>
 
                     <div class="student">
                       <ul class="list-unstyled m-t-1 hidden" id="drones">
@@ -122,11 +121,11 @@
                         </li>
                       </ul>
                     </div>
-                    <p><a class="au-cta-link" href="drone-details.html#task" style="font-size:1.1rem;font-weight:500;">Add Drone details</a></p>
+                    <p><a class="au-cta-link" href="drone-details.html#task" style="font-size:1.1rem;font-weight:500;">Add RPA details</a></p>
                   </div>
                   <div class="item">
                     <h4 id="heading-personnel">3. Personnel <span class="badge badge-secondary float-right">Not started</span></h4>
-                    <p style="color:#666666;" class="m-t-0">Enter your Chief Remote Pilot and Maintenance Controller <em>(MC only required if a drone is above 150kg)</em>.</p>
+                    <p style="color:#666666;" class="m-t-0">Add your Chief Remote Pilot and Maintenance Controller.</p>
 
                     <div class="student">
                       <ul class="list-unstyled m-t-1 hidden" id="personnel">
@@ -144,9 +143,17 @@
 													<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
                           <div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
                         </li>
+                        <li class="row hidden" id="personnel-mc">
+                          <div class="col-md-5 col-xs-6">Wendy Williams</div>
+                          <div class="col-md-2 col-xs-3">1234567</div>
+                          <div class="col-md-3 col-xs-3">Maintenance Controller</div>
+													<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
+                          <div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
+                        </li>
                       </ul>
                     </div>
-                    <p><a class="au-cta-link" href="add-personnel-crp.html#task" id="personnel-add" style="font-size:1.1rem;font-weight:500;">Add Chief remote Pilot</a></p>
+                    <p><a class="au-cta-link" href="add-personnel-crp.html#task" id="personnel-add-crp" style="font-size:1.1rem;font-weight:500;">Add Chief Remote Pilot</a><br>
+                    <a class="au-cta-link" href="add-personnel-mc.html#task" id="personnel-add-mc" style="font-size:1.1rem;font-weight:500;">Add Maintenance Controller</a></p>
                   </div>
                   <div class="item">
                     <h4 id="heading-docs">4. Documents <span class="badge badge-secondary float-right">Not started</span></h4>
@@ -172,25 +179,38 @@
                           </div>
                           <div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
                         </li>
+                        <li class="row hidden" id="library">
+                          <div class="col-md-5 col-xs-12"><a href="#">WendysLibrary</a></div>
+                          <div class="col-md-5 col-xs-4">Operations procedure (Library)
+                          </div>
+                          <div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
+                        </li>
                       </ul>
                     </div>
-                    <p><a class="au-cta-link" href="upload-app.html#task" id="upload-doc" style="font-size:1.1rem;font-weight:500;">Upload Manual</a><br>
-                      <a class="au-cta-link" href="upload-app.html#task" id="upload-doc" style="font-size:1.1rem;font-weight:500;">Upload Operations procedure</a></p>
+                    <p>
+                      <a class="au-cta-link" href="upload-app-manual.html" id="upload-manual" style="font-size:1.1rem;font-weight:500;">Add Manual</a><br>
+                      <a class="au-cta-link" href="upload-app-library.html" id="upload-library" style="font-size:1.1rem;font-weight:500;">Add Operations procedure (Library)</a><br>
+                      <a class="au-cta-link" href="upload-app-syllabus.html" id="upload-syllabus" style="font-size:1.1rem;font-weight:500;">Add Training Syllabus</a><br>
+                      <a class="au-cta-link" href="upload-app-syllabus.html" id="upload-aircraft" style="font-size:1.1rem;font-weight:500;">Maintenance Manual and Flight Manual</a>
+                    </p>
                   </div>
 									<div class="au-callout">
 										<strong>RPA operator’s certificate (ReOC) fee:</strong><br>$950
-
+                    <div class="dec hidden m-t-2">
+                      <h3>Declarations</h3>
+                      <label class="au-control-input m-t-1">
+                				<input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="declaration">
+                				<span class="au-control-input__text form-text p-t-0">
+                					I declare that the information provided in this application form is true and correct. Giving false or misleading information is an offence under the regulations.
+                				</span>
+                			</label>
+                    </div>
 									</div><br>
-                  <a class="au-btn au-btn--primary hidden" href="dec.html" id="next">Next: Declarations</a>
+                  <!--<a class="au-btn au-btn--primary hidden" href="dec.html" id="next">Next: Declarations</a>-->
 
 											<div class="hidden" id="proceed-payment">
-												<a href="payment.html  " class="au-btn" id="next">Proceed to Payment</a>
+												<a href="payment.html" class="au-btn" id="next">Proceed to Payment</a>
 												<p class="westpac">You will be directed to Westpac for payment</p>
-												<div class="save-exit">
-												<a href="dashboard.html#save" class="au-btn au-btn--secondary">
-												Save and exit
-												</a>&nbsp; to continue this application later
-											 </div>
 											</div>
 
 
@@ -231,6 +251,19 @@
 
   </main>
   <script>
+  $('#next').click(function(){
+    //$('#declaration').change(function(){
+      if($('#declaration').prop('checked') == false){
+        $('#dec-error').removeClass('hidden');
+        $('html').scrollTop(0);
+        return false;
+      }else{
+        $('#dec-error').addClass('hidden');
+
+      }
+    //});
+  });
+
     var type = window.location.hash.substr(1);
 		if (type == 'cert') {
       $('#names').removeClass('hidden');
@@ -249,7 +282,10 @@
     }
     if (type == 'personnel') {
       $('#drones').removeClass('hidden');
+      $('#personnel-add-crp').addClass('hidden');
+      $('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-personnel span').removeClass('badge-secondary').text('Saved CRP').addClass('badge-success');
       //$('#personnel-add').removeClass('gray');
 
       $('#personnel').removeClass('hidden');
@@ -258,7 +294,21 @@
       $('#heading-personnel span').removeClass('hidden');
       //$('#upload-doc').removeClass('gray');
     }
-    if (type == 'upload') {
+    if (type == 'personnel-mc') {
+      $('#drones,#personnel-mc').removeClass('hidden');
+      $('#personnel-add-crp, #personnel-add-mc').addClass('hidden');
+      $('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-personnel span').removeClass('badge-secondary').text('Saved MC').addClass('badge-success');
+      //$('#personnel-add').removeClass('gray');
+
+      $('#personnel').removeClass('hidden');
+      $('#personnel').parent().find('p').remove();
+
+      $('#heading-personnel span').removeClass('hidden');
+      //$('#upload-doc').removeClass('gray');
+    }
+    if (type == 'manual') {
       $('#drones').removeClass('hidden');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       //$('#personnel-add').removeClass('gray');
@@ -267,11 +317,28 @@
       $('#personnel').parent().find('p').remove();
 			$('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+			$('#heading-docs span').removeClass('badge-secondary').text('Saved Manual').addClass('badge-success');
       //$('#heading-docs span').removeClass('hidden');
 
       $('#manual').removeClass('hidden');
       $('#next').removeClass('hidden');
+      $('#upload-manual').addClass('hidden');
+    }
+    if (type == 'library') {
+      $('#drones, #library, .dec, #proceed-payment').removeClass('hidden');
+      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+      //$('#personnel-add').removeClass('gray');
+
+      $('#personnel').removeClass('hidden');
+      $('#personnel').parent().find('p').remove();
+			$('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+			$('#heading-docs span').removeClass('badge-secondary').text('Saved library').addClass('badge-success');
+      //$('#heading-docs span').removeClass('hidden');
+
+      $('#manual').removeClass('hidden');
+      $('#next').removeClass('hidden');
+      $('#upload-manual, #upload-library').addClass('hidden');
     }
 		if (type == 'review') {
       $('#drones').removeClass('hidden');
@@ -285,16 +352,14 @@
 			$('h1').text('Summary of your ReOC');
 			$('#names a, #drones a, #personnel a, #manual a.del, p.lead').remove();
 
-			/*$('#heading-drones span').removeClass('badge-secondary').text('Under Review').addClass('badge-info');
-			$('#heading-cert span').removeClass('badge-secondary').text('Under Review').addClass('badge-info');
-      $('#heading-personnel span').removeClass('badge-secondary').text('Under Review').addClass('badge-info');
-			$('#heading-docs span').removeClass('badge-secondary').text('Under Review').addClass('badge-info');*/
-
 			$('#heading-drones span').addClass('hidden');
 			$('#heading-cert span').addClass('hidden');
       $('#heading-personnel span').addClass('hidden');
 			$('#heading-docs span').addClass('hidden');
     }
+
+
+
   </script>
 
 </body>

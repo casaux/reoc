@@ -212,7 +212,7 @@ or a foreign regulatory authority in the last 10 years?</p>
           <div class="save-exit">
             <a href="dashboard-wendy.html#save" class="au-btn au-btn--secondary">
               Save and exit
-            </a>&nbsp; to continue this application later
+            </a>
           </div>
         </div>
       </div>
@@ -234,8 +234,8 @@ or a foreign regulatory authority in the last 10 years?</p>
       $('a#next').attr("href", "add-personnel-mc.html#org");
     }
     if (type == 'task') {
-      $('a#next').attr("href", "add-personnel-mc.html#task").text("Next: Maintenance Controller");
-      $('.save-exit').addClass('hidden');
+      $('a#next').attr("href", "app-reoc-tasklist-links.html#personnel").text("Save");
+      $('.save-exit a').attr("href","app-reoc-tasklist-links.html#drone").text('Cancel');
     }
     //$('.student-details').hide();
     $('#addPilot').click(function() {
