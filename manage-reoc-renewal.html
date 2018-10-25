@@ -223,7 +223,7 @@
 
 <br>
 
-<div class="au-callout hidden" id="payment-update">
+<div class="au-callout" id="payment-update">
 	<strong>RPA operator’s certificate (ReOC) Renewal fee:</strong><br>$950
 	<div class="dec m-t-2">
 		<h3>Declarations</h3>
@@ -237,7 +237,7 @@
 </div><br>
 <!--<a class="au-btn au-btn--primary hidden" href="dec.html" id="next">Next: Declarations</a>-->
 
-		<div class="hidden" id="proceed-payment">
+		<div class="" id="proceed-payment">
 			<a href="payment.html#renew" class="au-btn" id="next">Proceed to Payment</a>
 			<p class="westpac">You will be directed to Westpac for payment</p>
 		</div>
@@ -275,20 +275,16 @@ $('#next').click(function(){
 
 
 	if (type == 'flight') {
-		$('#drones, #library, .dec, #names').removeClass('hidden');
-		$('#heading-drones span').addClass('hidden');
+		$('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names,#flight').removeClass('hidden');
+		$('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 
-		$('#personnel').removeClass('hidden');
-		$('#personnel').parent().find('p').remove();
+		$('#personnels').parent().find('p').remove();
 		$('#heading-cert span').addClass('hidden');
-		('#heading-drone span').addClass('hidden');
 		$('#heading-personnel span').addClass('hidden');
+		$('#heading-drones span').addClass('hidden');
 		$('#heading-docs span').addClass('hidden');
 
-		$('#manual').removeClass('hidden');
-		$('#next').removeClass('hidden');
-		$('#upload-manual, #upload-library').addClass('hidden');
-		$('#personnel-add-crp, #personnel-add-mc').addClass('hidden');
+		$('#upload-manual, #upload-aircraft, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
 	}
 	if (type == 'drone-update') {
 		$('#drones, #library, .dec, #names, #aero, #payment-update, #proceed-payment').removeClass('hidden');
