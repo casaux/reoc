@@ -76,17 +76,6 @@
 
           <h3 class="m-t-2">Business Details (optional)</h3>
           <section class="arn-details">
-            <!--<div class="form-section m-t-2" class="col-md-12">
-              <p><strong>Would you like to add your trading name(s) on the certificate?</strong></p>
-              <label class="au-control-input">
-              <input class="au-control-input__input" type="radio" name="name" id="name">
-              <span class="au-control-input__text form-text">Yes</span>
-              </label>
-                <label class="au-control-input">
-                <input class="au-control-input__input" type="radio" name="name">
-                <span class="au-control-input__text form-text">No</span>
-                </label>
-            </div>-->
             <div class="student hidden" id="names">
               <p>&nbsp;</p>
               <ul class="list-unstyled m-t-1">
@@ -128,8 +117,8 @@
         <div class="col-md-8 m-t-2"><br>
           <a href="app-reoc-tasklist-links.html#cert" class="au-btn" id="next">Save</a>
           <div class="save-exit">
-            <a href="app-reoc-tasklist-links.html" class="au-btn au-btn--secondary">
-              Cancel
+            <a href="#" class="au-btn au-btn--secondary" data-toggle="modal" data-target="#back-modal-app">
+              Back to application
             </a><!--&nbsp; to continue this application later-->
           </div>
         </div>
@@ -138,21 +127,21 @@
 
 
 <!--delete modal -->
-<div class="modal fade" id="delete-modal-app" tabindex="-1" role="dialog" aria-labelledby="na" style="display: none;" aria-hidden="true">
+<div class="modal fade" id="back-modal-app" tabindex="-1" role="dialog" aria-labelledby="na" style="display: none;" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Delete business name</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Back to application</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
       </div>
       <div class="modal-body">
-        Are you sure you want to delete the business name, Wendy's Wedding?
+        Your information will not be saved, are you sure?
       </div>
       <div class="modal-footer">
         <button type="button" class="au-btn au-btn--secondary" data-dismiss="modal">No</button>
-        <button type="button" class="au-btn" data-dismiss="modal" id="delete-yes-app">Yes</button>
+        <button type="button" class="au-btn" data-dismiss="modal" id="back-yes-app">Yes</button>
       </div>
     </div>
   </div>
@@ -205,8 +194,8 @@
         $('#names, #save').removeClass('hidden');
         $('#save').fadeOut(3000);
     });
-    $('#delete-yes-app').click(function(){
-      $('#names').addClass('hidden');
+    $('#back-yes-app').click(function(){
+      window.location.href="app-reoc-tasklist-links.html";
     });
   </script>
 </body>

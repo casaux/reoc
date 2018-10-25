@@ -14,18 +14,9 @@
   <link rel="stylesheet" href="css/main.css">
   <script type="text/javascript" src="js/furnace.min.js"></script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
-  <!--<script>
-	$(document).ready(function() {
-		var type = window.location.hash.substr(1);
-		if(type=='org'){
-			$('a#next').attr("href", "add-personnel-crp.html");
-		}else if(type !=='org'){
-			//alert(3);
-			$('a#next').attr("href", "upload-app.html");
-		}
-	});
-</script>-->
+
 
 </head>
 
@@ -264,14 +255,36 @@
         <div class="col-md-8">
           <a href="add-personnel-crp.html" class="au-btn" id="next">Next</a>
           <div class="save-exit">
-            <a href="dashboard-wendy.html#save" class="au-btn au-btn--secondary">
-              Save and exit
-            </a><span id="cancel-help-text">&nbsp; to continue this application later</span>
+            <a href="#" class="au-btn au-btn--secondary"  data-toggle="modal" data-target="#back-modal-app">
+              Back to application
+            </a>
           </div>
         </div>
       </div>
     </div>
   </main>
+
+  <!--delete modal -->
+  <div class="modal fade" id="back-modal-app" tabindex="-1" role="dialog" aria-labelledby="na" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Back to application</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Your information will not be saved, are you sure?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="au-btn au-btn--secondary" data-dismiss="modal">No</button>
+          <button type="button" class="au-btn" data-dismiss="modal" id="back-yes-app">Yes</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
   <footer class="footer">
     <div class="footer-wrapper">
       <iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
@@ -307,7 +320,7 @@
     }
     if (type == 'task') {
       $('a#next').attr("href", "app-reoc-tasklist-links.html#drone").text("Save");
-      $('.save-exit a').attr("href","app-reoc-tasklist.html").text('Cancel');
+      //$('.save-exit a').attr("href","app-reoc-tasklist.html").text('Cancel');
       $('#cancel-help-text').remove();
       $('#add-drone').addClass('hidden');
     }
@@ -471,7 +484,9 @@
         $('#rpatypepow').parent().addClass('hidden');
       }
     });
-
+    $('#back-yes-app').click(function(){
+      window.location.href="app-reoc-tasklist-links.html#drone";
+    });
 
   </script>
 </body>

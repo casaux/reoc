@@ -272,9 +272,7 @@
         return false;
       }else{
         $('#dec-error').addClass('hidden');
-
       }
-    //});
   });
   $('#heading-cert span').addClass('hidden');
     var type = window.location.hash.substr(1);
@@ -288,7 +286,7 @@
 		    });
     }
     if (type == 'drone') {
-      $('#drones,#names').removeClass('hidden');
+      $('#drones, #names').removeClass('hidden');
 			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       $('#personnel-add').removeClass('gray');
@@ -366,7 +364,7 @@
       $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names,#flight').removeClass('hidden');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 
-      $('#personnel,#flight').parent().find('p').remove();
+      $('#personnels').parent().find('p').remove();
 			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
       $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
