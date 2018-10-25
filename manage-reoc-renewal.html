@@ -277,14 +277,19 @@ $('#next').click(function(){
 
 
 	if (type == 'flight') {
-		$('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names,#flight').removeClass('hidden');
-		$('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+		$('#drones, #library, .dec, #names, #manual, #syllabus, #flight').removeClass('hidden');
+		$('#heading-drones span, #upload-manual, #upload-library').addClass('hidden');
 
-		$('#personnels').parent().find('p').remove();
+		$('#personnel').removeClass('hidden');
+		$('#personnel').parent().find('p').remove();
 		$('#heading-cert span').addClass('hidden');
+		$('#heading-drone span').addClass('hidden');
 		$('#heading-personnel span').addClass('hidden');
-		$('#heading-drones span').addClass('hidden');
 		$('#heading-docs span').addClass('hidden');
+
+		$('#manual').removeClass('hidden');
+		$('#next').removeClass('hidden');
+		//$('#personnel-add-crp, #personnel-add-mc').addClass('hidden');
 
 		$('#upload-manual, #upload-aircraft, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
 	}
