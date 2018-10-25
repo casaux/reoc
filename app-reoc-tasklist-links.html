@@ -325,19 +325,17 @@
       $('#upload-manual').addClass('hidden');
     }
     if (type == 'library') {
-      $('#drones, #library, .dec, #proceed-payment').removeClass('hidden');
+      $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc').removeClass('hidden');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-      //$('#personnel-add').removeClass('gray');
 
-      $('#personnel').removeClass('hidden');
+
+
       $('#personnel').parent().find('p').remove();
 			$('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-      //$('#heading-docs span').removeClass('hidden');
 
-      $('#manual').removeClass('hidden');
-      $('#next').removeClass('hidden');
+
       $('#upload-manual, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
     }
 		if (type == 'review') {
