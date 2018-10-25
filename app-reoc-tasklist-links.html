@@ -185,13 +185,26 @@
                           </div>
                           <div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
                         </li>
+                        <li class="row hidden" id="syllabus">
+                          <div class="col-md-5 col-xs-12"><a href="#">TrainingSyllabus</a></div>
+                          <div class="col-md-5 col-xs-4">Training Syllabus
+                          </div>
+                          <div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
+                        </li>
+                        <li class="row hidden" id="flight">
+                          <div class="col-md-5 col-xs-12">
+                            <a href="#">WendysFlightManual</a></div>
+                          <div class="col-md-5 col-xs-4">Maintenance Manual and Flight Manual
+                          </div>
+                          <div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
+                        </li>
                       </ul>
                     </div>
                     <p>
                       <a class="au-cta-link" href="upload-app-manual.html" id="upload-manual" style="font-size:1.1rem;font-weight:500;">Add Manual</a><br>
                       <a class="au-cta-link" href="upload-app-library.html" id="upload-library" style="font-size:1.1rem;font-weight:500;">Add Operations procedure (Library)</a><br>
                       <a class="au-cta-link" href="upload-app-syllabus.html" id="upload-syllabus" style="font-size:1.1rem;font-weight:500;">Add Training Syllabus</a><br>
-                      <a class="au-cta-link" href="upload-app-syllabus.html" id="upload-aircraft" style="font-size:1.1rem;font-weight:500;">Maintenance Manual and Flight Manual</a>
+                      <a class="au-cta-link" href="upload-app-flight.html" id="upload-aircraft" style="font-size:1.1rem;font-weight:500;">Maintenance Manual and Flight Manual</a>
                     </p>
                   </div>
 									<div class="au-callout">
@@ -337,6 +350,28 @@
 
 
       $('#upload-manual, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
+    }
+    if (type == 'syllabus') {
+      $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names, #syllabus').removeClass('hidden');
+      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+
+      $('#personnel').parent().find('p').remove();
+			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
+      $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+
+      $('#upload-manual, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
+    }
+    if (type == 'flight') {
+      $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names,#flight').removeClass('hidden');
+      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+
+      $('#personnel,#flight').parent().find('p').remove();
+			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
+      $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+
+      $('#upload-manual, #upload-aircraft, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
     }
 		if (type == 'review') {
       $('#drones').removeClass('hidden');
