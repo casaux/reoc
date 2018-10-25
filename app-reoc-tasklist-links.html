@@ -77,8 +77,9 @@
 
 
                   <div class="item">
-                    <h4 id="heading-cert">1. Operator's Certificate<span class="badge badge-secondary float-right">Not started</span></h4>
-                    <p style="color:#666666;" class="m-t-0">Please provide the details of the operator details.</p>
+                    <h4 id="heading-cert">1. Operator's details<span class="badge badge-secondary float-right">Not started</span></h4>
+                    <div style="color:#666666;" class="m-t-1 au-callout">Your certificate will be issued to:<br>
+                    Wendy Williams</div>
 
 										<div class="student hidden" id="names">
 				              <ul class="list-unstyled m-t-1">
@@ -93,9 +94,8 @@
 				                  <div class="col-md-1 col-sm-2 col-xs-12"><a href="#" data-toggle="modal" data-target="#delete-modal-app">Delete</a></div>
 				                </li>
 				              </ul>
-
 				            </div>
-                    <p><a class="au-cta-link" href="business-details.html#task" style="font-size:1.1rem;font-weight:500;">Add preferred name(s) on your certificate</a></p>
+                    <p><a class="au-cta-link" href="business-details.html#task" style="font-size:1.1rem;font-weight:500;">Add business name(s)</a></p>
                   </div>
                   <div class="item">
                     <h4 id="heading-drones">2. RPA and Operations<span class="badge badge-secondary float-right">Not started</span></h4>
@@ -263,11 +263,11 @@
       }
     //});
   });
-
+  $('#heading-cert span').addClass('hidden');
     var type = window.location.hash.substr(1);
 		if (type == 'cert') {
       $('#names').removeClass('hidden');
-      $('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
       //$('#personnel-add').removeClass('gray');
 				$('#delete-yes-app').click(function(){
 		      $('#names').addClass('hidden');
@@ -276,14 +276,14 @@
     }
     if (type == 'drone') {
       $('#drones,#names').removeClass('hidden');
-			$('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       $('#personnel-add').removeClass('gray');
     }
     if (type == 'personnel') {
       $('#drones').removeClass('hidden');
       $('#personnel-add-crp').addClass('hidden');
-      $('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       //$('#personnel-add').removeClass('gray');
@@ -297,7 +297,7 @@
     if (type == 'personnel-mc') {
       $('#drones,#personnel-mc').removeClass('hidden');
       $('#personnel-add-crp, #personnel-add-mc').addClass('hidden');
-      $('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+      $('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       //$('#personnel-add').removeClass('gray');
@@ -315,7 +315,7 @@
 
       $('#personnel').removeClass('hidden');
       $('#personnel').parent().find('p').remove();
-			$('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
       $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
       //$('#heading-docs span').removeClass('hidden');
@@ -325,13 +325,13 @@
       $('#upload-manual').addClass('hidden');
     }
     if (type == 'library') {
-      $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc').removeClass('hidden');
+      $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names').removeClass('hidden');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 
 
 
       $('#personnel').parent().find('p').remove();
-			$('#heading-cert span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
       $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 
