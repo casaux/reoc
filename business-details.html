@@ -80,23 +80,25 @@
 
           <h3 class="m-t-2">Certificate Details</h3>
           <section class="arn-details">
-            <div class="form-section" class="col-md-12">
-              <p><strong>The perferred name to be reflected on the certificate when issued?</strong></p>
+
+
+
+            <div class="form-section m-t-2" class="col-md-12">
+              <p><strong>Would you like to add your trading name(s) on the certificate?</strong></p>
+              <label class="au-control-input">
+              <input class="au-control-input__input" type="radio" name="name" id="name">
+              <span class="au-control-input__text form-text">Yes</span>
+              </label>
                 <label class="au-control-input">
                 <input class="au-control-input__input" type="radio" name="name">
-                <span class="au-control-input__text form-text">Wendy Williams</span>
+                <span class="au-control-input__text form-text">No</span>
                 </label>
-                <label class="au-control-input">
-                <input class="au-control-input__input" type="radio" name="name" id="name">
-                <span class="au-control-input__text form-text">Business Name(s)</span>
-                </label>
-
             </div>
             <div class="student hidden" id="names">
               <p>&nbsp;</p>
               <ul class="list-unstyled m-t-1">
                 <li class="row alt-row xs-hidden">
-                  <div class="col-md-7 col-sm-5 col-xs-12"><strong>Business Name(s)</strong></div>
+                  <div class="col-md-7 col-sm-5 col-xs-12"><strong>Trading Name(s)</strong></div>
                   <div class="col-md-2 col-sm-2 col-xs-12"></div>
                   <div class="col-md-2 col-sm-2 col-xs-12"></div>
                 </li>
@@ -110,12 +112,19 @@
             </div>
 
               <div class="form-section hidden" id="business-name">
-                <label for="surname-input">Business Name</label>
+                <div class="form-section">
+                  <label for="abn-input">ABN</label>
+                  <span id="surname-error" style="color:#d82c52;"></span>
+                  <input class="au-text-input" name="text-input" id="abn-input" type="text">
+                </div>
+                <div class="form-section">
+                <label for="surname-input">Trading Name</label>
                 <span id="surname-error" style="color:#d82c52;"></span>
                 <input class="au-text-input" name="text-input" id="name-input" type="text">
                 <p>&nbsp;</p>
-                <a id="add-name" href="#" class="au-btn au-btn--secondary">Add business name</a>
+                <a id="add-name" href="#" class="au-btn au-btn--secondary">Add trading name</a>
               </div>
+
           </section>
         </div>
       </div>

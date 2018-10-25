@@ -64,13 +64,16 @@
 	<div class="container">
 	<div class="row">
 		<div class="col-md-10">
-			<h4>Date Issued</h4>
+			<div class="au-page-alerts au-page-alerts--warning" role="alert">
+				<h4>Date Issued</h4>
 			16/12/2018
 			<h4>Expiry date</h4>
 			16/12/2019
+		</div>
 <p>&nbsp;</p>
 				<p class="au-callout">
-					Updates to your RPA operator’s certificate (ReOC) will need to be reviewed by a CASA inspector. This also may incur a $450 fee.
+						Renewing your RPA operator’s certificate (ReOC) will incur a fee of $950.
+						<br>Any updates made will be an additional $450 (A CASA inspector will review the updates for approval).
 				</p>
 
 				<div class="item">
@@ -118,7 +121,7 @@
 								<div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
 							</li>
 							<li class="row hidden" id="aero">
-								<div class="col-md-2 col-xs-3">Aeroplane <span class="badge badge-info"> New </span></div>
+								<div class="col-md-2 col-xs-3">Aeroplane</div>
 								<div class="col-md-2 col-xs-3">Up to 25kg</div>
 								<div class="col-md-3 col-xs-3">N/A</div>
 								<div class="col-md-3 col-xs-3">RPAS Aerial Work</div>
@@ -151,7 +154,7 @@
 								<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
 								<div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
 							</li>
-							<li class="row" id="personnel-mc">
+							<li class="row hidden" id="personnel-mc">
 								<div class="col-md-5 col-xs-6">Wendy Williams</div>
 								<div class="col-md-2 col-xs-3">1234567</div>
 								<div class="col-md-3 col-xs-3">Maintenance Controller</div>
@@ -208,7 +211,7 @@
 <br>
 
 <div class="au-callout hidden" id="payment-update">
-	<strong>RPA operator’s certificate (ReOC) fee:</strong><br>$450
+	<strong>RPA operator’s certificate (ReOC) Renewal fee:</strong><br>$950
 	<div class="dec m-t-2">
 		<h3>Declarations</h3>
 		<label class="au-control-input m-t-1">
@@ -274,7 +277,7 @@ $('#next').click(function(){
 		$('#upload-manual, #upload-library').addClass('hidden');
 		$('#personnel-add-crp, #personnel-add-mc').addClass('hidden');
 	}
-	if (type == 'drone-update' || type == 'review') {
+	if (type == 'drone-update') {
 		$('#drones, #library, .dec, #names, #aero, #payment-update, #proceed-payment').removeClass('hidden');
 		$('#heading-drones span').addClass('hidden');
 
