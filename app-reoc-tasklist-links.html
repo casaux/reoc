@@ -76,15 +76,6 @@
                   <p class="lead">Complete the steps below to get your RPA operators certificate (ReOC).</p>
                   <div class="au-callout m-t-1">
 										<strong>RPA operator’s certificate (ReOC) fee:</strong><br>$950
-                    <!--<div class="dec hidden m-t-2">
-                      <h3>Declarations</h3>
-                      <label class="au-control-input m-t-1">
-                				<input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="declaration">
-                				<span class="au-control-input__text form-text p-t-0">
-                					I declare that the information provided in this application form is true and correct. Giving false or misleading information is an offence under the regulations.
-                				</span>
-                			</label>
-                    </div>-->
 									</div>
 
                   <div class="item">
@@ -264,16 +255,7 @@
 
   </main>
   <script>
-  //$('#next').click(function(){
-    //$('#declaration').change(function(){
-      /*if($('#declaration').prop('checked') == false){
-        $('#dec-error').removeClass('hidden');
-        $('html').scrollTop(0);
-        return false;
-      }else{
-        $('#dec-error').addClass('hidden');
-      }*/
-  //});
+
   $('#heading-cert span').addClass('hidden');
     var type = window.location.hash.substr(1);
 		if (type == 'cert') {
@@ -338,13 +320,10 @@
       $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names').removeClass('hidden');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 
-
-
       $('#personnel').parent().find('p').remove();
 			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
       $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-
 
       $('#upload-manual, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
     }
@@ -387,9 +366,6 @@
       $('#heading-personnel span').addClass('hidden');
 			$('#heading-docs span').addClass('hidden');
     }
-
-
-
   </script>
 
 </body>
