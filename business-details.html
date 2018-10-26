@@ -76,7 +76,7 @@
 
           <h3 class="m-t-2">Business Details (optional)</h3>
           <section class="arn-details">
-            <div class="student hidden" id="names">
+            <!--<div class="student hidden" id="names">
               <p>&nbsp;</p>
               <ul class="list-unstyled m-t-1">
                 <li class="row alt-row xs-hidden">
@@ -91,7 +91,7 @@
                 </li>
               </ul>
               <p>&nbsp;</p>
-            </div>
+            </div>-->
 
               <div class="form-section" id="business-name">
                 <div class="form-section">
@@ -164,13 +164,14 @@
     if (type == 'edit') {
       $('#name').attr('checked','checked');
       $('#names, #next, #business-name').removeClass('hidden');
-      $('#name-input').attr('value',"Wendy's Wedding").focus();
+      $('#abn-input').attr('value',"12345678901");
+      $('#name-input').attr('value',"Wendy's Wedding");
       $('.save-exit a').attr('href','app-repc-tasklist.html#cert');
       $('#add-name').text('Update business name');
         $('#add-name').click(function(){
           $('#wendy').text("Wendy's Wedding PTY LTD");
         });
-      $('#name-input').css('background-color','#ffc');
+      /*$('#name-input, #abn-input').css('background-color','#ffc');*/
     }
     if (type == 'org') {
       $('a#home').attr("href", "profile-dashboard.html#org-wendy");

@@ -72,10 +72,10 @@
 			16/12/2019
 		</div>
 <p>&nbsp;</p>
-				<p class="au-callout">
-						Renewing your RPA operator’s certificate (ReOC) will incur a fee of $950.
-						<br>Any updates made will be an additional $450 (A CASA inspector will review the updates for approval).
-				</p>
+				<div class="au-callout m-t-1">
+						<p>Renewing your RPA operator’s certificate (ReOC) will incur a fee of $950.</p>
+						<p>Please ensure all the information is current. Any updates will be an additional $450 (A CASA inspector will review the updates for approval).</p>
+				</div>
 
 				<div class="item">
 					<h4 id="heading-cert">1. Operator's Certificate<span class="badge badge-secondary float-right">Not started</span></h4>
@@ -122,7 +122,7 @@
 								<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
 								<div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
 							</li>
-							<li class="row hidden" id="aero">
+							<li class="row" id="aero">
 								<div class="col-md-2 col-xs-3">Aeroplane</div>
 								<div class="col-md-2 col-xs-3">Up to 25kg</div>
 								<div class="col-md-3 col-xs-3">N/A</div>
@@ -156,7 +156,7 @@
 								<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
 								<div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
 							</li>
-							<li class="row hidden" id="personnel-mc">
+							<li class="row" id="personnel-mc">
 								<div class="col-md-5 col-xs-6">Wendy Williams</div>
 								<div class="col-md-2 col-xs-3">1234567</div>
 								<div class="col-md-3 col-xs-3">Maintenance Controller</div>
@@ -225,23 +225,9 @@
 
 <br>
 
-<div class="au-callout" id="payment-update">
-	<strong>RPA operator’s certificate (ReOC) Renewal fee:</strong><br>$950
-	<div class="dec m-t-2">
-		<h3>Declarations</h3>
-		<label class="au-control-input m-t-1">
-			<input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="declaration">
-			<span class="au-control-input__text form-text p-t-0">
-				I declare that the information provided in this application form is true and correct. Giving false or misleading information is an offence under the regulations.
-			</span>
-		</label>
-	</div>
-</div><br>
-<!--<a class="au-btn au-btn--primary hidden" href="dec.html" id="next">Next: Declarations</a>-->
 
 		<div class="" id="proceed-payment">
-			<a href="payment.html#renew" class="au-btn" id="next">Proceed to Payment</a>
-			<p class="westpac">You will be directed to Westpac for payment</p>
+			<a href="app-reoc-summary.html#renew" class="au-btn" id="next">Finalise Application</a>
 		</div>
 
 		</div>
@@ -256,25 +242,12 @@
 			<iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
 		</div>
 	</div>
-
-
 </main>
 
 <script>
-$('#next').click(function(){
-	//$('#declaration').change(function(){
-		if($('#declaration').prop('checked') == false){
-			$('#dec-error').removeClass('hidden');
-			$('html').scrollTop(0);
-			return false;
-		}else{
-			$('#dec-error').addClass('hidden');
-		}
-	//});
-});
+
 
 	var type = window.location.hash.substr(1);
-
 
 	if (type == 'flight') {
 		$('#drones, #library, .dec, #names, #manual, #syllabus, #flight').removeClass('hidden');
@@ -310,18 +283,6 @@ $('#next').click(function(){
 		$('#personnel-add-crp, #personnel-add-mc').addClass('hidden');
 	}
 
-	$('#next').click(function(){
-    //$('#declaration').change(function(){
-      if($('#declaration').prop('checked') == false){
-        $('#dec-error').removeClass('hidden');
-        $('html').scrollTop(0);
-        return false;
-      }else{
-        $('#dec-error').addClass('hidden');
-
-      }
-    //});
-  });
 </script>
 
 

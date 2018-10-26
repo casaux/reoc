@@ -51,8 +51,6 @@
           This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
         </div>
       </div>
-
-
       <div class="body">
         <div class="container">
           <div class="col-md-10">
@@ -73,19 +71,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-10">
-                  <p class="lead">Complete the steps below to get your RPA operators certificate (ReOC).</p>
-                  <div class="au-callout m-t-1">
-										<strong>RPA operator’s certificate (ReOC) fee:</strong><br>$950
-                    <!--<div class="dec hidden m-t-2">
-                      <h3>Declarations</h3>
-                      <label class="au-control-input m-t-1">
-                				<input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="declaration">
-                				<span class="au-control-input__text form-text p-t-0">
-                					I declare that the information provided in this application form is true and correct. Giving false or misleading information is an offence under the regulations.
-                				</span>
-                			</label>
-                    </div>-->
-									</div>
+                  <h3>Application summary</h3>
 
                   <div class="item">
                     <h4 id="heading-cert">1. Operator's details<span class="badge badge-secondary float-right hidden">Not started</span></h4>
@@ -130,6 +116,14 @@
                           <div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
                           <div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
                         </li>
+                        <li class="row" id="aero">
+          								<div class="col-md-2 col-xs-3">Aeroplane <span class="badge badge-info"> New </span></div>
+          								<div class="col-md-2 col-xs-3">Up to 25kg</div>
+          								<div class="col-md-3 col-xs-3">N/A</div>
+          								<div class="col-md-3 col-xs-3">RPAS Aerial Work</div>
+          								<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
+          								<div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
+          							</li>
                       </ul>
                     </div>
                     <p><a class="au-cta-link" href="drone-details.html#task" style="font-size:1.1rem;font-weight:500;">Add RPA details</a></p>
@@ -154,7 +148,7 @@
 													<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
                           <div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
                         </li>
-                        <li class="row hidden" id="personnel-mc">
+                        <li class="row" id="personnel-mc">
                           <div class="col-md-5 col-xs-6">Wendy Williams</div>
                           <div class="col-md-2 col-xs-3">1234567</div>
                           <div class="col-md-3 col-xs-3">Maintenance Controller</div>
@@ -163,12 +157,9 @@
                         </li>
                       </ul>
                     </div>
-                    <p><a class="au-cta-link" href="add-personnel-crp.html#task" id="personnel-add-crp" style="font-size:1.1rem;font-weight:500;">Add Chief Remote Pilot</a><br>
-                    <a class="au-cta-link" href="add-personnel-mc.html#task" id="personnel-add-mc" style="font-size:1.1rem;font-weight:500;">Add Maintenance Controller</a></p>
                   </div>
                   <div class="item">
                     <h4 id="heading-docs">4. Documents <span class="badge badge-secondary float-right">Not started</span></h4>
-                    <p style="color:#666666;" class="m-t-0">Upload your manual and required document for review.</p>
 
                     <div class="student">
 
@@ -190,19 +181,19 @@
                           </div>
                           <div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
                         </li>
-                        <li class="row hidden" id="library">
+                        <li class="row" id="library">
                           <div class="col-md-5 col-xs-12"><a href="#">WendysLibrary</a></div>
                           <div class="col-md-5 col-xs-4">Operations procedure (Library)
                           </div>
                           <div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
                         </li>
-                        <li class="row hidden" id="syllabus">
+                        <li class="row" id="syllabus">
                           <div class="col-md-5 col-xs-12"><a href="#">TrainingSyllabus</a></div>
                           <div class="col-md-5 col-xs-4">Training Syllabus
                           </div>
                           <div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
                         </li>
-                        <li class="row hidden" id="flight">
+                        <li class="row" id="flight">
                           <div class="col-md-5 col-xs-12">
                             <a href="#">WendysFlightManual</a></div>
                           <div class="col-md-5 col-xs-4">Maintenance Manual and Flight Manual
@@ -211,187 +202,50 @@
                         </li>
                       </ul>
                     </div>
-                    <p>
-                      <a class="au-cta-link" href="upload-app-manual.html" id="upload-manual" style="font-size:1.1rem;font-weight:500;">Add Manual</a><br>
-                      <a class="au-cta-link" href="upload-app-library.html" id="upload-library" style="font-size:1.1rem;font-weight:500;">Add Operations procedure (Library)</a><br>
-                      <a class="au-cta-link" href="upload-app-syllabus.html" id="upload-syllabus" style="font-size:1.1rem;font-weight:500;">Add Training Syllabus</a><br>
-                      <a class="au-cta-link" href="upload-app-flight.html" id="upload-aircraft" style="font-size:1.1rem;font-weight:500;">Maintenance Manual and Flight Manual</a>
-                    </p>
+                  </div>
+                  <h3>Fee summary</h3>
+                  <div class="au-callout m-t-1">
+                    <strong>RPA operator’s certificate (ReOC) fee:</strong><br><span id="fee">$950</span>
                   </div>
 
-                  <!--<a class="au-btn au-btn--primary hidden" href="dec.html" id="next">Next: Declarations</a>-->
 
-											<div class="hidden" id="proceed-payment">
-												<a href="app-reoc-summary.html" class="au-btn" id="next">Finalise Application</a>
-												<!--<p class="westpac">You will be directed to Westpac for payment</p>-->
+											<div class="">
+												<a href="payment.html" class="au-btn" id="next">Proceed to Payment</a>
+												<p class="westpac">You will be directed to Westpac for payment</p>
 											</div>
-
-
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-
       <div class="footer">
         <div class="footer-wrapper">
           <iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
         </div>
       </div>
-
-			<!--delete modal -->
-			<div class="modal fade" id="delete-modal-app" tabindex="-1" role="dialog" aria-labelledby="na" style="display: none;" aria-hidden="true">
-			  <div class="modal-dialog modal-dialog-centered" role="document">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <h5 class="modal-title" id="exampleModalLongTitle">Delete business name</h5>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">×</span>
-			        </button>
-			      </div>
-			      <div class="modal-body">
-			        Are you sure you want to delete the business name, Wendy's Wedding?
-			      </div>
-			      <div class="modal-footer">
-			        <button type="button" class="au-btn au-btn--secondary" data-dismiss="modal">No</button>
-			        <button type="button" class="au-btn" data-dismiss="modal" id="delete-yes-app">Yes</button>
-			      </div>
-			    </div>
-			  </div>
-			  </div>
-
   </main>
   <script>
-  //$('#next').click(function(){
-    //$('#declaration').change(function(){
-      /*if($('#declaration').prop('checked') == false){
-        $('#dec-error').removeClass('hidden');
-        $('html').scrollTop(0);
-        return false;
-      }else{
-        $('#dec-error').addClass('hidden');
-      }*/
-  //});
-  $('#heading-cert span').addClass('hidden');
     var type = window.location.hash.substr(1);
-		if (type == 'cert') {
-      $('#names').removeClass('hidden');
-      $('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
-      //$('#personnel-add').removeClass('gray');
-				$('#delete-yes-app').click(function(){
-		      $('#names, #heading-cert span').addClass('hidden');
-		    });
-    }
-    if (type == 'drone') {
-      $('#drones, #names').removeClass('hidden');
-			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
-      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-      $('#personnel-add').removeClass('gray');
-    }
-    if (type == 'personnel') {
-      $('#drones').removeClass('hidden');
-      $('#personnel-add-crp').addClass('hidden');
-      $('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
-      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-      $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-      //$('#personnel-add').removeClass('gray');
-
-      $('#personnel').removeClass('hidden');
-      $('#personnel').parent().find('p').remove();
-
-      $('#heading-personnel span').removeClass('hidden');
-      //$('#upload-doc').removeClass('gray');
-    }
-    if (type == 'personnel-mc') {
-      $('#drones,#personnel-mc').removeClass('hidden');
-      $('#personnel-add-crp, #personnel-add-mc').addClass('hidden');
-      $('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
-      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-      $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-      //$('#personnel-add').removeClass('gray');
-
-      $('#personnel').removeClass('hidden');
-      $('#personnel').parent().find('p').remove();
-
-      $('#heading-personnel span').removeClass('hidden');
-      //$('#upload-doc').removeClass('gray');
-    }
-    if (type == 'manual') {
-      $('#drones').removeClass('hidden');
-      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-      //$('#personnel-add').removeClass('gray');
-
-      $('#personnel').removeClass('hidden');
-      $('#personnel').parent().find('p').remove();
-			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
-      $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-      //$('#heading-docs span').removeClass('hidden');
-
-      $('#manual').removeClass('hidden');
-      $('#next').removeClass('hidden');
-      $('#upload-manual').addClass('hidden');
-    }
-    if (type == 'library') {
-      $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names').removeClass('hidden');
-      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-
-
-
-      $('#personnel').parent().find('p').remove();
-			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
-      $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-
-
-      $('#upload-manual, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
-    }
-    if (type == 'syllabus') {
-      $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names, #syllabus').removeClass('hidden');
-      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-
-      $('#personnel').parent().find('p').remove();
-			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
-      $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-
-      $('#upload-manual, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
-    }
-    if (type == 'flight') {
-      $('#drones, #library, #proceed-payment, #manual, #next, #personnel, #personnel-mc, #names, #syllabus, #flight').removeClass('hidden');
-      $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-
-      $('#personnels').parent().find('p').remove();
-			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
-      $('#heading-personnel span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-
-      $('#upload-manual, #upload-aircraft, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
-    }
-		if (type == 'review') {
       $('#drones').removeClass('hidden');
       $('#personnel').removeClass('hidden');
-
       $('#personnel').parent().find('p').remove();
       $('#manual, #names').removeClass('hidden');
-      $('#next').addClass('hidden');
-
-			$('.au-callout, .au-btn--secondary').addClass('hidden');
-			$('h1').text('Summary of your ReOC');
+			$('.au-btn--secondary, .au-cta-link').addClass('hidden');
 			$('#names a, #drones a, #personnel a, #manual a.del, p.lead').remove();
+			$('#heading-drones span, #heading-cert span, #heading-personnel span, #heading-docs span').addClass('hidden');
 
-			$('#heading-drones span').addClass('hidden');
-			$('#heading-cert span').addClass('hidden');
-      $('#heading-personnel span').addClass('hidden');
-			$('#heading-docs span').addClass('hidden');
-    }
-
+      if(type == "update-section"){
+        $('#fee').text('$450');
+        $('#aero').removeClass('hidden');
+        $('a#next').attr("href", "payment-confirmation.html#update-section");
+      }
+      if(type=='renew'){
+      
+      	$('a#next').attr("href", "payment-confirmation.html#renew");
+      }
 
 
   </script>
-
 </body>
-
 </html>

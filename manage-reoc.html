@@ -46,7 +46,7 @@
 	<div class="body">
 		<div class="container">
 
-			<div class="col-xs-8">
+			<div class="col-md-10">
 			<nav class="au-breadcrumbs" aria-label="breadcrumb">
 			  <ul class="au-link-list au-link-list--inline">
 				<li><a href="dashboard-approved.html">Wendy Williams</a></li>
@@ -188,9 +188,22 @@
 								</div>
 								<div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
 							</li>
-							<li class="row hidden" id="library">
+							<li class="row " id="library">
 								<div class="col-md-5 col-xs-12"><a href="#">WendysLibrary</a></div>
 								<div class="col-md-5 col-xs-4">Operations procedure (Library)
+								</div>
+								<div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
+							</li>
+							<li class="row " id="syllabus">
+								<div class="col-md-5 col-xs-12"><a href="#">TrainingSyllabus</a></div>
+								<div class="col-md-5 col-xs-4">Training Syllabus
+								</div>
+								<div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
+							</li>
+							<li class="row " id="flight">
+								<div class="col-md-5 col-xs-12">
+									<a href="#">WendysFlightManual</a></div>
+								<div class="col-md-5 col-xs-4">Maintenance Manual and Flight Manual
 								</div>
 								<div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
 							</li>
@@ -207,23 +220,10 @@
 
 <br>
 
-<div class="au-callout hidden" id="payment-update">
-	<strong>RPA operator’s certificate (ReOC) fee:</strong><br>$450
-	<div class="dec m-t-2">
-		<h3>Declarations</h3>
-		<label class="au-control-input m-t-1">
-			<input class="au-control-input__input" type="checkbox" name="checkbox-ex" id="declaration">
-			<span class="au-control-input__text form-text p-t-0">
-				I declare that the information provided in this application form is true and correct. Giving false or misleading information is an offence under the regulations.
-			</span>
-		</label>
-	</div>
-</div><br>
-<!--<a class="au-btn au-btn--primary hidden" href="dec.html" id="next">Next: Declarations</a>-->
 
-		<div class="hidden" id="proceed-payment">
-			<a href="payment.html#update-section" class="au-btn" id="next">Proceed to Payment</a>
-			<p class="westpac">You will be directed to Westpac for payment</p>
+		<div class="" id="proceed-payment">
+			<a href="app-reoc-summary.html#update-section" class="au-btn" id="next">Finalise application</a>
+			<!--<p class="westpac">You will be directed to Westpac for payment</p>-->
 		</div>
 
 		</div>
@@ -243,23 +243,13 @@
 </main>
 
 <script>
-$('#next').click(function(){
-	//$('#declaration').change(function(){
-		if($('#declaration').prop('checked') == false){
-			$('#dec-error').removeClass('hidden');
-			$('html').scrollTop(0);
-			return false;
-		}else{
-			$('#dec-error').addClass('hidden');
-		}
-	//});
-});
+
 
 	var type = window.location.hash.substr(1);
 
 
 	if (type == 'flight') {
-		$('#drones, #library, .dec, #names, #manual').removeClass('hidden');
+		$('#drones, #library, .dec, #names, #manual, #syllabus, #flight').removeClass('hidden');
 		$('#heading-drones span, #upload-manual, #upload-library').addClass('hidden');
 
 		$('#personnel').removeClass('hidden');
@@ -271,10 +261,12 @@ $('#next').click(function(){
 
 		$('#manual').removeClass('hidden');
 		$('#next').removeClass('hidden');
-		$('#personnel-add-crp, #personnel-add-mc').addClass('hidden');
+		//$('#personnel-add-crp, #personnel-add-mc').addClass('hidden');
+
+		$('#upload-manual, #upload-aircraft, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
 	}
 	if (type == 'drone-update' || type == 'review') {
-		$('#drones, #library, .dec, #names, #aero, #payment-update, #proceed-payment').removeClass('hidden');
+		$('#drones, #library, .dec, #names, #aero, #payment-update, #proceed-payment, #syllabus, #flight').removeClass('hidden');
 		$('#heading-drones span').addClass('hidden');
 
 		$('#personnel').removeClass('hidden');
@@ -287,7 +279,7 @@ $('#next').click(function(){
 		$('#manual').removeClass('hidden');
 		$('#next').removeClass('hidden');
 		$('#upload-manual, #upload-library').addClass('hidden');
-		$('#personnel-add-crp, #personnel-add-mc').addClass('hidden');
+		$('#upload-manual, #upload-aircraft, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
 	}
 
 	$('#next').click(function(){
@@ -298,9 +290,9 @@ $('#next').click(function(){
         return false;
       }else{
         $('#dec-error').addClass('hidden');
-
       }
     //});
+		$('#upload-manual, #upload-aircraft, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
   });
 </script>
 
