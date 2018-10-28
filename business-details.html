@@ -73,7 +73,7 @@
           <h2 class="au-display-xl m-t-2">RPA operators certificate (ReOC)</h2>
           <a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
-
+<form name="business-details" method="post" class="form-horizontal" action="app-reoc-tasklist-links.html#cert" id="name">
           <h3 class="m-t-2">Business Details (optional)</h3>
           <section class="arn-details">
             <!--<div class="student hidden" id="names">
@@ -92,17 +92,17 @@
               </ul>
               <p>&nbsp;</p>
             </div>-->
-
+			
               <div class="form-section" id="business-name">
                 <div class="form-section">
-                  <label for="abn-input">ABN</label>
-                  <span id="surname-error" style="color:#d82c52;"></span>
-                  <input class="au-text-input" name="text-input" id="abn-input" type="text">
+                  <label for="abn-input">Australian Business Number (ABN)</label>
+                  <span id="abn-error" style="color:#d82c52;"></span>
+                  <input class="au-text-input no-spinners" name="abninput" id="abninput" type="text" required>
                 </div>
                 <div class="form-section">
-                <label for="surname-input">Business Name</label>
-                <span id="surname-error" style="color:#d82c52;"></span>
-                <input class="au-text-input" name="text-input" id="name-input" type="text">
+                <label for="name-input">Business Name</label>
+                <span id="name-error" style="color:#d82c52;"></span>
+                <input class="au-text-input" name="nameinput" id="nameinput" type="text" required>
 
                 <!--<a id="add-name" href="#" class="au-btn au-btn--secondary">Add trading name</a>-->
                </div>
@@ -115,7 +115,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 m-t-2"><br>
-          <a href="app-reoc-tasklist-links.html#cert" class="au-btn" id="next">Save</a>
+          <button type="submit" class="au-btn" id="next">Save</button>
           <div class="save-exit">
             <a href="#" class="au-btn au-btn--secondary" data-toggle="modal" data-target="#back-modal-app">
               Back to application
@@ -124,7 +124,7 @@
         </div>
       </div>
     </div>
-
+</form>
 
 <!--delete modal -->
 <div class="modal fade" id="back-modal-app" tabindex="-1" role="dialog" aria-labelledby="na" style="display: none;" aria-hidden="true">
@@ -156,9 +156,11 @@
   </footer>
   <script type="text/javascript" src="js/furnace.min.js"></script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-validate.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
   <script>
+  $( document ).ready( function () {
     //$('a#next').addClass('hidden');
     var type = window.location.hash.substr(1);
     if (type == 'edit') {
@@ -180,7 +182,7 @@
       $('a#next').attr("href", "add-personnel-mc.html#org");
     }
     if (type == 'task') {
-      $('a#next').attr("href", "app-reoc-tasklist-links.html#cert").text("Save");
+      //$('form').attr("action", "app-reoc-tasklist-links.html#cert");
     }
 
     $('input[name="name"]').change(function() {
@@ -198,6 +200,22 @@
     $('#back-yes-app').click(function(){
       window.location.href="app-reoc-tasklist-links.html";
     });
+	
+	
+	//Form Validation
+	$( "#name" ).validate( {
+				rules: {
+					abninput: "required",
+					nameinput: "required"
+				},
+				messages: {
+					abninput: "Please enter your ABN",
+					nameinput: "Please enter your Business Name"
+				}
+			} );
+
+	});
+
   </script>
 </body>
 

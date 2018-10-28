@@ -80,7 +80,7 @@
 
                   <div class="item">
                     <h4 id="heading-cert">1. Operator's details<span class="badge badge-secondary float-right hidden">Not started</span></h4>
-                    <div style="color:#666666;" class="m-t-1 au-callout">Name on the certificate will be issued to:<br>
+                    <div class="m-t-1 au-callout" style="border-left: .25rem solid #b9b9b9;background-color: #f8f9fa;color:#666666;padding:1rem;">Name on the certificate will be issued to:<br>
                     <strong>Wendy Williams</strong></div>
 
 										<div class="student hidden" id="names">
@@ -91,7 +91,7 @@
 				                  <div class="col-md-1 col-sm-2 col-xs-12"></div>
 				                </li>
 				                <li class="row">
-				                  <div class="col-md-10 col-sm-5 col-xs-12">Wendy's Weddings</div>
+				                  <div class="col-md-10 col-sm-5 col-xs-12">Wendy’s weddings Pty Ltd</div>
 													<div class="col-md-1 col-sm-2 col-xs-12"><a href="business-details.html#edit">Edit</a></div>
 				                  <div class="col-md-1 col-sm-2 col-xs-12"><a href="#" data-toggle="modal" data-target="#delete-modal-app">Delete</a></div>
 				                </li>
@@ -270,7 +270,10 @@
       $('#drones, #names').removeClass('hidden');
 			$('#heading-cert span').removeClass('badge-secondary, hidden').text('Saved').addClass('badge-success');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
-      $('#personnel-add').removeClass('gray');
+      //$('#personnel-add').removeClass('gray');
+		 /* $('html, body').animate({
+			scrollTop: $("#heading-drones").offset().top - 150
+			}, 2700);*/
     }
     if (type == 'personnel') {
       $('#drones').removeClass('hidden');
@@ -285,6 +288,9 @@
 
       $('#heading-personnel span').removeClass('hidden');
       //$('#upload-doc').removeClass('gray');
+	  /*$('html, body').animate({
+			scrollTop: $("#heading-personnel").offset().top - 150
+			}, 2800);*/
     }
     if (type == 'personnel-mc') {
       $('#drones,#personnel-mc').removeClass('hidden');
@@ -299,6 +305,9 @@
 
       $('#heading-personnel span').removeClass('hidden');
       //$('#upload-doc').removeClass('gray');
+	   /*$('html, body').animate({
+			scrollTop: $("#heading-personnel").offset().top - 150
+			}, 2800);*/
     }
     if (type == 'manual') {
       $('#drones').removeClass('hidden');
@@ -315,6 +324,9 @@
       $('#manual').removeClass('hidden');
       $('#next').removeClass('hidden');
       $('#upload-manual').addClass('hidden');
+	  /*$('html, body').animate({
+			scrollTop: $("#heading-docs").offset().top - 150
+			}, 3000);*/
     }
     if (type == 'library') {
       $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names').removeClass('hidden');
@@ -326,6 +338,9 @@
 			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 
       $('#upload-manual, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
+	   /*$('html, body').animate({
+			scrollTop: $("#heading-docs").offset().top - 150
+			}, 3000);*/
     }
     if (type == 'syllabus') {
       $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names, #syllabus').removeClass('hidden');
@@ -337,6 +352,9 @@
 			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 
       $('#upload-manual, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
+	  /* $('html, body').animate({
+			scrollTop: $("#heading-docs").offset().top - 150
+			}, 3000);*/
     }
     if (type == 'flight') {
       $('#drones, #library, #proceed-payment, #manual, #next, #personnel, #personnel-mc, #names, #syllabus, #flight').removeClass('hidden');
@@ -348,6 +366,9 @@
 			$('#heading-docs span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 
       $('#upload-manual, #upload-aircraft, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
+	  /* $('html, body').animate({
+			scrollTop: $("#heading-docs").offset().top - 150
+			}, 3000);*/
     }
 		if (type == 'review') {
       $('#drones').removeClass('hidden');

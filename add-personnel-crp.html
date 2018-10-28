@@ -76,7 +76,7 @@
           </div>
           <h2 class="au-display-xl m-t-2">RPA operators certificate (ReOC)</h2>
           <a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
-
+<form name="crp-details" method="post" class="form-horizontal" action="app-reoc-tasklist-links.html#personnel" id="crp">
           <div class="student hidden" id="personnel">
             <p>&nbsp;</p>
             <ul class="list-unstyled m-t-1">
@@ -106,38 +106,29 @@
             </div><br>
             <div id="add-person">
               <div class="form-section col-md-12">
-                <label for="surname-input">Family Name</label>
+                <label for="surname">Family Name</label>
                 <span id="surname-error" style="color:#d82c52;"></span>
-                <input class="au-text-input" name="text-input" id="surname-input" type="text">
+                <input class="au-text-input" name="surname" id="surname" type="text">
               </div>
               <div class="form-section col-md-12">
-                <label for="arn-input">ARN</label>
+                <label for="arn">ARN</label>
                 <span id="arn-error" style="color:#d82c52;"></span>
-                <input class="au-text-input" name="text-input" id="arn-input" type="number">
+                <input class="au-text-input" name="arn" id="arn" type="number">
               </div>
-              <!--<div class="form-section col-12">
-						<label for="select1block">What option?</label>
-							<select id="select1block" class="au-select au-select--block">
-							  <option value="">Your Role</option>
-							  <option value="1">Chief Remote Pilot (CRP)</option>
-							  <option value="2">RPA Pilot</option>
-							  <option value="3">Maintenance Controller</option>
-								<option value="3">Authorised RPAS Maintanier</option>
-							</select>
-					</div>-->
+  
             </div>
 
-						<div class="form-section col-md-12">
-              <label for="text-input-block">Remotely Piloted Aircraft (RPA) Type operated</label>
-              <input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text">
-						</div>
+			<div class="form-section col-md-12">
+              <label for="rpa">Remotely Piloted Aircraft (RPA) Type operated</label>
+              <input class="au-text-input au-text-input--block" name="rpa" id="rpa" type="text">
+			</div>
             <div class="form-section col-md-12">
-              <label for="text-input-block">Total RPA flying time</label>
-              <input class="au-text-input au-text-input--block" name="text-input-block" id="text-input-block" type="text">
+              <label for="time">Total RPA flying time</label>
+              <input class="au-text-input au-text-input--block" name="time" id="time" type="text">
             </div>
             <div class="form-section col-md-12">
-              <label for="textarea">Provide details of relevant qualifications, knowledge and flying history</label>
-              <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea">
+              <label for="history">Provide details of relevant qualifications, knowledge and flying history</label>
+              <textarea class="au-text-input au-text-input--block" name="history" id="history">
 
               </textarea>
             </div>
@@ -208,7 +199,7 @@ or a foreign regulatory authority in the last 10 years?</p>
     <div class="container">
       <div class="row">
         <div class="col-md-8 m-t-2"><br>
-          <a href="add-personnel-mc.html" class="au-btn" id="next">Next</a>
+          <button type="submit" class="au-btn" id="next">Save</button>
           <div class="save-exit">
             <a href="dashboard-wendy.html#save" class="au-btn au-btn--secondary">
               Save and exit
@@ -217,6 +208,7 @@ or a foreign regulatory authority in the last 10 years?</p>
         </div>
       </div>
     </div>
+	</form>
   </main>
   <footer class="footer">
     <div class="footer-wrapper">
@@ -225,7 +217,23 @@ or a foreign regulatory authority in the last 10 years?</p>
   </footer>
   <script type="text/javascript" src="js/furnace.min.js"></script>
   <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-validate.js"></script>
   <script>
+    $( document ).ready( function () {
+	$('#am').change(function() {
+      //var crp = $("#am");
+      if ($("#am").is(':checked')) {
+        $('#arn').val('1234567').attr('disabled','disabled');
+				$('#arn,#surname').parent().find('label').addClass('gray');
+        $('#surname').val('Williams').attr('disabled','disabled');
+        $('.am-text').text('Have you');
+      } else {
+        $('#arn').val('').removeAttr('disabled','disabled');
+        $('#surname').val('').removeAttr('disabled','disabled');
+				$('#arn,#surname').parent().find('label').removeClass('gray');
+        $('.am-text').text('Has this person');
+      }
+    });
     var type = window.location.hash.substr(1);
     if (type == 'org') {
       $('a#home').attr("href", "profile-dashboard.html#org-wendy");
@@ -234,7 +242,7 @@ or a foreign regulatory authority in the last 10 years?</p>
       $('a#next').attr("href", "add-personnel-mc.html#org");
     }
     if (type == 'task') {
-      $('a#next').attr("href", "app-reoc-tasklist-links.html#personnel").text("Save");
+      //$('a#next').attr("href", "app-reoc-tasklist-links.html#personnel").text("Save");
       $('.save-exit a').attr("href","app-reoc-tasklist-links.html#drone").text('Cancel');
     }
     //$('.student-details').hide();
@@ -264,20 +272,26 @@ or a foreign regulatory authority in the last 10 years?</p>
       }
     });
 
-    $('#am').change(function() {
-      //var crp = $("#am");
-      if ($("#am").is(':checked')) {
-        $('#arn-input').val('1234567').attr('disabled','disabled');
-				$('#arn-input,#surname-input').parent().find('label').addClass('gray');
-        $('#surname-input').val('Williams').attr('disabled','disabled');
-        $('.am-text').text('Have you');
-      } else {
-        $('#arn-input').val('').removeAttr('disabled','disabled');
-        $('#surname-input').val('').removeAttr('disabled','disabled');
-				$('#arn-input,#surname-input').parent().find('label').removeClass('gray');
-        $('.am-text').text('Has this person');
-      }
-    });
+    
+		
+	//Form Validation
+	$( "#crp" ).validate( {
+				rules: {
+					rpa: "required",
+					time: "required",
+					//history: "required",
+					surname: "required",
+					arn: "required"
+					},
+				messages: {
+					rpa: "Please enter the RPA operated",
+					time: "Please enter flying time",
+					//history: "Plese enter CRP's qualifications, knowledge and flying history",
+					surname: "Please enter the Surname",
+					arn: "Please enter the ARN"
+				}
+			} );
+});
   </script>
 </body>
 

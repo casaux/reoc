@@ -144,11 +144,18 @@
 								<div class="col-md-1 col-xs-3"></div>
 								<div class="col-md-1 col-xs-3"></div>
 							</li>
-							<li class="row">
+							<li class="row" id="wendy">
 								<div class="col-md-5 col-xs-6">Wendy Williams</div>
 								<div class="col-md-2 col-xs-3">1234567</div>
 								<div class="col-md-3 col-xs-3">Chief Remote Pilot</div>
-								<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
+								<div class="col-md-1 col-xs-3"><a href="edit-personnel-crp.html">Edit</a></div>
+								<div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
+							</li>
+							<li class="row hidden" id="smith">
+								<div class="col-md-5 col-xs-6">Clark Smith  <span class="badge badge-info"> New </span></div>
+								<div class="col-md-2 col-xs-3">09876545</div>
+								<div class="col-md-3 col-xs-3">Chief Remote Pilot</div>
+								<div class="col-md-1 col-xs-3"><a href="edit-personnel-crp.html">Edit</a></div>
 								<div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
 							</li>
 							<li class="row" id="personnel-mc">
@@ -222,7 +229,7 @@
 
 
 		<div class="" id="proceed-payment">
-			<a href="app-reoc-summary.html#update-section" class="au-btn" id="next">Finalise application</a>
+			<a href="app-reoc-summary.html#update-section" class="au-btn" id="next">Finalise application updates</a>
 			<!--<p class="westpac">You will be directed to Westpac for payment</p>-->
 		</div>
 
@@ -268,6 +275,22 @@
 	if (type == 'drone-update' || type == 'review') {
 		$('#drones, #library, .dec, #names, #aero, #payment-update, #proceed-payment, #syllabus, #flight').removeClass('hidden');
 		$('#heading-drones span').addClass('hidden');
+
+		$('#personnel').removeClass('hidden');
+		$('#personnel').parent().find('p').remove();
+		$('#heading-cert span').addClass('hidden');
+		$('#heading-personnel span').addClass('hidden');
+		$('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+		$('#heading-docs span').addClass('hidden');
+
+		$('#manual').removeClass('hidden');
+		$('#next').removeClass('hidden');
+		$('#upload-manual, #upload-library').addClass('hidden');
+		$('#upload-manual, #upload-aircraft, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
+	}
+	if (type == 'personnel-crp' || type == 'review') {
+		$('#drones, #library, .dec, #names, #aero, #payment-update, #proceed-payment, #syllabus, #flight, #smith').removeClass('hidden');
+		$('#heading-drones span, #wendy').addClass('hidden');
 
 		$('#personnel').removeClass('hidden');
 		$('#personnel').parent().find('p').remove();

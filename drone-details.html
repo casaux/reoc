@@ -75,6 +75,7 @@
   </div>
   <main id="main-content">
     <div class="container">
+	
       <div class="row">
         <div class="col-lg-6 col-md-12">
 
@@ -85,7 +86,7 @@
           <h2 class="au-display-xl m-t-2">RPA operators certificate (ReOC)</h2>
           <a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
-
+	<form name="drone-details" method="post" class="form-horizontal" action="app-reoc-tasklist-links.html#drone" id="drone">
           <div class="student m-t-3 hidden">
             <ul class="list-unstyled m-t-1">
               <li class="row alt-row xs-hidden">
@@ -111,7 +112,7 @@
           <h3 class="m-t-2">Remotely Piloted Aircraft details</h3>
           <div class="form-section m-t-1">
             <label for="category">Category</label>
-            <select id="category" class="au-select au-select--block">
+            <select id="category" name="category" class="au-select au-select--block" required>
               <option value="1" selected="selected">Please select</option>
               <option value="2">Aeroplane</option>
               <option value="3">Helicopter</option>
@@ -122,7 +123,7 @@
           </div>
           <div class="form-section">
             <label for="weight">Weight Class/Capacity</label>
-            <select id="weight" class="au-select au-select--block">
+            <select id="weight" name="weight" class="au-select au-select--block" required>
               <option value="1" selected="selected">Please select</option>
               <option value="2">Restricted - Up to 25kg</option>
               <option value="3">Small - Up to 25kg</option>
@@ -253,7 +254,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <a href="add-personnel-crp.html" class="au-btn" id="next">Next</a>
+          <button type="submit" class="au-btn" id="next">Save</button>
           <div class="save-exit">
             <a href="#" class="au-btn au-btn--secondary"  data-toggle="modal" data-target="#back-modal-app">
               Back to application
@@ -262,6 +263,7 @@
         </div>
       </div>
     </div>
+	</form>
   </main>
 
   <!--delete modal -->
@@ -290,7 +292,9 @@
       <iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
     </div>
   </footer>
+   <script type="text/javascript" src="js/jquery-validate.js"></script>
   <script>
+  $( document ).ready( function () {
     $("#add-drone").click(function() {
       $("input[name=checkbox-ex]").prop("checked", false);
       $("option").prop("selected", false);
@@ -302,8 +306,8 @@
       });
     });
 
-    $('#rpatypeaero, #rpatypeair, #rpatypeheli, #rpatypmulti, #rpatypepow').on('change', function() {
-      if ($('#rpatypeaero, #rpatypeair, #rpatypeheli, #rpatypmulti, #rpatypepow').val() == 'Other'){
+    $('#rpatypemulti, #rpatypeaero, #rpatypeair, #rpatypeheli, #rpatypmulti, #rpatypepow').on('change', function() {
+      if ($('#rpatypemulti,#rpatypeaero, #rpatypeair, #rpatypeheli, #rpatypmulti, #rpatypepow').val() == 'Other'){
         $('#other').removeClass('hidden');
       }else{
         $('#other').addClass('hidden');
@@ -319,7 +323,7 @@
       $('a#next').attr("href", "add-personnel-crp.html#org");
     }
     if (type == 'task') {
-      $('a#next').attr("href", "app-reoc-tasklist-links.html#drone").text("Save");
+      //$('a#next').attr("href", "app-reoc-tasklist-links.html#drone").text("Save");
       //$('.save-exit a').attr("href","app-reoc-tasklist.html").text('Cancel');
       $('#cancel-help-text').remove();
       $('#add-drone').addClass('hidden');
@@ -488,6 +492,30 @@
       window.location.href="app-reoc-tasklist-links.html#drone";
     });
 
+	//Form Validation
+	// add the rule here
+	 $.validator.addMethod("valueNotEquals", function(value, element, arg){
+	  return arg !== value;
+	 }, "Value must not equal arg.");
+ 
+	$( "#drone" ).validate( {
+				rules: {
+					category: { valueNotEquals: "1" },
+					weight:{ valueNotEquals: "1" },
+					'checkbox-ex': {
+										required: true
+									}
+				},
+				messages: {
+					category: { valueNotEquals: "Please select an option" },
+					weight: { valueNotEquals: "Please select an option" },
+					'checkbox-ex': {
+								required: "You must select at least 1 operation"
+							}
+				}
+			} );
+	
+	});
   </script>
 </body>
 

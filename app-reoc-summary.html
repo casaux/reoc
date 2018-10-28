@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="css/main.css">
   <script type="text/javascript" src="js/furnace.min.js"></script>
   <script src="js/jquery.min.js"></script>
-  <script src="js/jquery.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
 </head>
@@ -75,7 +74,7 @@
 
                   <div class="item">
                     <h4 id="heading-cert">1. Operator's details<span class="badge badge-secondary float-right hidden">Not started</span></h4>
-                    <div style="color:#666666;" class="m-t-1 au-callout">Name on the certificate will be issued to:<br>
+                    <div  style="border-left: .25rem solid #b9b9b9;background-color: #f8f9fa;color:#666666;padding:1rem;" class="m-t-1 au-callout">Name on the certificate will be issued to:<br>
                     <strong>Wendy Williams</strong></div>
 
 										<div class="student hidden" id="names">
@@ -141,13 +140,20 @@
 													<div class="col-md-1 col-xs-3"></div>
                           <div class="col-md-1 col-xs-3"></div>
                         </li>
-                        <li class="row">
-                          <div class="col-md-5 col-xs-6">Wendy Williams</div>
-                          <div class="col-md-2 col-xs-3">1234567</div>
-                          <div class="col-md-3 col-xs-3">Chief Remote Pilot</div>
-													<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
-                          <div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
-                        </li>
+                        <li class="row" id="wendy">
+          								<div class="col-md-5 col-xs-6">Wendy Williams</div>
+          								<div class="col-md-2 col-xs-3">1234567</div>
+          								<div class="col-md-3 col-xs-3">Chief Remote Pilot</div>
+          								<div class="col-md-1 col-xs-3"><a href="edit-personnel-crp.html">Edit</a></div>
+          								<div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
+          							</li>
+          							<li class="row hidden" id="smith">
+          								<div class="col-md-5 col-xs-6">Clark Smith  <span class="badge badge-info"> New </span></div>
+          								<div class="col-md-2 col-xs-3">09876545</div>
+          								<div class="col-md-3 col-xs-3">Chief Remote Pilot</div>
+          								<div class="col-md-1 col-xs-3"><a href="edit-personnel-crp.html">Edit</a></div>
+          								<div class="col-md-1 col-xs-3"><a href="#">Delete</a></div>
+          							</li>
                         <li class="row" id="personnel-mc">
                           <div class="col-md-5 col-xs-6">Wendy Williams</div>
                           <div class="col-md-2 col-xs-3">1234567</div>
@@ -204,11 +210,56 @@
                     </div>
                   </div>
                   <h3>Fee summary</h3>
-                  <div class="au-callout m-t-1">
+                  <div class="au-callout m-t-1" id="update-fee">
                     <strong>RPA operator’s certificate (ReOC) fee:</strong><br><span id="fee">$950</span>
                   </div>
 
+                  <div class="student-details hidden" id="renew-fee">
+								<ul class="grid">
+									<li class="hidden-sm-down">
+										<div class="col-md-6 col-xs-12">
+											<strong>Application</strong>
+										</div>
+											<div class="col-md-3 col-xs-12 p-r-1">
+												<strong>Fee type</strong>
+											</div>
+											<div class="col-md-3 col-xs-12 text-right p-r-1">
+												<strong>Fee</strong>
+											</div>
+									</li>
+									<li id="peter" style="margin-bottom:0;">
+										<div class="col-md-6 col-xs-12">
+											<span class="student-name">Renewal</span>
+											<!--<span class="badge badge-info">Existing RePL - Aeroplane, 25kg to 150kg, Medium</span>-->
+										</div>
+										<div class="col-md-3 col-xs-12 ">
 
+										</div>
+										<div class="col-md-3 col-xs-12 text-right p-r-1 payment">
+											$950
+										</div>
+									</li>
+									<li id="ava">
+										<div class="col-md-6 col-xs-12">
+											<span class="student-name">Updates<br>New RPA<br>New Chief remote pilot</span>
+										</div>
+                    <div class="col-md-3 col-xs-12 ">
+Updates (Variation)
+										</div>
+										<div class="col-md-3 col-xs-12 text-right p-r-1 payment">
+											$450
+										</div>
+									</li>
+									<li id="ava">
+										<div class="col-md-12 col-xs-12 p-r-1 text-right">
+											<span class="price">Total: $1400</span>
+										</div>
+									</li>
+								</ul>
+
+
+					<!--<p><a href="01-organisation.html" class="au-direction-link">Go to Bob's Flying School</a></p>-->
+		</div>
 											<div class="">
 												<a href="payment.html" class="au-btn" id="next">Proceed to Payment</a>
 												<p class="westpac">You will be directed to Westpac for payment</p>
@@ -226,6 +277,7 @@
       </div>
   </main>
   <script>
+   $('#aero').addClass('hidden');
     var type = window.location.hash.substr(1);
       $('#drones').removeClass('hidden');
       $('#personnel').removeClass('hidden');
@@ -237,11 +289,13 @@
 
       if(type == "update-section"){
         $('#fee').text('$450');
-        $('#aero').removeClass('hidden');
+        $('#aero, #smith').removeClass('hidden');
+        $('#wendy').addClass('hidden');
         $('a#next').attr("href", "payment-confirmation.html#update-section");
       }
       if(type=='renew'){
-        $('#aero span').addClass('hidden');
+        $('#aero span, #update-fee').addClass('hidden');
+          $('#renew-fee').removeClass('hidden');
       	$('a#next').attr("href", "payment-confirmation.html#renew");
       }
 
