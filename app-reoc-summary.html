@@ -210,8 +210,9 @@
                     </div>
                   </div>
                   <h3>Fee summary</h3>
-                  <div class="au-callout m-t-1" id="update-fee">
+                  <div class="m-t-1" id="update-fee">
                     <strong>RPA operator’s certificate (ReOC) fee:</strong><br><span id="fee">$950</span>
+
                   </div>
 
                   <div class="student-details hidden" id="renew-fee">
@@ -241,7 +242,7 @@
 									</li>
 									<li id="ava">
 										<div class="col-md-6 col-xs-12">
-											<span class="student-name">Updates<br>New RPA<br>New Chief remote pilot</span>
+											<span class="student-name">Updates<br>RPA<br>Chief remote pilot</span>
 										</div>
                     <div class="col-md-3 col-xs-12 ">
 Updates (Variation)
@@ -260,6 +261,18 @@ Updates (Variation)
 
 					<!--<p><a href="01-organisation.html" class="au-direction-link">Go to Bob's Flying School</a></p>-->
 		</div>
+    <p>&nbsp;</p>
+    		<div class="dec">
+    		<h3>Declarations</h3>
+    		<p class="au-callout" aria-label="Callout description1">
+    			<label class="au-control-input">
+    				<input class="au-control-input__input" type="checkbox" name="checkbox-ex-dec" id="declaration">
+    				<span class="au-control-input__text form-text p-t-0">
+    					I declare that the information provided in this application form is true and correct. Giving false or misleading information is an offence under the regulations.
+    				</span>
+    			</label>
+    		</p>
+    	</div><p>&nbsp;</p>
 											<div class="">
 												<a href="payment.html" class="au-btn" id="next">Proceed to Payment</a>
 												<p class="westpac">You will be directed to Westpac for payment</p>
@@ -277,6 +290,23 @@ Updates (Variation)
       </div>
   </main>
   <script>
+  $("#next").click(function(){
+
+    //$("#declaration").change(function(){
+      if (!$('#declaration').is(":checked")) {
+        $('#dec-error').removeClass('hidden');
+        window.scrollTo( 0, 0 );
+        return false;
+      }
+      else{
+        $('#dec-error').addClass('hidden');
+        return true;
+      }
+  //  });
+
+  });
+
+
    $('#aero').addClass('hidden');
     var type = window.location.hash.substr(1);
       $('#drones').removeClass('hidden');
@@ -295,9 +325,11 @@ Updates (Variation)
       }
       if(type=='renew'){
         $('#aero span, #update-fee').addClass('hidden');
-          $('#renew-fee').removeClass('hidden');
+          $('#renew-fee, #smith').removeClass('hidden');
+          $('#wendy').addClass('hidden');
       	$('a#next').attr("href", "payment-confirmation.html#renew");
       }
+
 
 
   </script>
