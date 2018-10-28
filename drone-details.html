@@ -75,7 +75,7 @@
   </div>
   <main id="main-content">
     <div class="container">
-	
+
       <div class="row">
         <div class="col-lg-6 col-md-12">
 
@@ -86,7 +86,7 @@
           <h2 class="au-display-xl m-t-2">RPA operators certificate (ReOC)</h2>
           <a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
-	<form name="drone-details" method="post" class="form-horizontal" action="app-reoc-tasklist-links.html#drone" id="drone">
+	<form name="drone-details" method="get" class="form-horizontal" action="app-reoc-tasklist-links.html#drone" id="drone">
           <div class="student m-t-3 hidden">
             <ul class="list-unstyled m-t-1">
               <li class="row alt-row xs-hidden">
@@ -497,7 +497,7 @@
 	 $.validator.addMethod("valueNotEquals", function(value, element, arg){
 	  return arg !== value;
 	 }, "Value must not equal arg.");
- 
+
 	$( "#drone" ).validate( {
 				rules: {
 					category: { valueNotEquals: "1" },
@@ -514,7 +514,7 @@
 							}
 				}
 			} );
-	
+
 	});
   </script>
 </body>
