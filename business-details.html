@@ -73,7 +73,7 @@
           <h2 class="au-display-xl m-t-2">RPA operators certificate (ReOC)</h2>
           <a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
-<form name="business-details" method="post" class="form-horizontal" action="app-reoc-tasklist-links.html#cert" id="name">
+<form name="business-details" method="get" class="form-horizontal" action="app-reoc-tasklist-links.html#cert" id="name">
           <h3 class="m-t-2">Business Details (optional)</h3>
           <section class="arn-details">
             <!--<div class="student hidden" id="names">
@@ -92,7 +92,7 @@
               </ul>
               <p>&nbsp;</p>
             </div>-->
-			
+
               <div class="form-section" id="business-name">
                 <div class="form-section">
                   <label for="abn-input">Australian Business Number (ABN)</label>
@@ -200,8 +200,8 @@
     $('#back-yes-app').click(function(){
       window.location.href="app-reoc-tasklist-links.html";
     });
-	
-	
+
+
 	//Form Validation
 	$( "#name" ).validate( {
 				rules: {
