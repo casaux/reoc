@@ -190,21 +190,24 @@
 								</div>
 							</li>
 							<li class="row">
-								<div class="col-md-5 col-xs-12"><a href="#">WendysManual</a></div>
+								<div class="col-md-5 col-xs-12" id="manual-update-name"><a href="#">WendysManual</a></div>
 								<div class="col-md-5 col-xs-4">Operations Manual
 								</div>
+								<div class="col-md-1 col-xs-3"><a href="upload-app-manual.html#update">Edit</a></div>
 								<div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
 							</li>
 							<li class="row " id="library">
 								<div class="col-md-5 col-xs-12"><a href="#">WendysLibrary</a></div>
 								<div class="col-md-5 col-xs-4">Operations procedure (Library)
 								</div>
+								<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
 								<div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
 							</li>
 							<li class="row " id="syllabus">
 								<div class="col-md-5 col-xs-12"><a href="#">TrainingSyllabus</a></div>
 								<div class="col-md-5 col-xs-4">Training Syllabus
 								</div>
+								<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
 								<div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
 							</li>
 							<li class="row " id="flight">
@@ -212,13 +215,14 @@
 									<a href="#">WendysFlightManual</a></div>
 								<div class="col-md-5 col-xs-4">Maintenance Manual and Flight Manual
 								</div>
+								<div class="col-md-1 col-xs-3"><a href="#">Edit</a></div>
 								<div class="col-md-1 col-xs-3"><a href="#" class="del">Delete</a></div>
 							</li>
 						</ul>
 					</div>
 					<p>
-						<a class="au-cta-link" href="upload-app-manual.html" id="upload-manual" style="font-size:1.1rem;font-weight:500;">Add Manual</a><br>
-						<a class="au-cta-link" href="upload-app-library.html" id="upload-library" style="font-size:1.1rem;font-weight:500;">Add Operations procedure (Library)</a><br>
+						<a class="au-cta-link" href="upload-app-manual.html#update" id="upload-manual" style="font-size:1.1rem;font-weight:500;">Add Manual</a><br>
+						<a class="au-cta-link" href="upload-app-library.html#update" id="upload-library" style="font-size:1.1rem;font-weight:500;">Add Operations procedure (Library)</a><br>
 						<a class="au-cta-link" href="upload-app-syllabus.html" id="upload-syllabus" style="font-size:1.1rem;font-weight:500;">Add Training Syllabus</a><br>
 						<a class="au-cta-link" href="upload-app-syllabus.html" id="upload-aircraft" style="font-size:1.1rem;font-weight:500;">Maintenance Manual and Flight Manual</a>
 					</p>
@@ -292,6 +296,22 @@
 		$('#drones, #library, .dec, #names, #aero, #payment-update, #proceed-payment, #syllabus, #flight, #smith').removeClass('hidden');
 		$('#heading-drones span, #wendy').addClass('hidden');
 
+		$('#personnel').removeClass('hidden');
+		$('#personnel').parent().find('p').remove();
+		$('#heading-cert span').addClass('hidden');
+		$('#heading-personnel span').addClass('hidden');
+		$('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
+		$('#heading-docs span').addClass('hidden');
+
+		$('#manual').removeClass('hidden');
+		$('#next').removeClass('hidden');
+		$('#upload-manual, #upload-library').addClass('hidden');
+		$('#upload-manual, #upload-aircraft, #upload-syllabus, #upload-library, #personnel-add-crp, #personnel-add-mc').addClass('hidden');
+	}
+	if (type == 'manual-update' || type == 'review') {
+		$('#drones, #library, .dec, #names, #aero, #payment-update, #proceed-payment, #syllabus, #flight, #smith').removeClass('hidden');
+		$('#heading-drones span, #wendy').addClass('hidden');
+		$('#manual-update-name a').text("Updated_wendysWedding");
 		$('#personnel').removeClass('hidden');
 		$('#personnel').parent().find('p').remove();
 		$('#heading-cert span').addClass('hidden');

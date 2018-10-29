@@ -92,6 +92,12 @@
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
+var type = window.location.hash.substr(1);
+
+
+if (type == 'update') {
+	$('#next').attr('href','manage-reoc.html#manual-update');
+}
 function myFunction(){
 	//$('.au-page-alerts').hide();
     var x = document.getElementById("myFile");
