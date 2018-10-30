@@ -1057,63 +1057,6 @@ or a foreign regulatory authority in the last 10 years?</p>
 	  
 	  
 	  
-	  
-	  
-	  
-	  
-	  
-    $( document ).ready( function () {
-	$('#am').change(function() {
-      //var crp = $("#am");
-      if ($("#am").is(':checked')) {
-        $('#arn').val('1234567').attr('disabled','disabled');
-				$('#arn,#surname').parent().find('label').addClass('gray');
-        $('#surname').val('Williams').attr('disabled','disabled');
-        $('.am-text').text('Have you');
-      } else {
-        $('#arn').val('').removeAttr('disabled','disabled');
-        $('#surname').val('').removeAttr('disabled','disabled');
-				$('#arn,#surname').parent().find('label').removeClass('gray');
-        $('.am-text').text('Has this person');
-      }
-    });
-    var type = window.location.hash.substr(1);
-    if (type == 'org') {
-      $('a#home').attr("href", "profile-dashboard.html#org-wendy");
-      $('a#bread-home').attr("href", "dashboard-org.html#save").text("Wendy's Wedding");
-      $('.save-exit a').attr("href", "dashboard-org.html#save");
-      $('a#next').attr("href", "add-personnel-mc.html#org");
-    }
-    if (type == 'task') {
-      //$('a#next').attr("href", "app-reoc-tasklist-links.html#personnel").text("Save");
-      $('.save-exit a').attr("href","app-reoc-tasklist-links.html#drone").text('Cancel');
-    }
-    //$('.student-details').hide();
-    $('#addPilot').click(function() {
-      $('#save, #personnel').removeClass('hidden');
-      $('#arn-input').val('');
-      $('#surname-input').val('');
-      $("#am").prop("checked", false);
-      $('.am-text').text('Has this person');
-      $('html').scrollToTop();
-    });
-
-    $('input[name="radio-ex"]').change(function() {
-      //var convicted = getElementById("yes").checked;
-      if ($('#yes').is(':checked')) {
-        $('#convicted').removeClass('hidden');
-      } else if ($('#no').is(':checked')) {
-        $('#convicted').addClass('hidden');
-      }
-    });
-		$('input[name="radio-ex-1"]').change(function() {
-      //var convicted = getElementById("yes").checked;
-      if ($('#yes-1').is(':checked')) {
-        $('#by-casa').removeClass('hidden');
-      } else if ($('#no-1').is(':checked')) {
-        $('#by-casa').addClass('hidden');
-      }
-    });	  
   </script>
 
 </body>
