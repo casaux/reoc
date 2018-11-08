@@ -62,8 +62,8 @@
                 <li>Apply for ReOC</li>
               </ul>
             </nav>
-            <div role="alert" class="hidden au-page-alerts au-page-alerts--error" id="dec-error" style="width:100%;">
-              <h3>Declaration incomplete</h3>
+                 <div role="alert" class="hidden au-page-alerts au-page-alerts--error" id="dec-error" style="width:100%;">
+              <h3>Please check that you have added details into all sections below before finalising your application</h3>
             </div>
             <div class="au-header" role="banner">
               <h1 class="m-t-0">Apply for ReOC</h1>
@@ -216,7 +216,7 @@
 
                   <!--<a class="au-btn au-btn--primary hidden" href="dec.html" id="next">Next: Declarations</a>-->
 
-											<div class="hidden" id="proceed-payment">
+											<div id="proceed-payment">
 												<a href="app-reoc-summary.html" class="au-btn" id="next">Finalise Application</a>
 												<!--<p class="westpac">You will be directed to Westpac for payment</p>-->
 											</div>
@@ -258,7 +258,34 @@
 			  </div>
 
   </main>
-  <script>
+    <script>
+
+
+
+$("#next").bind("click",function(event){
+
+var savedCount = $(".badge-success").length;
+
+
+if(savedCount == 4){
+
+} else {
+$("#dec-error").removeClass("hidden");
+
+
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#dec-error").offset().top
+    }, 500);
+
+
+event.preventDefault();
+return false;
+}
+
+
+
+
+});
 
   $('#heading-cert span').addClass('hidden');
     var type = window.location.hash.substr(1);
@@ -326,14 +353,14 @@
       //$('#heading-docs span').removeClass('hidden');
 
       $('#manual').removeClass('hidden');
-      $('#next').removeClass('hidden');
+      //$('#next').removeClass('hidden');
       $('#upload-manual').addClass('hidden');
 	  /*$('html, body').animate({
 			scrollTop: $("#heading-docs").offset().top - 150
 			}, 3000);*/
     }
     if (type == 'library') {
-      $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names').removeClass('hidden');
+      $('#drones, #library, .dec, #proceed-payment, #manual, #personnel, #personnel-mc,#names').removeClass('hidden');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 
       $('#personnel').parent().find('p').remove();
@@ -347,7 +374,7 @@
 			}, 3000);*/
     }
     if (type == 'syllabus') {
-      $('#drones, #library, .dec, #proceed-payment, #manual, #next, #personnel, #personnel-mc,#names, #syllabus').removeClass('hidden');
+      $('#drones, #library, .dec, #proceed-payment, #manual, #personnel, #personnel-mc,#names, #syllabus').removeClass('hidden');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 
       $('#personnel').parent().find('p').remove();
@@ -361,7 +388,7 @@
 			}, 3000);*/
     }
     if (type == 'flight') {
-      $('#drones, #library, #proceed-payment, #manual, #next, #personnel, #personnel-mc, #names, #syllabus, #flight').removeClass('hidden');
+      $('#drones, #library, #proceed-payment, #manual, #personnel, #personnel-mc, #names, #syllabus, #flight').removeClass('hidden');
       $('#heading-drones span').removeClass('badge-secondary').text('Saved').addClass('badge-success');
 
       $('#personnels').parent().find('p').remove();
@@ -380,7 +407,7 @@
 
       $('#personnel').parent().find('p').remove();
       $('#manual, #names').removeClass('hidden');
-      $('#next').addClass('hidden');
+     // $('#next').addClass('hidden');
 
 			$('.au-callout, .au-btn--secondary').addClass('hidden');
 			$('h1').text('Summary of your ReOC');
